@@ -141,7 +141,7 @@ const config = {
           },
           secondary: {
             label: "Learning Objectives",
-            href: "learning-objectives",
+            href: "learning-objectives/intro",
           },
         },
       },
