@@ -207,9 +207,9 @@ $$2! = 2 \times 1 = 2$$
 
 $$3! = 3 \times 2! = 3 \times 2 = 6$$
 
-$$4! = 4 \times 3! = 4 \times 6 = 24 $$
+$$4! = 4 \times 3! = 4 \times 6 = 24$$
 
-$$5! = 5 \times 4! = 5 \times 24 = 120 $$
+$$5! = 5 \times 4! = 5 \times 24 = 120$$
 
 Now we can write the steps.
 
@@ -247,7 +247,7 @@ From the above describe, we have the same recursive tree as before.
 
 From here, we can conclude that the computation time is linear, i.e. $T(n) = O(n)$, a function of the input integer.
 
-In the above two examples, summing an array and calculating a factorial, the solutions can be written either using recursion or iteration (such as a for-loop). It is not evident why we need a recursive solution in these two cases. However, there are cases when the iterative solution would be too complicated and its recursive solution is simple and elegent. One example of this is the problem of Tower of Hanoi which we will discuss next.
+In the above two examples, summing an array and calculating a factorial, the solutions can be written either using recursion or iteration (such as a for-loop). It is not evident why we need a recursive solution in these two cases. However, there are cases when the iterative solution would be too complicated and its recursive solution is simple and elegant. One example of this is the problem of Tower of Hanoi which we will discuss next.
 
 ## Tower of Hanoi Problem
 
@@ -362,7 +362,7 @@ Now we can generalize this to $n$ disks. The recursive tree looks as the one bel
 
 <ImageCard path={require("./images/tower_of_hanoi_time_n.png").default} widthPercentage="70%"/>
 
-There will be $n$ levels from $i = 0 $ up to $i = n - 1$. Moreover, at each level, the sum total time is $2^i \times c$. If we sum up all the levels, we have the following series:
+There will be $n$ levels from $i = 0$ up to $i = n - 1$. Moreover, at each level, the sum total time is $2^i \times c$. If we sum up all the levels, we have the following series:
 
 $$T(n) = \sum_{i = 0}^{n-1} 2^i c = c \sum_{i = 0}^{n-1}2^i$$
 
