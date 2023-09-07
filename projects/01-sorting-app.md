@@ -11,25 +11,21 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 <ChatBaseBubble/>
 
-### Learning Objectives
-
+## Learning Objectives
 In this mini project, you will develop a web app to sort numbers. By the end of this assignment, you should be able to:
-
 - Create a simple web app using Flask web framework
 - Use Transcrypt Python library to create front-end web script with Python
-- Run a localhost web server
+- Run a localhost web server 
 
 ## Setup
 
 ### Install Git
 
 You need to have Git to do the project. Download and install the software according to your OS:
-
 - Windows: [Git for Windows](https://git-scm.com/download/win)
 - Mac OS: [Git for MacOS](https://git-scm.com/download/mac)
 
 ### Downloading Repository
-
 Clone the mini project repository from Github. On your terminal or Git Bash, type the following:
 
 ```shell
@@ -42,14 +38,12 @@ git clone https://github.com/Data-Driven-World/d2w_mini_projects
 Once you have downloaded the repository, you can go to the repository and to the folder called `mp_sort` for this mini project.
 
 Windows:
-
 ```dos
 cd d2w_mini_projects\mp_sort
 dir
 ```
 
 Unix/MacOS
-
 ```shell
 cd d2w_mini_projects/mp_sort
 ls
@@ -58,7 +52,7 @@ ls
 The last command should output the following:
 
 ```shell
-Readme.md
+Readme.md		
 application.py
 Pipfile
 Pipfile.lock
@@ -67,18 +61,15 @@ app
 
 This handout can be found in the file `Readme.md`.
 
-### Create Virtual Environment
+### Create Virtual Environment 
 
 **You should open Anaconda Prompt to do the following steps.**
 
 In the following steps, whenever there is a different between the OS commands, the **Windows** prompt will be represented by:
-
 ```shell
 >
 ```
-
 while the MacOS/Linux prompt will be represented by:
-
 ```shell
 $
 ```
@@ -86,13 +77,11 @@ $
 Go to the root folder `mp_sort`.
 
 Windows:
-
 ```dos
 > cd %USERPROFILE%\Downloads\d2w_mini_projects\mp_sort
 ```
 
 Unix/MacOS:
-
 ```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_sort
 ```
@@ -118,30 +107,27 @@ It is basically saying that you need to add the newly installed `pipenv` program
 export PATH='/voc/work/.local/bin':$PATH
 ```
 
-We will call `mp_sort` folder as the **root** folder of our application.
+We will call `mp_sort` folder as the **root** folder of our application. 
 
 From the root folder, install the packages specified in the `Pipfile`.
-
 ```shell
 pipenv install
 ```
 
 The above steps will install Flask and Transcrypt Python libraries and some other necessary packages.
 
-To activate the virtualenv, run
 
+To activate the virtualenv, run
 ```shell
 pipenv shell
 ```
 
 Alternatively, you can choose everytime you run a command to prepend that command with the following:
-
 ```shell
 pipenv run
 ```
 
 Ok, so let's enter into the shell by typing:
-
 ```shell
 pipenv shell
 ```
@@ -149,24 +135,21 @@ pipenv shell
 You should see the word `(mp_sort)` in your prompt something like:
 
 Windows:
-
 ```dos
 (mp_sort) folder >
 ```
-
 Unix/MacOS:
-
 ```shell
 (mp_sort) user $
 ```
 
 _To exit the virtual environment at the end of this mini project, simply type:_
-
 ```shell
 exit
 ```
 
-All the subsequent exercises assumes you are in the virtualenv shell.
+All the subsequent exercises assumes you are in the virtualenv shell. 
+
 
 ## Brief Overview of Flask Project Structure
 
@@ -234,7 +217,7 @@ mp_sort/
       ex2.html
 ```
 
-The other two routes does the same by serving any request to "/ex1" and "/ex2". The templates for these two are provided inside the `template` folder.
+The other two routes does the same by serving any request to "/ex1" and "/ex2". The templates for these two are provided inside the `template` folder. 
 
 For Exercise 1, you may want to look into the file `ex1.html`. Open this file in a text editor.
 
@@ -244,11 +227,8 @@ HTML code normally contains of two section, the header and the body. Each of the
 
 ```html
 <head>
-  <title>{{title}}</title>
-  <script type="module">
-    import * as library from "/static/__target__/library.js";
-    window.library = library;
-  </script>
+	<title>{{title}}</title>
+	<script type="module">import * as library from '/static/__target__/library.js'; window.library = library;</script>
 </head>
 ```
 
@@ -262,7 +242,7 @@ def exercise1():
 
 In this code, the variable `title` is set to `Mini Project 1 Exercise 1`.
 
-The second tag `<script ...>...</script>` is to import our script. We will generate this Javascript file `library.js` from our Python `library.py` file inside the `static` folder.
+The second tag `<script ...>...</script>` is to import our script. We will generate this Javascript file `library.js` from our Python `library.py` file inside the `static` folder. 
 
 ```shell
 mp_sort/
@@ -280,21 +260,19 @@ All your work for this mini project will be done inside `library.py`.
 Javascript is the commonly used language for front-end web development. However, since this course only covers Python. We will use `Transcrypt` library which can compile and translate Python script into a Javascript file. To compile `library.py`, first we need to go into the `static` folder.
 
 Windows:
-
 ```dos
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort\app\static
 > dir
 ```
 
 Unix/MacOS:
-
 ```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_sort/app/static
 $ ls
 ```
 
-The last command will list the file in that folder, and you should see:
 
+The last command will list the file in that folder, and you should see:
 ```shell
 library.py
 ```
@@ -308,21 +286,18 @@ python -m transcrypt -b -n library
 The option `-b` means to build the javascript library. You can use `--help` for more options. Once it is done, you should be able to see a folder called `__target__` containing several files. To see the content of that folder:
 
 Windows:
-
 ```dos
 > dir
 > dir __target__
 ```
 
 Unix/MacOS:
-
 ```shell
 $ ls
 $ ls __target__
 ```
 
 The output should be something like the following:
-
 ```shell
 __target__/
   library.js
@@ -339,80 +314,28 @@ You should see `library.js` created inside this folder.
 Now you are ready to run your web app in your local computer. To do so, you need to go back to the root directory. This can be done with the following:
 
 Windows:
-
 ```dos
 > cd ..\..
 ```
 
 Unix/MacOS:
-
 ```shell
 $ cd ../..
 ```
-
 which means go up the folder two times. Or, simply
 
 Windows:
-
 ```dos
 > cd %USERPROFILE\Downloads\d2w_mini_projects\mp_sort
 ```
 
 Unix/MacOS:
-
 ```shell
 $ cd ~/Downloads/d2w_mini_projects/mp_sort/
 ```
 
-You should see `application.py` in this root folder.
 
-#### Vocareum
-
-If you use Vocareum terminal, which is a linux terminal, to run your Flask application, you can do so by running the `runflaskvoc.sh` script. Before running this script, make sure the `voc=True` is set true in the following line inside `mp_sort/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=True)
-```
-
-Now, make sure you are inside the `mp_sort` folder by using the `pwd` command.
-
-```shell
-pwd
-```
-
-Use `ls` to ensure that you see the `runflaskvoc.sh` in the current folder.
-
-```shell
-ls
-```
-
-Make sure that the script is executable by running the following command.
-
-```shell
-chmod a+x ./runflaskvoc.sh
-```
-
-The above script is to change the file to be executable for all users, group and owner.
-
-To run the script, type the following.
-
-```shell
-./runflaskvoc.sh
-```
-
-Once it is running, you can open another tab in your browser and type the following url: [`https://myserver.vocareum.com/`](https://myserver.vocareum.com/).
-
-To stop the web app type `CTRL+C`.
-
-#### Local Computer
-
-If you are using your own computer, make sure to change the flag `voc=False` in the following line inside `mp_sort/app/__init__.py`.
-
-```python
-# set voc=False if you run on local computer
-application.wsgi_app = PrefixMiddleware(application.wsgi_app, voc=False)
-```
+You should see `application.py` in this root folder. 
 
 Now, you can run Flask by typing:
 
@@ -430,15 +353,15 @@ Now you can open your browser at `http://127.0.0.1:5000/` to see the web app. Yo
 
 ![](https://www.dropbox.com/s/a2fqx5svvyqtqf9/mp1_home.png?raw=1)
 
-To stop the web app type `CTRL+C`.
+To stop the web app, type `CTRL+C`. 
 
-## Tasks
+If you are doing your mini project in Vocareum, you can do a CTRL-click (Windows) or CMD-click on the `http://127.0.0.1:5000` link in the terminal and it will open a new tab in your browser. 
 
-There are 4 tasks in this Mini Project. Please do them in sequence.
+To stop the web app, type `CTRL+C`.
 
-### Task 1: Generating Random Integers
+## Task 1: Generating Random Integers 
 
-We will start with Exercise 1. Open `ex1.html` in your text editor. You should see these few lines of code:
+We will start with Exercise 1.  Open `ex1.html` in your text editor. You should see these few lines of code:
 
 ```html
 <p>
@@ -448,15 +371,13 @@ We will start with Exercise 1. Open `ex1.html` in your text editor. You should s
 ```
 
 We have two buttons. The first button is to generate 10 random numbers. The event `onclick` is binded to the function `generate()` in your `library.py`. Fill in this function to do the following:
-
 - generate 10 random integers and store it into the global variable `array`,
 - create a single string containing all the numbers. For example,
-  `3, 1, 2, 4, 8, 6, 5, 9, 0, 7.`
+    `3, 1, 2, 4, 8, 6, 5, 9, 0, 7.`
 
-### Task 2: Sorting Numbers
+## Task 2: Sorting Numbers
 
 In `ex1.html`, you should also find the following lines:
-
 ```html
 <p>
 	<div id="sorted">...</div>
@@ -465,13 +386,12 @@ In `ex1.html`, you should also find the following lines:
 ```
 
 The second button is to sort the generated random numbers. The event `onclick` is binded to the function `sortnumber1()` in your `library.py`. Fill in this function to do the following:
-
-- get the random numbers from `generate` HTML id. _Hint: use `document.getElementById(id).innerHTML`_ to get the numbers,
+- get the random numbers from `generate` HTML id. *Hint: use `document.getElementById(id).innerHTML`* to get the numbers,
 - remove the other characters and create a list of integers called `sortedarray`,
 - sort the list using either bubble sort or insertion sort,
 - create a single string containing the sorted numbers.
 
-### Task 3: Creating a Text Input
+## Task 3: Creating a Text Input
 
 Now, let's move on to Exercise 2. In this exercise, instead of randomly generate the numbers, you will ask the user to enter the sequence of numbers using a Text Input.
 
@@ -484,9 +404,9 @@ Open `ex2.html`. You should see the following:
 </p>
 ```
 
-Search the internet to find out how to create a Text Input field and enter the code in the line indicated. Replace that line with the correct tag and code for Text Input. Name the text input `numbers`. _You may want to also specify some default values to appear in the text input_.
+Search the internet to find out how to create a Text Input field and enter the code in the line indicated. Replace that line with the correct tag and code for Text Input. Name the text input `numbers`. *You may want to also specify some default values to appear in the text input*.
 
-### Task 4: Sorting User Input
+## Task 4: Sorting User Input
 
 You should also see the following line:
 
@@ -498,7 +418,6 @@ You should also see the following line:
 ```
 
 This button's even `onclick` is binded to `sortnumber2()` function in your `library.py`. Modify that function to do the following:
-
 - get the string from the text input stored in the variable `value`,
 - split the string using comma as a separator,
 - remove all trailing whitespaces and convert them to numbers,
@@ -507,4 +426,6 @@ This button's even `onclick` is binded to `sortnumber2()` function in your `libr
 
 ## Expected Output
 
-[The expected output for both exercises 1 and 2 can be found in this video](https://web.microsoftstream.com/video/fa203d50-c064-48a2-a951-ec0ec3385a48).
+The expected output for both exercises 1 and 2 can be found in this video.
+
+[Mini Project 1 Expected Output](https://web.microsoftstream.com/video/fa203d50-c064-48a2-a951-ec0ec3385a48)
