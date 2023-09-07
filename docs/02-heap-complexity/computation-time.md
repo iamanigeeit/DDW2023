@@ -222,7 +222,7 @@ These asymptotic notations can be understood better in relation to analogies wit
 | :-----------------: | :-----------------: |
 |       $f = g$       |   $f = \Theta(g)$   |
 |       $f < g$       |     $f = o(g)$      |
-|      $f <= g$       |     $ f= O(g)$      |
+|      $f <= g$       |     $f= O(g)$       |
 |       $f > g$       |   $f = \omega(g)$   |
 |      $f >= g$       |   $f = \Omega(g)$   |
 
@@ -572,7 +572,7 @@ $T(n) = O(1) + O(n) \times(O(1) + O(n) + O(1))$
 
 $T(n) = O(1) + O(n) \times O(n)$
 
-$T(n) = O(1) + O(n^2) $
+$T(n) = O(1) + O(n^2)$
 
 $T(n) = O(n^2)$
 
@@ -790,7 +790,7 @@ $T(n) = O(n\log(n)) + O(n) \times O(\log(n))$
 
 $T(n) = O(n\log(n)) + O(n\log(n))$
 
-$T(n) = O(n\log(n)) $
+$T(n) = O(n\log(n))$
 
 ## Computational Time Summary
 
