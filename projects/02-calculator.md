@@ -452,9 +452,9 @@ Test also the other pages and see if they are working fine:
 
 Read the following notes to understand how to use the database and Bootstrap for styling.
 
-- [Using SQLAlchemy and Flask in this Mini Project 2](Database.md)
-- [Using Bootstrap in this Mini Project 2](Bootstrap.md)
-- [Using Web Forms in this Mini Project 2](Forms.md)
+- [Using SQLAlchemy and Flask in this Mini Project 2](/projects/advanced/database)
+- [Using Bootstrap in this Mini Project 2](/projects/advanced/bootstrap)
+- [Using Web Forms in this Mini Project 2](/projects/advanced/forms)
 
 ## Expected Output
 
