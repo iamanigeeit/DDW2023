@@ -46,4 +46,4 @@ flowchart TD
 
 See below if you need to zoom in.
 
-<iframe src="https://sutdapac-my.sharepoint.com/personal/oka_kurniawan_sutd_edu_sg/_layouts/15/embed.aspx?UniqueId=847f4d69-5c81-4a7a-b112-65c671b194c1" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="DDW Concept Map-Week 9.drawio.png"></iframe>
+![](https://www.dropbox.com/scl/fi/4kusbrn45cvrzykreooy8/DDW-Concept-Map-Week-9.drawio.png?rlkey=27oljt84tuases7x5651kz4vd&raw=1)
