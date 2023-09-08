@@ -36,7 +36,8 @@ As your program grows in complexity, you may need something more than simple bui
 
 - attributes: which defines the characteristic of the object, and
 - methods: which defines what the object can do
-  Attributes and methods define your object.
+  
+Attributes and methods define your object.
 
 You actually have worked with objects if you use `list` and `str` data type in your program. These are called **built-in** objects in Python. Python has provided these objects for you to use. What we will do in this section is to create your own **user-defined** objects.
 
@@ -223,7 +224,7 @@ Therefore, it is important that we do encapsulation. Encapsulation ensures that 
 
 Let's look at another example of why we want to do encapsulation. Let's say we want to _update_ our Robot class definition to implement relative coordinates where the robot has a absolute position and a relative position with respect to some initial position in the map. Let's say, the robot can start at any other position other than `0, 0` and we want to store the absolute position of the robot as its attribute. This change requires a change in the way the programmers set the value of the robot's position since previously the position is always relative to the origin of `0,0`. Such changes may break the code since now the `_pos` attribute means differently. Previously, it is relative to `0, 0` and now it is going to be some absolute position in the map. With encapsulation, however, we can keep the way position is set while changing the internal attributes. For example, we can create `pos` as relative to the initial origin while storing the absolute position internally based on where the initial origin is. Encapsulation simply separates the internal data representation with how others interact with this object. Without encapsulation, we will break the code and requires new methods to be created.
 
-To achieve this data encapsulation, we usually craete two kinds of methods:
+To achieve this data encapsulation, we usually create two kinds of methods:
 
 - enquiry or _getter_: this method is used to get or enquire the state of the object
 - modifier or _setter_: this method is used to modify or set the state of the object.
@@ -232,7 +233,7 @@ To achieve this data encapsulation, we usually craete two kinds of methods:
 
 In Python, we do this using the concept of **property**. A _property_ represents an attribute with its getter and setter. Note that **a property is not the same as the attribute**. Because they are not the same, Python will require you to use two different names. The name of the property must not be the same as the name of the attribute. Property looks like an attribute but they behave differently. When we set a property's value, it passes through its **setter** method. Similarly, when we get a property's value, we can only obtain it from its **getter** method. Since all access passes through some methods, the data is encapsulated by the getter and the setter methods. We can make changes internally without affecting how the outside world interact with the data.
 
-Let's rewrite our `RobotTurtle` class using property to encapsulate the `_name` attribute and `_speed` attribute. To do this, we are going to create two properties, one for `name` and the other one for `speed`. On the other hand, we wil create a property for position only with a getter. The reason is that we want position to be modified only by calling the `move()` method.
+Let's rewrite our `RobotTurtle` class using property to encapsulate the `_name` attribute and `_speed` attribute. To do this, we are going to create two properties, one for `name` and the other one for `speed`. On the other hand, we will create a property for position only with a getter. The reason is that we want position to be modified only by calling the `move()` method.
 
 ```python
 # Class definition
@@ -342,7 +343,7 @@ T4
 1
 ```
 
-Notice that you use the property name, which are `name` and `speed` respectively instead of its attributes name, i.e. `__name` and `__speed`. This access calls the **getter** method of the respective properties.
+Notice that you use the property name, which are `name` and `speed` respectively instead of its attributes name, i.e. `_name` and `_speed`. This access calls the **getter** method of the respective properties.
 
 Moreover, you can also change the value using the assignment operator which will call the **setter** method.
 
@@ -708,6 +709,7 @@ classDiagram
 ```
 
 <br/>
+
 In this diagram, we see that one `RobotTurtle` can have one `Coordinate`. This is a specific kind of _association_ relationship called **composition**. This means that `RobotTurtle` is composed of a `Coordinate`. When the object `RobotTurtle` is destroyed, the `Coordinate` object associated with it is also destroyed. There are other kinds of relationship which we will introduce along the way.
 
 ## Try it out
