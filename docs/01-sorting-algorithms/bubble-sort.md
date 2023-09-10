@@ -147,7 +147,7 @@ Now we begin again with the pair (7, 3) and push 7 to its final position. The de
 
 - [3, 2, 4, 1, **7, 8, 8, 10, 14, 16**]
 
-At this point, we will start a new iteration by comparing the pair (3, 2). Since 3 is greater than 2, there will be a swap. The next comparison will fall on the pair (3, 4), i.e. [2, **3, 4**, 1, 7, 8, 8, 10, 14, 16]. But since 3 is less than 4, there is no swap happing. And the rest of the comparison will push 4 to its final position.
+At this point, we will start a new iteration by comparing the pair (3, 2). Since 3 is greater than 2, there will be a swap. The next comparison will fall on the pair (3, 4), i.e. [2, **3, 4**, 1, 7, 8, 8, 10, 14, 16]. But since 3 is less than 4, there is no swap happening. And the rest of the comparison will push 4 to its final position.
 
 - [2, 3, 1, **4, 7, 8, 8, 10, 14, 16**]
 

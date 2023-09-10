@@ -126,11 +126,11 @@ We want to write some steps that sort the numbers such that the output will be:
 
    no swapping occurs
 
-7. We can now move to the _seventh_ element, i.e. 3. We will not show the swapping steps, and only show the final position of the sevent element.
+7. We can now move to the _seventh_ element, i.e. 3. We will not show the swapping steps, and only show the final position of the seventh element.
 
    [**3**, 7, 8, 8, 10, 14, 16, 2, 4, 1]
 
-8. We do the same with the _eight_ element, i.e. 2.
+8. We do the same with the _eighth_ element, i.e. 2.
 
    [**2**, 3, 7, 8, 8, 10, 14, 16, 4, 1]
 
@@ -150,10 +150,8 @@ Looking at the above case, we can try to write down our algorithm in pseudocode.
 
 There are **two** iterations in the steps above:
 
-1. <span style={{ "color":"red", "fontWeight": "bold" }}>outer</span> iteration is moving from the _second_ element to the last element in the list. What the outer iteration does is to place that n-th element into its position.
-2. <span style={{ "color":"red", "fontWeight": "bold" }}>inner</span> iteration is swapping the n-th element until either:
-   - it reaches the most left position, or
-   - the number on its left is smaller
+1. <span style={{ "color":"red", "fontWeight": "bold" }}>outer</span> iteration is moving from the <span><i>second</i></span> element to the last element in the list. What the outer iteration does is to place that n-th element into its position.
+2. <span style={{ "color":"red", "fontWeight": "bold" }}>inner</span> iteration is swapping the n-th element until either: a) it reaches the most left position, or b) the number on its left is smaller
 
 ### Fixed Outer Iteration
 
@@ -204,7 +202,7 @@ We can improve the algorithm slightly by reducing the number of assignment in th
 
    [7, 8, 10, 14, `_16_`, **16**, 3, 2, 4, 1] , temporary = 8
 
-3. We then now compare, the temporary variable with 14. Since $ 8 < 14$, we shift 14 to the right.
+3. We then now compare, the temporary variable with 14. Since $8 < 14$, we shift 14 to the right.
 
    [7, 8, 10, **14**, `_16_`, 16, 3, 2, 4, 1] , temporary = 8
 
