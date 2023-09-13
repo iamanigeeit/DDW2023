@@ -55,7 +55,6 @@ The last command should output the following:
 Readme.md		
 application.py
 Pipfile
-Pipfile.lock
 app
 ```
 
