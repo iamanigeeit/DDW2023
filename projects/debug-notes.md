@@ -53,7 +53,8 @@ We assume you follow the _easy step_, which is to clone the original repository 
 ### Env does not have the var VOC_PROXY_ID
 
 You need to add the **trailing slash** at the URL as shown in the screenshot below:
-<img src="/assets/images/debug-notes/2022-09-23-17-07-41.png"  class="center_seventy"/>
+
+<ImageCard path={require("./images/debug-notes/2023-09-14-09-49-42.png").default} widthPercentage="100%"/>
 
 ### bash: ./runflaskvoc.sh /bin/bash^M: bad interpreter
 
