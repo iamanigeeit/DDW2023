@@ -220,7 +220,7 @@ Let's look at the particular example above. Given the tree above, we do the foll
   <ImageCard path={require("./images/Heapify_3.png").default} widthPercentage="70%"/>
 
 - We, then, move our current index to the place where we swap, i.e. old index of element 8. So we are now at index 8.
-- Since this node has no more children, we stop. We can check whether the node has more children by calculating the index of the _left_ child and see if it is still within the length of the array minus one, i.e. $left(i) < n-1$, where $i$ is the current node index and $n$ is the number of element in the array.
+- Since this node has no more children, we stop. We can check whether the node has more children by calculating the index of the _left_ child and see if it is still within the length of the array minus one, i.e. $left(i) < n$ if the node has at least one child, where $i$ is the current node index and $n$ is the number of element in the array.
 
 ### (D)esign of Algorithm
 
