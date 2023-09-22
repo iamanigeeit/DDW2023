@@ -88,7 +88,7 @@ Project-related question involves **understanding** the project structure:
 4. General understanding of Python modules used in the project
 5. General understanding of the Python virtual environment
 
-Don't worry, it will be very **basic**. If in doubt, please read [this handout about CLI background](https://data-driven-world.github.io/mini_projects/background-cli) and [this handout about the Web](https://data-driven-world.github.io/mini_projects/background-web) that we have asked you to read in Week 1.
+Don't worry, it will be very **basic**. If in doubt, please read [this handout about CLI background](background/cli) and [this handout about the Web](background/web) that we have asked you to read in Week 1.
 
 :::think
 **Why** do you have to know all these: CLI/Web/structure of the mini project as well?
