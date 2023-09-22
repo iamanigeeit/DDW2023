@@ -116,6 +116,6 @@ There are **8 checks** for both exercises in MP1. Each is worth 0.25 pts, totall
 
 ### Q&A
 
-Similar protocol like MP [above](http://127.0.0.1:4000/mini_projects/checkoff#qa). Please read all necessary markdown files: [Bootstrap](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Bootstrap.md), [Database](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Database.md), and [Forms](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Forms.md) that was available at the [mini project 2 repository](https://github.com/Data-Driven-World/d2w_mini_projects/tree/master/mp_calc) before going for the checkoff.
+Similar protocol like MP [above](#qa). Please read all necessary markdown files: [Bootstrap](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Bootstrap.md), [Database](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Database.md), and [Forms](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Forms.md) that was available at the [mini project 2 repository](https://github.com/Data-Driven-World/d2w_mini_projects/tree/master/mp_calc) before going for the checkoff.
 
 <ChatBaseBubble/>
