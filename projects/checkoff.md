@@ -88,7 +88,7 @@ Project-related question involves **understanding** the project structure:
 4. General understanding of Python modules used in the project
 5. General understanding of the Python virtual environment
 
-Don't worry, it will be very **basic**. If in doubt, please read [this handout about CLI background](https://data-driven-world.github.io/mini_projects/background-cli) and [this handout about the Web](https://data-driven-world.github.io/mini_projects/background-web) that we have asked you to read in Week 1.
+Don't worry, it will be very **basic**. If in doubt, please read [this handout about CLI background](background/cli) and [this handout about the Web](background/web) that we have asked you to read in Week 1.
 
 :::think
 **Why** do you have to know all these: CLI/Web/structure of the mini project as well?
@@ -116,6 +116,6 @@ There are **8 checks** for both exercises in MP1. Each is worth 0.25 pts, totall
 
 ### Q&A
 
-Similar protocol like MP [above](http://127.0.0.1:4000/mini_projects/checkoff#qa). Please read all necessary markdown files: [Bootstrap](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Bootstrap.md), [Database](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Database.md), and [Forms](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Forms.md) that was available at the [mini project 2 repository](https://github.com/Data-Driven-World/d2w_mini_projects/tree/master/mp_calc) before going for the checkoff.
+Similar protocol like MP [above](#qa). Please read all necessary markdown files: [Bootstrap](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Bootstrap.md), [Database](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Database.md), and [Forms](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Forms.md) that was available at the [mini project 2 repository](https://github.com/Data-Driven-World/d2w_mini_projects/tree/master/mp_calc) before going for the checkoff.
 
 <ChatBaseBubble/>
