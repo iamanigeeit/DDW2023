@@ -213,11 +213,10 @@ We have discussed two ways of implementing a list and each have its own advantag
 
 ```mermaid
 classDiagram
-    MyAbstractList <|-- MyPythonList : inheritance
-    MyAbstractList <|-- MyArrayList  : inheritance
-    MyAbstractList <|-- MyLinkedList  : inheritance
-    note for MyAbstractList "collections.abc.iterator"
-
+    MyAbstractList <|.. MyPythonList : implements
+    MyAbstractList <|.. MyArrayList  : implements
+    MyAbstractList <|.. MyLinkedList  : implements
+    `collections.abc.iterator` <|.. MyAbstractList :implements
 ```
 
 <br/>
