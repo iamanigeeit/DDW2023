@@ -129,11 +129,13 @@ Here's all the code so far in action regarding extracting a col or a row as `Ser
 
 ### Getting Rows and Columns as DataFrame
 
-The operator `:` works similar to Python's slicing. This means that you can get some rows by slicing them. For example, you can access the first 10 rows as follows.
+The operator `:` works similar to Python's slicing but with some difference in behaviour depending you are using `.loc` or `.iloc`. For example, you can access the first 10 rows as follows.
 
 ```python
-df_new = df.loc[0:10, :]
+df_new = df.loc[0:9, :]
 ```
+
+Notice that the rows included are from 0 to 9 inclusive with a total of 10 rows. The ending number after the `:` character is included by `.loc` object. This is unlike slicing in Python which is exclusive of the ending index. 
 
 :::think
 What would be the datatype of `df_new`?
@@ -166,6 +168,18 @@ df.iloc[0:10, columns]
 ```
 
 The above code gives the same data frame but it uses different input to specifies. By using `.iloc[]`, we specify the position of the index and the columns instead of the label of the index and the columns. It happens that for the index, the position numbering is exactly the same as the label.
+
+For `.iloc` the ending index is exclusive similar to Python slicing. For example, if we want to get the first 10 rows, we would use the following.
+
+```python
+df.iloc[0:10, columns]
+```
+
+This will extract row position 0 to 9 which results in 10 rows in total. Compare this with the following code.
+
+```python
+df.loc[0:9, columns]
+```
 
 Here's all the code so far in action to get rows and columns as `Dataframe`:
 <><iframe src="https://trinket.io/embed/python3/cc9d867b98?start=result" width="100%" height="600" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></>
