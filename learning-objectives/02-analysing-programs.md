@@ -16,9 +16,38 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
+![](https://www.dropbox.com/scl/fi/7gtdb13f6o1z8y3t1fqgz/DDW-Concept-Map-Week-2.drawio.png?rlkey=qtdx21r22gfume6gh4yrx0pdk&raw=1)
+
 ```mermaid
 flowchart TD
     A((Week 2<br>Heap and Complexity)) --> |learns| DS((Data Structure))
+    DS --> |learns| BINH((Binary Heap))
+    style BINH color:dodgerblue
+    BINH --> |specific case of| BT((Binary Tree))
+    BINH --> |uses| L((Python's<br>List))
+    BINH --> |access| N((Node))
+    BINH --> |maintains| HPROP((Heap Property))
+    BINH --> |is used in| HS((Heapsort))
+    BINH --> |process| BH((Build Heap))
+    BT --> |specific case of| TR((Tree))
+    BT --> |has two| CHLD((Children))
+    TR --> |has| LF((Leaf))
+    TR --> |has| RT((Root))
+    TR --> |has| N
+    LF --> |is-a| N
+    LF --> |has no| CHLD
+    RT --> |is-a| N
+    N --> |access| PR((Parent))
+    N --> |access| CHLD
+    CHLD --> |access| LTCD((Left Child))
+    CHLD --> |access| RTCD((Right Child))
+    CHLD --> |can be| MAXC((Max-Child))
+    CHLD --> |can be| MINC((Min-Child))
+    HPROP --> |uses| H((Heapify))
+    HPROP --> |can be| MAXHP((Max-Heap))
+    HPROP --> |can be| MINHP((Min-Heap))
+    MAXHP --> |finds| MAXC
+    MINHP --> |finds| MINC
     A --> |learns| AL((Algorithm))
     A --> |learns| C((Complexity))
     style DS color:red
@@ -33,29 +62,8 @@ flowchart TD
     AL --> |learns| HS
     AL --> |implements| BH((Build Heap))
     AL --> |implements| H((Heapify))
-    DS --> |learns| BINH((Binary Heap))
-    style BINH color:dodgerblue
-    BINH --> |specific case of| BT((Binary Tree))
-    BINH --> |uses| L((List))
-    BINH --> |access| N((Node))
-    BINH --> |maintains| HPROP((Heap Property))
-    BINH --> |is used in| HS
-    BINH --> |process| BH
-    BT --> |specific case of| TR((Tree))
-    BT --> |has two| CHLD((Children))
-    N --> |access| PR((Parent))
-    N --> |access| CHLD
-    TR --> |has| LF((Leaf))
-    TR --> |has| RT((Root))
-    TR --> |has| N
-    RT --> |is-a| N
-    LF --> |is-a| N
-    LF --> |has no| CHLD
-    CHLD --> |access| LTCD((Left Child))
-    CHLD --> |access| RTCD((Right Child))
-    HPROP --> |uses| HY((Heapify))
-    BH --> |uses| HY
-    AL --> |implements| HY
+    BH --> |uses| H
+    AL --> |implements| H
     AN --> |defines| BGONN((Big-O Notation))
     BGONN --> |derive for| HS
     BGONN --> |derive for| BEST((Bubble Sort))
@@ -71,6 +79,7 @@ flowchart TD
     LL --> |faster than| QC((Quadratic))
     BEST --> |runs| QC
     CT --> |for| BEST
+    CT --> |for| INST
     INST --> |runs| QC
     CT --> |can be| QUBIC((Qubic))
     QC --> |faster than| QUBIC
@@ -78,7 +87,3 @@ flowchart TD
     CT --> |can be | EXP
 ```
 
-
-See below if you need to zoom in.
-
-![](https://www.dropbox.com/scl/fi/7gtdb13f6o1z8y3t1fqgz/DDW-Concept-Map-Week-2.drawio.png?rlkey=qtdx21r22gfume6gh4yrx0pdk&raw=1)
