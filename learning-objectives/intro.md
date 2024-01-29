@@ -46,9 +46,13 @@ By the end of these lessons, students should be able to:
 
 - Solve problems using **recursion**
 - Identify problems that has recursive solutions
+- Identify base case and recursive case in a recursive problem and its solution
+- Explain and implement the recursive solution of Tower of Hanoi
 - Explain and implement **merge sort** algorithm
-- Derive solution of **recurrence** of merge sort using recursion-tree method
+- Derive solution for **recurrence** of tower of hanoi and merge sort using recursion-tree method
 - Measure computation time of merge sort and **compare** it with the other sort algorithms
+- Use helper function for a recursive solution
+- Compare recursive solution with that using iteration and discuss its advantages and disadvantages
 
 ## Week 4: Object-Oriented Paradigm
 

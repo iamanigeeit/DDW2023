@@ -16,6 +16,8 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
+![](https://www.dropbox.com/scl/fi/b3khm2mmgpbs6uf04ua03/DDW-Concept-Map-Week-3.drawio.png?rlkey=bv1zxg85e94ccpqa925bjupyg&raw=1)
+
 ```mermaid
 flowchart TD
     A((Week 3<br>Recursion and Mergesort)) --> |learns| ALGO((Algorithm))
@@ -23,6 +25,7 @@ flowchart TD
     ALGO --> |learns| R((Recursion))
     ALGO --> |learns| S((Sorting))
     C  --> |computes| CT((Computational Time))
+    R --> |as compared to| ITER((Iteration))
     R --> |may use| HF((Helper Function))
     R --> |has| CS((cases))
     S --> |learns| MS((Mergesort))
@@ -41,7 +44,4 @@ flowchart TD
     CT --> |for| R
 ```
 
-See below if you need to zoom in.
-
-![](https://www.dropbox.com/scl/fi/b3khm2mmgpbs6uf04ua03/DDW-Concept-Map-Week-3.drawio.png?rlkey=bv1zxg85e94ccpqa925bjupyg&raw=1)
 
