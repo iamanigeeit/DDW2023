@@ -23,6 +23,7 @@ By the end of this lesson, you should be able to:
 - Explain `has-a` relationship
 - Discuss object **aliasing** and **copying**
 - Draw UML class diagram for `has-a` relationship
+- Use object oriented programming to implement both data and computation
 
 :::keyword Keywords
 `object`, `class`, `instance`, `UML`, `composition`, `has-a relationship`, `attribute`, `method`, `property`, `computed property`, `getter`, `setter`, `special method`
