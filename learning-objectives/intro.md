@@ -69,6 +69,7 @@ By the end of these lessons, students should be able to:
 - Implement abstract data type for **Stack**, **Queue** using Object Oriented paradigm
 - **Apply** Stack and Queue for some applications
 - Implement Queue using double **Stack** and discuss implementation **impact** on computation time
+- Use object oriented programming to implement both data and computation
 
 ## Week 5: Searching Data
 
