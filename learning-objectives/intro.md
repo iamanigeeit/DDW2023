@@ -82,7 +82,7 @@ By the end of these lessons, students should be able to:
 - Define **graph**, **vertices**, **edges** and **weights**
 - Differentiate **directed** and **undirected** graphs
 - Define **paths**
-- Create a `Vertex` class and a Graph class
+- Create a `Vertex` class and a `Graph` class
 - Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation
 - Explain and implement **breadth** first search
 - Explain and implement **depth** first search
