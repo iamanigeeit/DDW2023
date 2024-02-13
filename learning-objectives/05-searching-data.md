@@ -15,6 +15,8 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
+![](https://www.dropbox.com/scl/fi/kxkl5112qw81pmruroc2w/DDW-Concept-Map-Week-5.drawio.png?rlkey=wu4ctxusyxkof1z75bkhiz8jp&raw=1)
+
 ```mermaid
 flowchart TD
     PK((Prior Knowledge)) --> |how to| CE((check element))
@@ -32,7 +34,7 @@ flowchart TD
     T --> L
     CT --> DT
     DT --> |has| V
-    DT --> K
+    DT --> |has| K
     L --> |as| V
     W((Week 5<br>Graph and Graph Search)) --> |requires| PK
     W --> |learns| DS((Data Structure))
@@ -44,20 +46,23 @@ flowchart TD
     AL --> |uses| L
     AL --> |implemented using| OO((Object Oriented))
     G --> |creates| VX((Vertex))
-    G --> |can have| D((direction))
+    G --> |can be| D((directional))
+    G --> |can be| UG
     G --> |has| VS((Vertices))
-    VS --> |is a| DT
     W --> |learns| ALGO((Algorithm))
+    ALGO --> |includes| GT((Graph<br>Traversal))
     style ALGO color:red
     ALGO --> |implements| S2D((Search2D))
     S2D --> |has a| GS((Graph Search))
     GS --> |is a child of| G
+    V --> |is a | DT
     VS --> |collection of| V
     VX  --> |has| ID((id_))
     VX --> |has| N((neighbours))
     N --> |collection of| VX
     OO --> |defines| CL((Class))
     CL --> |for| VX
+    CL --> |has| ATTR((attributes)) 
     N --> |is a| DT
     N --> |for key| DV((destination Vertex))
     N --> |for value| WEIGHT((weight))
@@ -65,9 +70,12 @@ flowchart TD
     EDGE --> |has| WEIGHT
     N --> |describes| EDGE
     EDGE --> |connects two| VX
+    PTH((Path)) --> |list of| EDGE
     GS --> |creates| VSH((Vertex Search))
     VSH --> |is a child of| VX
     VSH --> |has| CDFP((color,d,f,parent))
+    CDFP --> |are| ATTR
+    SFT((start/finish<br>time)) --> |are| ATTR
     UGS((UGraphSearch)) --> |is a child of| GS
     UGS --> |for| UG((Undirected Graph))
     UG --> |has| BD((bidirectional))
@@ -75,16 +83,17 @@ flowchart TD
     SBFS((SearchBFS)) --> |uses| GS
     SBFS --> |is a child of| S2D
     SBFS --> |implements| BFS((Breadth-First Search))
+    BFS --> |generates| CDFP
     SBFS --> |uses| CDFP
     SBFS --> |uses| UGS
     SBFS --> |uses| CDFP
     SDFS((SearchDFS)) --> |implements| DFS((Depth-First Search))
+    GT --> DFS
+    GT --> BFS
+    DFS --> |generates| SFT
     SDFS --> |uses| CDFP
     SDFS --> |is a child of| S2D
     TS((Topological Search)) --> |uses| SDFS
     DFS --> |application| TS
 ```
 
-See below if you need to zoom in.
-
-![](https://www.dropbox.com/scl/fi/kxkl5112qw81pmruroc2w/DDW-Concept-Map-Week-5.drawio.png?rlkey=wu4ctxusyxkof1z75bkhiz8jp&raw=1)

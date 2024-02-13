@@ -15,6 +15,8 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
+![](https://www.dropbox.com/scl/fi/cg95ksw5t32tmk8rba384/DDW-Concept-Map-Week-4.drawio.png?rlkey=f38imq2og0opnsh2cvgahjz3d&raw=1)
+
 ```mermaid
 flowchart TD
     A((Week 4<br>Object Oriented<br>Programming)) --> |uses| O((Object))
@@ -24,6 +26,8 @@ flowchart TD
     O --> |creates| OI((Object Instance))
     O --> |has| M((Methods))
     O --> |has| ATTR((Attributes))
+    O --> |as| D(Data)
+    O --> |as| CT(Computation)
     UML((UML)) --> |represents| C
     UML --> |describes| R
     R --> |can be| HA((has-a))
@@ -48,6 +52,8 @@ flowchart TD
     QUEUE --> |has| EQ((Enqueue))
     QUEUE --> |has| DQ((Dequeue))
     QUEUE --> |implemented as| O
+    QUEUE --> |can be implemented using| LS((List))
+    DBLS((Double Stack)) --> |faster than| LS
     EQ --> |is a| M
     DQ --> |is a| M
     SETTER((Setter)) --> |is a| M
@@ -63,8 +69,8 @@ flowchart TD
     COMP --> |has| GETTER
     STR --> |has| GETTER
     STR --> |has| SETTER
+    O --> |support| ENCAP((Encapsulation))
+    ENCAP --> |of| ATTR
+    ENCAP --> |using| PROP
 ```
 
-See below if you need to zoom in.
-
-![](https://www.dropbox.com/scl/fi/cg95ksw5t32tmk8rba384/DDW-Concept-Map-Week-4.drawio.png?rlkey=f38imq2og0opnsh2cvgahjz3d&raw=1)

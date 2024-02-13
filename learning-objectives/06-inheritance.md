@@ -15,6 +15,8 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
+![](https://www.dropbox.com/scl/fi/93ixr3fbfym1f1jmsgs9u/DDW-Concept-Map-Week-6.drawio.png?rlkey=5gspzdgwrhnz8pcuue7jnsj6v&raw=1)
+
 ```mermaid
 flowchart TD
     W((Week 6<br>Inheritance and<br>Abstract Base Class)) --> |learns| OO((Object Oriented<br>Programming))
@@ -22,6 +24,7 @@ flowchart TD
     W((Week 6<br>Inheritance and<br>Abstract Base Class)) --> |learns| DS((Data Structure))
     style DS color:red
     OO --> |learns| INH((Inheritance))
+    OO --> |learns| UML((UML<br>Diagram))
     style INH color:blue
     OO --> |learns| ABC((Abstract Base<br>Class))
     style ABC color:blue
@@ -39,6 +42,7 @@ flowchart TD
     ABC --> |uses| PABC((Python's<br>Abstract Base<br>Class))
     ABC --> |enforces implementation in| CC
     CC --> |inherits from| PABC
+    CC --> |inherits from| PC
     CC --> |has| METH
     CC --> |has| ATTR
     CC --> |can use| SUP((super))
@@ -46,6 +50,10 @@ flowchart TD
     SUP --> |to access| PC((parent class))
     SUP --> |to access| METH
     OVE --> METH
+    UML --> |for| ISAR((is-a<br>relationship))
+    ISAR --> |has| CC
+    ISAR --> |has| PC
+    INH --> |is| ISAR
     ABCI((abc.Iterable)) --> |is| PABC
     ABCI --> |is| ABC
     MyAbstractList --> |inherits from| ABCI
@@ -76,6 +84,3 @@ flowchart TD
 
 ```
 
-See below if you need to zoom in.
-
-![](https://www.dropbox.com/scl/fi/93ixr3fbfym1f1jmsgs9u/DDW-Concept-Map-Week-6.drawio.png?rlkey=5gspzdgwrhnz8pcuue7jnsj6v&raw=1)

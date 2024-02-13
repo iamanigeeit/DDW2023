@@ -30,9 +30,9 @@ flowchart TD
     R --> |has| CS((cases))
     S --> |learns| MS((Mergesort))
     CT --> |draw| RT((Recursive Tree))
-    CT --> |is| EXP((exponential))
+    CT --> |can be| EXP((exponential))
     EXP --> |for| TOH
-    CT --> |is| LL((Log Linear))
+    CT --> |can be| LL((Log Linear))
     MS --> |uses| R
     CS --> |uses| IE((if-else))
     CS --> |has| BASE((base))
