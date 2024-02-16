@@ -41,7 +41,7 @@ The name of the parent class or the base class is specified in the parenthesis a
 - attributes and methods that are unique to the child class
 - methods in the parent's class that we want to override
 
-One example that we had in the previous lesson is to create the class `VertexSearch` from the class `Vertex`. The class `Vertex` has two attributes: `id` and `neighbours`. When the class `VertexSearch` inherits from `Vertex`, any object of `VertexSearch` also has `id` and `neighbours`. What we need to define in the class `VertexSearch` are those attributes not present in the parent class. In this example, `VertexSearch` has additional attributes of `colour`, `distance`, and `parent`. Now, `Vertex` in general will not have these attributes since these are only used when doing a graph search. Similarly, we can also define any additional _methods_ in the child class that is present in the parent class.
+One example that we had in the previous lesson is to create the class `SearchVertex` from the class `Vertex`. The class `Vertex` has two attributes: `id` and `neighbours`. When the class `SearchVertex` inherits from `Vertex`, any object of `SearchVertex` also has `id` and `neighbours`. What we need to define in the class `SearchVertex` are those attributes not present in the parent class. In this example, `SearchVertex` has additional attributes of `colour`, `distance`, and `parent`. Now, `Vertex` in general will not have these attributes since these are only used when doing a graph search. Similarly, we can also define any additional _methods_ in the child class that is present in the parent class.
 
 Besides defining attributes and methods that are unique to the child class, we can also _re-define_ the methods of the parent class. This is what is called as _overriding_. One common method that is usually overridden is the initialization method.
 
@@ -52,12 +52,12 @@ class Vertex:
         self.neighbours = {}
 ```
 
-And the class `VertexSearch` can override this initialization:
+And the class `SearchVertex` can override this initialization:
 
 ```python
 import sys
 
-class VertexSearch(Vertex):
+class SearchVertex(Vertex):
     def __init__(self, id=""):
         super().__init__(id)
         self.colour = "white"

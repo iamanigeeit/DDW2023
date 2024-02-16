@@ -187,7 +187,7 @@ class Vertex{
 
 <br/>
 
-As shown in the previous section, our `Vertex` object has additional attributes such as _colour_, _distance_, and _parent_. We can actually create a new class containing all these new properties as well as the commonly found properties of a vertex (`id` and `neighbours`). However, we will duplicate our codes and rewriting the methods that is the same for all `Vertex` objects such as adding a neighbour. Inheritance allows us to create a new class without duplicating all the other parts that is the same. By using inheritance, we create a new class by _deriving_ it from an existing base class. In this example, we can create a new class called `VertexSearch` that is derived from a base class `Vertex`. When a class inherits another class, the new class possess all the attributes and methods of its parent class. This means that `VertexSearch` class contains both `id` and `neighbours` as well as all the methods that `Vertex` class has. What we need to do is simply to specify what is different with `VertexSearch` that `Vertex` class does not have. We can represent this relationship using a UML diagram as shown below.
+As shown in the previous section, our `Vertex` object has additional attributes such as _colour_, _distance_, and _parent_. We can actually create a new class containing all these new properties as well as the commonly found properties of a vertex (`id` and `neighbours`). However, we will duplicate our codes and rewriting the methods that is the same for all `Vertex` objects such as adding a neighbour. Inheritance allows us to create a new class without duplicating all the other parts that is the same. By using inheritance, we create a new class by _deriving_ it from an existing base class. In this example, we can create a new class called `SearchVertex` that is derived from a base class `Vertex`. When a class inherits another class, the new class possess all the attributes and methods of its parent class. This means that `SearchVertex` class contains both `id` and `neighbours` as well as all the methods that `Vertex` class has. What we need to do is simply to specify what is different with `SearchVertex` that `Vertex` class does not have. We can represent this relationship using a UML diagram as shown below.
 
 ```mermaid
 classDiagram
@@ -198,17 +198,17 @@ class Vertex{
     get_neighbours()
     get_weight(neighbour_vertex)
 }
-class VertexSearch{
+class SearchVertex{
     colour
     distance
     parent
 }
-VertexSearch --> Vertex
+SearchVertex --> Vertex
 ```
 
 <br/>
 
-In the UML diagram, the relationship is represented as an arrow with a white triangle pointing from the child class to the parent class. This relationship is also called **is-a** relationship which simply means that `VertexSearch` _is-a_ `Vertex`, it has all the attributes and methods of a `Vertex` object.
+In the UML diagram, the relationship is represented as an arrow with a white triangle pointing from the child class to the parent class. This relationship is also called **is-a** relationship which simply means that `SearchVertex` _is-a_ `Vertex`, it has all the attributes and methods of a `Vertex` object.
 
 In Python, we can specify if a class derives from another class using the following syntax:
 
@@ -217,19 +217,19 @@ class NameSubClass(NameBaseClass):
     pass
 ```
 
-For our example here, we can write the `VertexSearch` class as follows.
+For our example here, we can write the `SearchVertex` class as follows.
 
 ```python
-class VertexSearch(Vertex):
+class SearchVertex(Vertex):
     pass
 ```
 
-In the above class definition, we have `Vertex` inside the parenthesis to indicate to Python that we will use this as the _parent_ class or _base_ of `VertexSearch` class. In this new class, we can initialize all the new attributes as usual:
+In the above class definition, we have `Vertex` inside the parenthesis to indicate to Python that we will use this as the _parent_ class or _base_ of `SearchVertex` class. In this new class, we can initialize all the new attributes as usual:
 
 ```python
 import sys
 
-class VertexSearch(Vertex):
+class SearchVertex(Vertex):
     def __init__(self, id=""):
         super().__init__(id)
         self.colour = "white"
@@ -243,6 +243,6 @@ Notice here that we initialize:
 - `d` to be a large integer number
 - `parent` to be a `None` object
 
-The first line `super().__init__(id)` is to call the parent class' initialization method to initialize the both the `id` and the `neighbours`. The word `super` comes from Latin which means "above". Therefore, `super()` method returns a reference to the parent's class. Since we have both `__init__()` method in `VertexSearch` and `Vertex`, we need to be able to differentiate the two methods. For this purpose, Python provides `super()` method to refer to the parent's class methods instead of the current class.
+The first line `super().__init__(id)` is to call the parent class' initialization method to initialize the both the `id` and the `neighbours`. The word `super` comes from Latin which means "above". Therefore, `super()` method returns a reference to the parent's class. Since we have both `__init__()` method in `SearchVertex` and `Vertex`, we need to be able to differentiate the two methods. For this purpose, Python provides `super()` method to refer to the parent's class methods instead of the current class.
 
-In the child class `VertexSearch` we redefine the `__init__()` method of the parent's class. This is what is called as **method overriding**. We will discuss more of Inheritance in future lessons.
+In the child class `SearchVertex` we redefine the `__init__()` method of the parent's class. This is what is called as **method overriding**. We will discuss more of Inheritance in future lessons.
