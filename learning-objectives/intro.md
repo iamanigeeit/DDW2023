@@ -70,13 +70,6 @@ By the end of these lessons, students should be able to:
 - **Apply** Stack and Queue for some applications
 - Implement Queue using double **Stack** and discuss implementation **impact** on computation time
 - Use object oriented programming to implement both data and computation
-
-## Week 5: Searching Data
-
-#### [Concept Map](/learning-objectives/searching-data)
-
-By the end of these lessons, students should be able to:
-
 - Use **Dictionary** to represent graph
 - Apply **basic** dictionary operations
 - Define **graph**, **vertices**, **edges** and **weights**
@@ -84,6 +77,13 @@ By the end of these lessons, students should be able to:
 - Define **paths**
 - Create a `Vertex` class and a `Graph` class
 - Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation
+
+## Week 5: Searching Data
+
+#### [Concept Map](/learning-objectives/searching-data)
+
+By the end of these lessons, students should be able to:
+
 - Explain and implement **breadth** first search
 - Explain and implement **depth** first search
 

@@ -34,11 +34,12 @@ This page summarises the links to all notes that are relevant to 10.020. Please 
 
 - [Object Oriented Programming](/notes/oop/oop)
 - [Linear Data Structures](/notes/oop/linear-dt)
+- [Introduction to Graph](/notes/graphs/basics-graph)
 
 ### Week 05: Searching Data
 
-- [Introduction to Graph](/notes/graphs/basics-graph)
-- Graph Search: [Breadth First Search](/notes/graphs/bfs) and [Depth First Search](/notes/graphs/dfs)
+- [Breadth First Search](/notes/graphs/bfs) and 
+- [Depth First Search](/notes/graphs/dfs)
 
 ### Week 06: Inheritance and Object-Oriented Design
 
