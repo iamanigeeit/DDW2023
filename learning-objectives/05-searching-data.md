@@ -15,7 +15,7 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
-![](https://www.dropbox.com/scl/fi/kxkl5112qw81pmruroc2w/DDW-Concept-Map-Week-5.drawio.png?rlkey=wu4ctxusyxkof1z75bkhiz8jp&raw=1)
+![](https://www.dropbox.com/scl/fi/dkcuqrjjg6cwag810zjjm/DDW-Concept-Map-Week-5.drawio.png?rlkey=5wndc999e6q8hm6zdc7sj7ryy&raw=1)
 
 ```mermaid
 flowchart TD
