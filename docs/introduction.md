@@ -34,7 +34,7 @@ This page summarises the links to all notes that are relevant to 10.020. Please 
 
 - [Object Oriented Programming](/notes/oop/oop)
 - [Linear Data Structures](/notes/oop/linear-dt)
-- [Introduction to Graph](/notes/graphs/basics-graph)
+- [Introduction to Graph](/notes/oop/basics-graph)
 
 ### Week 05: Searching Data
 
