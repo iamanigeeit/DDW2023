@@ -106,12 +106,14 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
-- Create **scatter** plot and statistical plots like box plot, histogram, and bar plot
-- Create a **Panda's DataFrame** and selecting data from DataFrame
-- Using library to read `CSV` or `EXCEL` file
-- **Split** data randomly into training set and testing set
-- **Normalize** data using min-max normalization
 - Give example of **linear regression and classification**
+- Create a **Panda's DataFrame** and selecting data from DataFrame
+- Convert Panda's DataFrame to Numpy Array
+- Selecting data from Numpy Array
+- Using Panda's library to read `CSV` file
+- **Split** data randomly into training set and testing set
+- **Normalize** data using z-normalization and min-max normalization
+- Create **scatter** plot and statistical plots like box plot, histogram, and bar plot
 
 ## Week 9: Modelling Continuous Data
 

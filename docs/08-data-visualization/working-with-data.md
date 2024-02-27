@@ -19,10 +19,11 @@ By the end of this lesson, you should be able to:
 
 - Give example of **linear regression and classification**
 - Create a **Panda's DataFrame** and selecting data from DataFrame
-- Using library to read `CSV` or `EXCEL` file
-- Give example of **linear regression and classification**
+- Convert Panda's DataFrame to Numpy Array
+- Selecting data from Numpy Array
+- Using Panda's library to read `CSV` file
 - **Split** data randomly into training set and testing set
-- **Normalize** data using min-max normalization
+- **Normalize** data using z-normalizatin and min-max normalization
 
 :::keyword Keywords
 `Data Frame`, `Series`, `index`, `column`, `vectorized operation`, `normalization`, `z-norm`, `min-max`, `dataset`, `test set`, `training set`, `validation set`
