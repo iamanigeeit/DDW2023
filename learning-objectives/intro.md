@@ -121,10 +121,10 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
-- Write **objective** function of linear regression
+- Write **cost** function of linear regression
 - Implement **Gradient Descent algorithm** for optimisation
 - Train **linear regression model** using gradient descent
-- Transform data for **higher** order features
+- Transform data for **polynomial** model
 - Evaluate linear regression model using `r^2` and mean-squared-error
 - Evaluate and choose **learning rate**
 - Plot **cost** function over iteration time

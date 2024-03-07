@@ -17,7 +17,7 @@ Linear regression is a statistical modeling technique that seeks to establish a 
 
 By the end of this lesson, you should be able to:
 
-- Write **objective** function of linear regression
+- Write **cost** function of linear regression
 - Implement **Gradient Descent algorithm** for optimisation
 - Train **linear regression model** using gradient descent
 - Evaluate linear regression model using `r^2` and mean-squared-error

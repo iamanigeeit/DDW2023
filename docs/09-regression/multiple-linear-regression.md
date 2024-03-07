@@ -16,7 +16,7 @@ Multiple linear regression is a statistical technique used to model the relation
 ### Goals
 
 By the end of this lesson, you should be able to:
-- transform data for **higher** order features
+- transform data for **polynomial** model
 
 :::keyword Keywords
 `hypothesis`, `polynomial`, `update function`, `matrix form`
