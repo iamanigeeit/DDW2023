@@ -60,6 +60,7 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
+- Use object-oriented programming to abstract data 
 - Create `class` definitions with initialization and other methods
 - Create **stored** property and **computed** property
 - Draw UML class diagram of a class with attributes and methods
@@ -67,38 +68,35 @@ By the end of these lessons, students should be able to:
 - Discuss object **aliasing** and **copying**
 - Draw UML class diagram for `has-a` relationship
 - Implement abstract data type for **Stack**, **Queue** using Object Oriented paradigm
-- **Apply** Stack and Queue for some applications
 - Implement Queue using double **Stack** and discuss implementation **impact** on computation time
-- Use object oriented programming to implement both data and computation
-- Use **Dictionary** to represent graph
-- Apply **basic** dictionary operations
+- Use **Dictionary** and **OOP** to represent graph
 - Define **graph**, **vertices**, **edges** and **weights**
 - Differentiate **directed** and **undirected** graphs
 - Define **paths**
 - Create a `Vertex` class and a `Graph` class
 - Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation
 
-## Week 5: Searching Data
-
-#### [Concept Map](/learning-objectives/searching-data)
-
-By the end of these lessons, students should be able to:
-
-- Explain and implement **breadth** first search
-- Explain and implement **depth** first search
-
-## Week 6: Inheritance and Object-Oriented Design
+## Week 5: Composition and Inheritance
 
 #### [Concept Map](/learning-objectives/inheritance)
 
 By the end of these lessons, students should be able to:
 
+- Use object-oriented programming to implement computation
+- **Apply** Stack and Queue for some applications
 - Inherit a class to create a **child** class
 - Explain `is-a` relationship
 - Draw **UML** diagram for `is-a` relationship
 - **Override** operators to extend parent's methods
-- Implement **Deque** data structure as a subclass of **Queue**
-- Implement **Array** and **Linked List** data structure from the same base class
+- Extend class **Vertex** and **Graph** for graph traversal algorithm
+
+## Week 6: Graph Traversal
+
+#### [Concept Map](/learning-objectives/searching-data)
+By the end of these lessons, students should be able to:
+- Explain and implement **breadth** first search 
+- Explain and implement **depth** first search
+
 
 ## Week 8: Visualizing and Processing Data
 

@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import CollapsibleAnswer from '@site/src/components/CollapsibleAnswer';
@@ -24,7 +24,7 @@ By the end of this lesson, you should be able to:
 - Implement **Deque** data structure as a subclass of **Queue**
 
 :::keyword Keywords
-`inheritance`, `child class`, `parent class`, `super`, `override`, `abstract base class`, `iterable`
+`inheritance`, `child class`, `parent class`, `super`, `override`, 
 :::
 
 ## Inheritance
