@@ -11,11 +11,13 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 <ChatBaseBubble/>
 
+This topic is optional and no longer included in the syllabus. 
 
 ### Goals
 
 By the end of this lesson, you should be able to:
-- Insert learning objective here
+- state the purpose of Abstract Base Class
+- define Abstract Base Class
 
 :::keyword Keywords
 `abstract base class`, `iterable`
