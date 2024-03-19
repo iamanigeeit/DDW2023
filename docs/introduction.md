@@ -40,8 +40,8 @@ This page summarises the links to all notes that are relevant to 10.020. Please 
 
 - [Composition](/notes/composition-inheritance/compositions)
 - [Inheritance](/notes/composition-inheritance/inheritance)
-- [Abstract Base Class](/notes/composition-inheritance/abc)
-- [Fixed-Size Array and Linked List](/notes/composition-inheritance/array-linkedlist)
+- Optional: [Abstract Base Class](/notes/composition-inheritance/abc)
+- Optional: [Fixed-Size Array and Linked List](/notes/composition-inheritance/array-linkedlist)
 
 ### Week 06: Inheritance and Object-Oriented Design
 
