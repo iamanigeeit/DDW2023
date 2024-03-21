@@ -34,16 +34,15 @@ This page summarises the links to all notes that are relevant to 10.020. Please 
 
 - [Object Oriented Programming](/notes/oop/oop)
 - [Linear Data Structures](/notes/oop/linear-dt)
-- [Introduction to Graph](/notes/oop/basics-graph)
 
-### Week 05: Composition and Inheritance
+### Week 05: Inheritance and Introduction to Graph
 
-- [Composition](/notes/composition-inheritance/compositions)
-- [Inheritance](/notes/composition-inheritance/inheritance)
-- Optional: [Abstract Base Class](/notes/composition-inheritance/abc)
-- Optional: [Fixed-Size Array and Linked List](/notes/composition-inheritance/array-linkedlist)
+- [Inheritance](/notes/inheritance-graph/inheritance)
+- [Introduction to Graph](/notes/inheritance-graph/basics-graph)
+- Optional: [Abstract Base Class](/notes/inheritance-graph/abc)
+- Optional: [Fixed-Size Array and Linked List](/notes/inheritance-graph/array-linkedlist)
 
-### Week 06: Inheritance and Object-Oriented Design
+### Week 06: Graph Traversal
 
 - [Breadth First Search](/notes/graph-traversal/bfs) and 
 - [Depth First Search](/notes/graph-traversal/dfs)

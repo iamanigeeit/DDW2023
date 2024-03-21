@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 1
 ---
 
 import CollapsibleAnswer from '@site/src/components/CollapsibleAnswer';
@@ -29,7 +29,38 @@ By the end of this lesson, you should be able to:
 
 ## Inheritance
 
-In the previous lesson, we have shown that we can reuse the code from some _base_ class by using inheritance. The syntax in Python for deriving a class from some base class is as follows:
+One key component of Object-Oriented Programming is Inheritance. Inheritance allows us to implement what is called as **Open-Closed** principle. The Open-Closed principle says that *a class should be open for extension but closed for modification*. 
+
+This means that a class once it is created should not be modified. However, we may want to be able to extend that class to add new features. For example, in the earlier lesson we have the class `RobotTurtle`. This class has two methods `move()` and `tell_name()`. What if we want to create a game using `RobotTurtle` and there are various kinds of `RobotTurtle` with different capabilities. Let's say, one kind of robot turtle can attack while other kind of robot turtle can only collect items. We can name the first one as `ArmyTurtle` and the latter one as `ScavengerTurtle`. To make the game interesting, a `ScavengerTurtle` cannot attack and can only `collect()`. On the other hand, an `ArmyTurtle` can only `attack()` but cannot `collect()`. 
+
+How can we design the class to allow these two kinds of robot turtle without modifying the `RobotTurtle` class. This is where we can use *inheritance*. 
+
+Inheritance allows us to create a child class that inherits attributes and properties from a parent class. For example, we can create a new class called `ArmyTurtle` that has all the attributes and methods of `RobotTurtle`. Moreover, the child class can have an additional method of `attack()`. Similarly, a `ScavengerTurtle` can inherit from `RobotTurtle` and has all the attributes and methods of a `RobotTurtle`. Moreover, a `ScavengerTurtle` can have an additional method of `collect()`.
+
+The UML diagram is shown below.
+
+```mermaid
+classDiagram
+class RobotTurtle{
+    name: str
+    speed: int = 1
+    pos: Coordinate
+    move()
+    tell_name()
+}
+class ArmyTurtle{
+    attack()
+}
+class ScavengerTurtle{
+    collect()
+}
+RobotTurtle <|-- ArmyTurtle
+RobotTurtle <|-- ScavengerTurtle 
+```
+
+In this case, `ArmyTurtle` and `ScavengerTurtle` are child classes of `RobotTurtle`. We also call the child class as *sub class* and the parent class as *base class.
+
+The syntax in Python for deriving a class from some base class is as follows:
 
 ```python
 class NameSubClass(NameBaseClass):
@@ -41,38 +72,7 @@ The name of the parent class or the base class is specified in the parenthesis a
 - attributes and methods that are unique to the child class
 - methods in the parent's class that we want to override
 
-One example that we had in the previous lesson is to create the class `SearchVertex` from the class `Vertex`. The class `Vertex` has two attributes: `id` and `neighbours`. When the class `SearchVertex` inherits from `Vertex`, any object of `SearchVertex` also has `id` and `neighbours`. What we need to define in the class `SearchVertex` are those attributes not present in the parent class. In this example, `SearchVertex` has additional attributes of `colour`, `distance`, and `parent`. Now, `Vertex` in general will not have these attributes since these are only used when doing a graph search. Similarly, we can also define any additional _methods_ in the child class that is present in the parent class.
-
-Besides defining attributes and methods that are unique to the child class, we can also _re-define_ the methods of the parent class. This is what is called as _overriding_. One common method that is usually overridden is the initialization method.
-
-```python
-class Vertex:
-    def __init__(self, id=''):
-        self.id = id
-        self.neighbours = {}
-```
-
-And the class `SearchVertex` can override this initialization:
-
-```python
-import sys
-
-class SearchVertex(Vertex):
-    def __init__(self, id=""):
-        super().__init__(id)
-        self.colour = "white"
-        self.d = sys.maxsize
-        self.f = sys.maxsize
-        self.parent = None
-```
-
-:::tip
-Try it out in the interactive code editor below
-:::
-
-<><iframe src="https://trinket.io/embed/python3/70ed9fe830?start=result" width="100%" height="350" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></>
-
-The first line of the init is to call the _parent_ class' initialization and the subsequent lines proceed to initialize those attributes that is unique to the child class. In this way, we need not re-write all the initialization codes of the parent class and simply re-use them. Note that in overriding a method in the parent class, we use the same method's name and arguments as in the parent class.
+Besides defining attributes and methods that are unique to the child class, we can also _re-define_ the methods of the parent class. This is what is called as _overriding_. For example, we can choose to modify the way the robot turtles `tell_name()` by adding its kinds whether they are the army turtle or the scavenger turtle.
 
 Let's discuss a few more examples of inheritance.
 

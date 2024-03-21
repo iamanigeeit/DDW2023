@@ -248,4 +248,13 @@ Notice here that we initialize:
 
 The first line `super().__init__(id)` is to call the parent class' initialization method to initialize the both the `id` and the `neighbours`. The word `super` comes from Latin which means "above". Therefore, `super()` method returns a reference to the parent's class. Since we have both `__init__()` method in `SearchVertex` and `Vertex`, we need to be able to differentiate the two methods. For this purpose, Python provides `super()` method to refer to the parent's class methods instead of the current class.
 
-In the child class `SearchVertex` we redefine the `__init__()` method of the parent's class. This is what is called as **method overriding**. We will discuss more of Inheritance in future lessons.
+In the child class `SearchVertex` we redefine the `__init__()` method of the parent's class. This is what is called as **method overriding**. 
+
+:::tip
+Try it out in the interactive code editor below
+:::
+
+<><iframe src="https://trinket.io/embed/python3/70ed9fe830?start=result" width="100%" height="350" frameborder="0" marginwidth="0" marginheight="0" allowfullscreen></iframe></>
+
+The first line of the init is to call the _parent_ class' initialization and the subsequent lines proceed to initialize those attributes that is unique to the child class. In this way, we need not re-write all the initialization codes of the parent class and simply re-use them. Note that in overriding a method in the parent class, we use the same method's name and arguments as in the parent class.
+
