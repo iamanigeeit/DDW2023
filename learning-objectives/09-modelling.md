@@ -16,6 +16,8 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
+![](https://www.dropbox.com/scl/fi/4kusbrn45cvrzykreooy8/DDW-Concept-Map-Week-9.drawio.png?rlkey=27oljt84tuases7x5651kz4vd&raw=1)
+
 ```mermaid
 flowchart TD
     W((Week 9 Linear<br>Regression)) --> |creates| HYP((hypothesis))    
@@ -43,7 +45,3 @@ flowchart TD
     METR --> |can be| MSE((mean squared error))
     METR --> |can be| R2((r^2))
 ```
-
-See below if you need to zoom in.
-
-![](https://www.dropbox.com/scl/fi/4kusbrn45cvrzykreooy8/DDW-Concept-Map-Week-9.drawio.png?rlkey=27oljt84tuases7x5651kz4vd&raw=1)
