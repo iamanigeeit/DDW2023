@@ -69,14 +69,8 @@ By the end of these lessons, students should be able to:
 - Draw UML class diagram for `has-a` relationship
 - Implement abstract data type for **Stack**, **Queue** using Object Oriented paradigm
 - Implement Queue using double **Stack** and discuss implementation **impact** on computation time
-- Use **Dictionary** and **OOP** to represent graph
-- Define **graph**, **vertices**, **edges** and **weights**
-- Differentiate **directed** and **undirected** graphs
-- Define **paths**
-- Create a `Vertex` class and a `Graph` class
-- Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation
 
-## Week 5: Composition and Inheritance
+## Week 5: Inheritance and Intro to Graph
 
 #### [Concept Map](/learning-objectives/inheritance)
 
@@ -88,6 +82,14 @@ By the end of these lessons, students should be able to:
 - Explain `is-a` relationship
 - Draw **UML** diagram for `is-a` relationship
 - **Override** operators to extend parent's methods
+- Use **Dictionary** and **OOP** to represent graph
+- Define **graph**, **vertices**, **edges** and **weights**
+- Differentiate **directed** and **undirected** graphs
+- Define **paths**
+- Create a `Vertex` class and a `Graph` class
+- Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation
+
+
 - Extend class **Vertex** and **Graph** for graph traversal algorithm
 
 ## Week 6: Graph Traversal
