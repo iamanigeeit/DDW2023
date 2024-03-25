@@ -72,7 +72,7 @@ By the end of these lessons, students should be able to:
 
 ## Week 5: Inheritance and Intro to Graph
 
-#### [Concept Map](/learning-objectives/inheritance)
+#### [Concept Map](/learning-objectives/inheritance-graph)
 
 By the end of these lessons, students should be able to:
 
@@ -88,13 +88,11 @@ By the end of these lessons, students should be able to:
 - Define **paths**
 - Create a `Vertex` class and a `Graph` class
 - Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation
-
-
 - Extend class **Vertex** and **Graph** for graph traversal algorithm
 
 ## Week 6: Graph Traversal
 
-#### [Concept Map](/learning-objectives/searching-data)
+#### [Concept Map](/learning-objectives/graph-traversal)
 By the end of these lessons, students should be able to:
 - Explain and implement **breadth** first search 
 - Explain and implement **depth** first search
