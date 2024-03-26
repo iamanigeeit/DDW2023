@@ -17,9 +17,9 @@ Logistic regression is a statistical technique used to model and predict the pro
 
 By the end of this lesson, you should be able to:
 
-- Write objective function of **logistic** regression
+- Write **cost** function of **logistic** regression
 - Use logistic regression to **calculate** probabilities of binary classification
-- Train logistic **regression** model
+- Train **logistic** regression model
 - Split data into **training**, **validation**, and **testing** set
 
 :::keyword Keywords

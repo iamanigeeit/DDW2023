@@ -134,12 +134,12 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
-- Write objective function of **logistic** regression
+- Write **cost** function of **logistic** regression
 - Use logistic regression to **calculate** probabilities of binary classification
-- Train logistic **regression** model
+- Train **logistic** regression model
 - Split data into **training**, **validation**, and **testing** set
 - Classify **multi-class** problems using one-vs-all technique
-- Calculate **confusion** **matrix**, **precision**, and **recall**
+- Calculate **confusion** **matrix**, **precision**, and **recall**.
 
 ## Week 12: Design of State Machines
 
