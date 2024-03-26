@@ -18,9 +18,6 @@ Breadth-first search is a graph traversal algorithm that explores all the vertic
 
 By the end of this lesson, you should be able to:
 - explain and implement **breadth** first search
-- Inherit a class to create a **child** class
-- Explain `is-a` relationship
-- Draw **UML** diagram for `is-a` relationship
 
 :::keyword Keywords
 `graph traversal`, `breadth first search`, `distance`, `colour`, `parent vertex`, `inheritance`, `child class`, `parent class`, `super`

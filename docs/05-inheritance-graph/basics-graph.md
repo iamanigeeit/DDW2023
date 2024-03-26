@@ -17,12 +17,13 @@ Graph theory is a mathematical discipline that studies the properties and relati
 
 By the end of this lesson, you should be able to:
 
-- Use **Dictionary** to represent graph
+- Use **Dictionary** and **OOP** to represent graph
 - Define **graph**, **vertices**, **edges** and **weights**
 - Differentiate **directed** and **undirected** graphs
 - Define **paths**
 - Create a `Vertex` class and a Graph class
 - Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation
+- Extend class **Vertex** and **Graph** for graph traversal algorithm
 
 :::keyword Keywords
 `graph`,`adjacency matrix`,`adjacency list`,`vertex`,`neighbours`,`edge`,`weight`,`directional edge`

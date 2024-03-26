@@ -17,13 +17,13 @@ Object-oriented programming is a programming paradigm that organizes code into o
 
 By the end of this lesson, you should be able to:
 
+- Use object-oriented programming to abstract data 
 - Create `class` definitions with initialization and other methods
 - Create **stored** property and **computed** property
 - Draw UML class diagram of a class with attributes and methods
 - Explain `has-a` relationship
 - Discuss object **aliasing** and **copying**
 - Draw UML class diagram for `has-a` relationship
-- Use object oriented programming to implement both data and computation
 
 :::keyword Keywords
 `object`, `class`, `instance`, `UML`, `composition`, `has-a relationship`, `attribute`, `method`, `property`, `computed property`, `getter`, `setter`, `special method`

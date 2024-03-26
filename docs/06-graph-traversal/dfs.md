@@ -15,7 +15,8 @@ Depth First Search is a graph traversal algorithm that explores as far as possib
 
 ### Goals
 
-By the end of this lesson, you should be able to explain and implement **depth** first search.
+By the end of this lesson, you should be able to:
+- explain and implement **depth** first search.
 
 :::keyword Keywords
 `depth first search`, `topological search`, `colour`, `parent vertex`, `start/finish time`

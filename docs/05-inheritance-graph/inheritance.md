@@ -17,10 +17,12 @@ In Python, inheritance in classes allows a child class to inherit and extend the
 
 By the end of this lesson, you should be able to:
 
+- Use object-oriented programming to implement computation
 - Inherit a class to create a **child** class
 - Explain `is-a` relationship
 - Draw **UML** diagram for `is-a` relationship
 - **Override** operators to extend parent's methods
+- **Apply** Stack and Queue for some applications
 - Implement **Deque** data structure as a subclass of **Queue**
 
 :::keyword Keywords

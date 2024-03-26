@@ -18,8 +18,8 @@ A linear data structure is a collection of elements where each element has a dir
 By the end of this lesson, you should be able to:
 
 - Implement abstract data type for **Stack**, **Queue** using Object Oriented paradigm
-- **Apply** Stack and Queue for some applications
 - Implement Queue using double **Stack** and discuss implementation **impact** on computation time
+- **Apply** Stack and Queue for some applications
 
 :::keyword Keywords
 `data structure`, `stack`, `queue`, `pop`, `push`, `enqueue`, `dequeue`
