@@ -11,6 +11,8 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 An abstract base class in Python is a class that cannot be instantiated and serves as a blueprint for creating subclasses, defining common methods, and enforcing specific behavior.
 
+You can refer further to the optional reading on [Abstract Base Class](/notes/inheritance-graph/abc).
+
 <ChatBaseBubble/>
 
 ### Goals
@@ -34,7 +36,7 @@ As mentioned previously, all state machine have some common characteristics. Thi
 - `step(inp)` which takes in the current input of the machine and moves the machine to the next state in the next time step. This method returns the output of the machine at that time step.
 - `transduce(list_inp)` which takes in the list of all the inputs. This method simply calls the `start()` method and run `step()` for all the input in the list of the input argument.
 
-Our `StateMachine` class is an Abstract Base Class. This means that some of the methods of this class are waiting for implementation in the child class. This `StateMachine` class itself should not be instantiated. Any state machine instantiation should be done from one of the child classes of `StateMachine`. Why is this so?
+Our `StateMachine` class is an [Abstract Base Class](/notes/inheritance-graph/abc). This means that some of the methods of this class are waiting for implementation in the child class. This `StateMachine` class itself should not be instantiated. Any state machine instantiation should be done from one of the child classes of `StateMachine`. Why is this so?
 
 The reason is that every state machine has different **initial state** and different **output function** as well as **next state function**. If two state machines have the same initial state as well as the same output and next state functions, it means that the two machines are equivalent. Therefore, `StateMachine` class cannot provide the detail of what is the initial state of a state machine nor can it provide the functions for the output and the next state of a state machine. These must be defined in the child class definition. The abstract `StateMachine` class only contains those implementations that is found common for all state machines. In defining our Abstract Base Class, we can specify that any implementation of its child class must define the implementation of certain methods. This is done in Python using `@abstractmethod` decorator. In our case, we will force child classses of `StateMachine` to define a method called `get_next_values(state, inp)` where these sub classes can define the implementation of the output and next state functions. This means that this method should return two things, the output and the next state given the current state and the current input.
 
