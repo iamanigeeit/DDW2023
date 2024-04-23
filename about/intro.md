@@ -18,24 +18,6 @@ This course provides fundamentals for students with the necessary skills in a da
 
 10.014 Computational Thinking for Design (Term 1)
 
-## Assessments
-
-| Components                    | Percentage |
-| ----------------------------- | ---------- |
-| Final Exam                    | 30         |
-| Mid-Term Exam                 | 25         |
-| 1D Projects                   | 15         |
-| 2D Project                    | 10         |
-| Cohort Sessions and Homeworks | 10         |
-| Pre-Class Activities          | 8          |
-| Participation                 | 2          |
-
-For Audit students to be considered pass, they need to have above 80% scores for the following assessments:
-
-- 1D Projects
-- Cohort Sessions and Homeworks
-- Pre-Class Activities
-
 ## Learning Objectives
 
 By the end, students should be able to:
