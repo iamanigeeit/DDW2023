@@ -109,6 +109,8 @@ We can then design an abstract base class for our List data as shown in the imag
 
 ```mermaid
 classDiagram
+    class MyAbstractList
+    <<Abstract>> MyAbstractList
     MyAbstractList <|.. MyPythonList : implements
     MyAbstractList <|.. MyArrayList  : implements
     MyAbstractList <|.. MyLinkedList  : implements
@@ -123,6 +125,10 @@ The great thing is that all these three different implementation has a common in
 
 ```mermaid
 classDiagram
+    class MyAbstractList
+    <<Abstract>> MyAbstractList
+    class `collections.abc.iterator`
+    <<Abstract>> `collections.abc.iterator`
     MyAbstractList <|.. MyPythonList : implements 
     MyAbstractList <|.. MyArrayList  : implements
     MyAbstractList <|.. MyLinkedList  : implements
