@@ -36,7 +36,7 @@ By the end of these lessons, students should be able to:
 - Define **Big-O** notation and other asymptotic notations
 - Derive **complexity** of a code using its computation model
 - Create **plots** from array data for **visualising** computational time
-- **Measure** computation time for bubble sort, insertion sort, built-in sort, and heapsort
+- **Measure** computation time for bubble sort, insertion sort and heapsort
 
 ## Week 3: Divide and Conquer
 
