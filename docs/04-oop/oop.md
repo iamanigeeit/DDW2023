@@ -885,3 +885,31 @@ my_robot.move("right")
 my_robot.move("down")
 print(my_robot.pos.x, my_robot.pos.y)
 ```
+
+## Object as Computation
+
+So far we have used object to model and abstract data. We created a new data called `RobotTurtle`. However, even with this usage, we see that `RobotTurtle` actually consists of two things, attributes and methods. Attributes seem like the data that we try to abstract. The methods, however, look more like computation on those data. The object `RobotTurtle` actually contains both **data** and **computation**. 
+
+We can also actually use object to model **computation**. One common way to see this is that our code is actually computation. Computation is a set of code to manipulate our data. In our example of `RobotTurtle`, this data is useless without any code that interact, manipulate, or make use of this data. We can easily imagine a computation code called `RobotTurtleSimulation` or maybe even `RobotTurtleGame` as our computation. This code actually makes use of our `RobotTurtle` data. The simulation or the game code, may spawn `RobotTurtle` objects, move it around and achieve some objectives of the game. We can see that this computation that interact with `RobotTurtle` can be conceived as another object called `RobotTurtleGame`. This game object **has** `RobotTurtle` object as its data. This is another example of **composition**. We can draw its class diagram as follows.
+
+```mermaid
+classDiagram
+    RobotTurtleGame *-- RobotTurtle
+
+```
+
+This class `RobotTurtleGame` may also have its attributes and methods. Every object has attributes and methods. Maybe one of its attributes is a list of `RobotTurtle` objects in the game. What can the game do? Maybe it can `initialize_game()`, `start_game()`, `check_winner()`, and so on. Again, we can represent this class using the class diagram as follows.
+
+
+```mermaid
+classDiagram
+class RobotTurtleGame {
+    list_turtles: list[RobotTurtle]
+    initialize_game()
+    start_game()
+    check_winner()
+    ...
+}
+```
+
+In your problem set, you will create both objects that represent data and computation. Some objects like `RobotTurtle` can be easily understood as another data type, while other objects like `RobotTurtleGame` can be more easily seen as computation. Anyway, every object has both data and computation. 
