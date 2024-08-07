@@ -78,7 +78,7 @@ class RobotTurtle:
 
 Some notes on the class definition:
 
-- Notice the above code starts with a Class Definition. To define a class, we use the keyword `class` followed by the class name `RobotTurtle`.
+- Notice the above code starts with a **Class Definition**. To define a class, we use the keyword `class` followed by the class name `RobotTurtle`.
 - The keyword `def` inside the class defines the **method** which tells Python what the object can do.
 - The first method is special and it is called `__init__()`. This method is always called during _object instantiation_. This special method is called to _initialize_ the object's attributes during _instantiation_. In this definition, we see that during instantation, we ask Python to initialize three attributes:
   - `_name` which is a string and is initialized using the first argument during object instantiation.
@@ -182,7 +182,7 @@ Note:
 
 One important concept of Object Oriented programming is called **Encapsulation**. The idea of encapsulation is that data should be bundled together with some methods to access it. The data itself should be hidden from those outside of the object. With encapsulation, the state of the object is hidden from those outside of the object. If anyone would like to change the state of the object or enquire about the state of the object, it has to do so using some **methods**.
 
-Why would we want to have this encapsulation? One of the purpose is to make the object transparent. Anyone working with the object does not need to know how the state or the data inside the object is implemented. For example, we implement the position attribute in our Robot Turtle object as a tuple of two numbers. This assumes those assigning value to this position always assign a tuple with two numbers. What if they don't? Let's illustrate this with an example
+Why would we want to have this encapsulation? One of the purpose is **abstraction**. Anyone working with the object does not need to know how the state or the data inside the object is implemented. For example, we implement the position attribute in our Robot Turtle object as a tuple of two numbers. This assumes those assigning value to this position always assign a tuple with two numbers. What if they don't? Let's illustrate this with an example
 
 If we let others access the attributes direclty, one can assign non number data into the position attribute, such as the following example.
 
@@ -221,6 +221,8 @@ TypeError                                 Traceback (most recent call last)
 TypeError: can only concatenate str (not "int") to str
 ```
 
+Encapsulation also allows us to change the internal data without changing the interface to access the data. In the above example, we store the position as a tuple. But what if we want to use *list* or *dictionary* instead? If we create methods to access these internal data, we can change the internal data without changing the way other objects interact with our data. The key is to keep the interface consistent and stable. We do these by creating methods to access our internal data.
+
 Therefore, it is important that we do encapsulation. Encapsulation ensures that any access to the data should be done through some specific methods.
 
 Let's look at another example of why we want to do encapsulation. Let's say we want to _update_ our Robot class definition to implement relative coordinates where the robot has a absolute position and a relative position with respect to some initial position in the map. Let's say, the robot can start at any other position other than `0, 0` and we want to store the absolute position of the robot as its attribute. This change requires a change in the way the programmers set the value of the robot's position since previously the position is always relative to the origin of `0,0`. Such changes may break the code since now the `_pos` attribute means differently. Previously, it is relative to `0, 0` and now it is going to be some absolute position in the map. With encapsulation, however, we can keep the way position is set while changing the internal attributes. For example, we can create `pos` as relative to the initial origin while storing the absolute position internally based on where the initial origin is. Encapsulation simply separates the internal data representation with how others interact with this object. Without encapsulation, we will break the code and requires new methods to be created.
@@ -233,6 +235,100 @@ To achieve this data encapsulation, we usually create two kinds of methods:
 <ImageCard path={require("./images/property_attribute.png").default} widthPercentage="70%"/>
 
 In Python, we do this using the concept of **property**. A _property_ represents an attribute with its getter and setter. Note that **a property is not the same as the attribute**. Because they are not the same, Python will require you to use two different names. The name of the property must not be the same as the name of the attribute. Property looks like an attribute but they behave differently. When we set a property's value, it passes through its **setter** method. Similarly, when we get a property's value, we can only obtain it from its **getter** method. Since all access passes through some methods, the data is encapsulated by the getter and the setter methods. We can make changes internally without affecting how the outside world interact with the data.
+
+Let's show how we can create a property for position attribute. 
+
+```python
+# Class definition
+class RobotTurtle:
+    # Attributes:
+    def __init__(self, name, speed=1):
+        self._name = name
+        self._speed = speed
+        self._pos = (0, 0)
+
+    #  getter method
+    def get_pos(self):
+        return self._pos
+
+    # Methods:
+    def move(self, direction):
+        update = {'up' : (self.pos[0], self.pos[1] + self.speed),
+                  'down' : (self.pos[0], self.pos[1] - self.speed),
+                  'left' : (self.pos[0] - self.speed, self.pos[1]),
+                  'right' : (self.pos[0] + self.speed, self.pos[1])}
+        self._pos = update[direction]
+
+
+    def tell_name(self):
+        print(f"My name is {self.name}")
+        
+    pos = property(get_pos)
+```
+
+Notice the last line of this class definition. We have the following.
+
+```python
+pos = property(get_pos)
+```
+
+This line creates a *property* with the name `pos` using the function `property()`. This function takes in at least one argument which is the **getter** function. In the case above, our getter function is `get_pos()`. This is defined as follows in the class.
+
+```python
+    #  getter method
+    def get_pos(self):
+        return self._pos
+```
+
+The function `property()` can take in another argument for the **setter** function. In our case, our position should not be modified directly and so we do not want to create a setter function for our position data. Our position data should be modified only by the `move()` method. On the other hand, we may want to have setter function for `name` of the robot turtle. We can write the following code snippet.
+
+```python
+class RobotTurtle:
+    ...
+    # getter method
+    def get_name(self):
+        return self._name
+        
+    # setter method
+    def set_name(self, value):
+        self._name = value
+        
+    name = property(get_name, set_name)
+```
+
+In this case, we created a `name` property that encapsulates the `_name` attribute. To set the data `_name`, one has to use the `set_name()` function. Similarly, to get the data from `_name`, one has to use the `get_name()` function. This may seems pointless, but the getter and setter may contain some logic to it. For example, let's say that we want to make sure only string data to be passed to `_name`, we can write the following code.
+
+```python
+    # setter method
+    def set_name(self, value):
+        if isinstance(value, str) and value != "":
+            self._name = value
+```
+
+The above code ensures that the data passed on to our attribute is always a string and non-empty. 
+
+Python provides a "shortcut" to create a property using function decorator. This makes the code cleaner and easier to read. The syntax is simple, you just put a decorator `@property` on a getter method of your property. Just make sure that the name of the method is the name of your property. To create the setter, we put another decorator `@property_name.setter` just before our setter function. To rewrite the above code using function decorator, we end up with the following.
+
+```python
+class RobotTurtle:
+    ...
+    # getter method
+    @property
+    def name(self):
+        return self._name
+        
+    # setter method
+    @name.setter
+    def name(self, value):
+        self._name = value
+```
+Notice a few things here:
+- We no longer have the line which calls the function `property()`. 
+- You may wonder, how do we define the name of our property. The answer is that the method name under the decorator `@property` defines the name of our property. 
+- Since by default a property must have a getter function, the function decorated by `@property` is the getter method. 
+- To create the setter, we need to specify which property this setter belongs, so the syntax specifies the name of the property, i.e. `@name.setter`. 
+
+In the following section, we will use the syntax using the function decorator instead of calling the `property()` function.
 
 Let's rewrite our `RobotTurtle` class using property to encapsulate the `_name` attribute and `_speed` attribute. To do this, we are going to create two properties, one for `name` and the other one for `speed`. On the other hand, we will create a property for position only with a getter. The reason is that we want position to be modified only by calling the `move()` method.
 
