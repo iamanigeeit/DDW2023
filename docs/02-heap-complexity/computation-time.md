@@ -34,32 +34,6 @@ A performance of a computer program can be measured using its computation time a
 
 Asymptotic notation is a shorthand used to give a quick measure of the behaviour of a function $f(n)$ as $n$ grows large. Here, we will introduce several notations that is common in analysing computer programs.
 
-### Little Oh
-
-This notation is to indicate that $f$ is _asymptotically smaller_ than $g$, or in symbols,
-
-$$
-f(x) = o(g(x))
-$$
-
-This is True if and only if
-
-$$
-\lim_{x\to \infty}  \frac{f(x)}{g(x)} = 0
-$$
-
-For example,
-
-$$
-1000x^{1.9} = o(x^2)
-$$
-
-This is because
-
-$$
-\lim_{x\to\infty} \frac{1000x^{1.9}}{x^2} = \lim_{x\to\infty} \frac{1000}{x^{0.1}} = 0
-$$
-
 ### Big Oh
 
 Big Oh is the most frequently used notation in computing as it is used to give an upper bound on the growth of a function.
@@ -87,6 +61,54 @@ This is because
 $$
 \lim_{x\to\infty} \text{sup} \frac{x^2+100x+10}{x^2} = 1 < \infty
 $$
+
+
+### Little Oh
+
+This notation is to indicate that $f$ is _asymptotically smaller_ than $g$, or in symbols,
+
+$$
+f(x) = o(g(x))
+$$
+
+This is True if and only if
+
+$$
+\lim_{x\to \infty}  \frac{f(x)}{g(x)} = 0
+$$
+
+For example,
+
+$$
+1000x^{1.9} = o(x^2)
+$$
+
+This is because
+
+$$
+\lim_{x\to\infty} \frac{1000x^{1.9}}{x^2} = \lim_{x\to\infty} \frac{1000}{x^{0.1}} = 0
+$$
+
+### Example of Big Oh and Little Oh
+
+What's the difference between Big Oh and Little Oh. To illustrate this difference, let's take a look at three functions.
+- $f(x) = 2x + 4$
+- $g(x) = 3x^2 + 4x +5$
+- $h(x) = 2x^2 + 7$
+
+Let's check if $f(x)$ and $g(x)$ has Big Oh or Little Oh relationship with respect to $h(x)$. To do this, we will apply the mathematical definition. Let's start with $f(x)$. We are asking, what is the limit of the following.
+
+$$\lim_{x\to\infty}\frac{2x+4}{2x^2+7} = \lim_{x\to\infty}\frac{\frac{2}{x}+\frac{4}{x^2}}{2+\frac{7}{x^2}} = 0 $$
+
+Since the limit when $x$ approaches infinity is zero, it satisfies the little oh definition. This means that $f = o(h)$. 
+
+On the other hand, when we apply this to $g(x)$, we will get the following.
+
+$$\lim_{x\to\infty}\frac{3x^2+4x+5}{2x^2+7} = \lim_{x\to\infty}\frac{3+\frac{4}{x}+\frac{5}{x^2}}{2+\frac{7}{x^2}} = \frac{3}{2} < \infty $$
+
+This satisfies the Big Oh notation and so we can say that $g = O(h)$. 
+
+We can see that in this asymptotic notation, Little Oh notation behaves like $<$ in relational operation of arithmetic. Big Oh behaves like $<=$ relational operation. You may think that $g$ is not less than $h$ since the constant is b igger than 1. However, we do still say that when it approaches infinity the function $g$ is bounded by $h$ by some constant. The ratio does not grow to infinity. 
 
 ### Big Omega
 
@@ -132,7 +154,7 @@ $$
 x^2 = \Omega(x)
 $$
 
-#### Little Omega
+### Little Omega
 
 This notation is used to denote that one function grows stricly faster than another function.
 
@@ -164,7 +186,7 @@ $$
 \lim_{x\to\infty} \frac{x}{x^{1.5}} = \lim_{x\to\infty} x^{-0.5} = \lim_{x\to\infty} \frac{1}{\sqrt{x}} = 0
 $$
 
-#### Theta
+### Theta
 
 Sometimes, we want to specify both upper bound and lower bound at the same time. We use this notation,
 
@@ -214,7 +236,7 @@ $$
 10n^3-20n^2+1 = \Theta(n^3)
 $$
 
-#### Analogies with Relation Operators
+### Analogies with Relation Operators
 
 These asymptotic notations can be understood better in relation to analogies with relational operators of numbers.
 
