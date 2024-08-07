@@ -139,7 +139,16 @@ Steps:
 
 ### Recursive Basic Structure
 
-In all recursive solutions, we can always identify two **cases**:
+In all recursive solutions, we can identify the following characteristics:
+- recursive solutions usually make use of **functions that calls itself**.
+- these solutions have two general cases, the base case and the recursive case.
+- the solutions are constructed using the same recursive code that is applied multiple time at different frames.
+
+Let's go through this one by one.
+
+The first is that recursive solutions usually make use of functions that calls itself. In the pseudocode above for summing a list of numbers, we can see that the solution to sum a list of numbers contains the step 2.1 which adds the first element to the *sum of the rest of the array*. To get the sum of the rest of the array, we can actually call the same function to compute the sum of a list of numbers. The only difference is that the array is smaller in this case because it excludes the first element. This can be implement by calling the same function as what is defined in this pseudocode but passing a different and smaller array from the original array.
+
+The second characteristic is that we can always identify two **cases**:
 
 1. **Base** Case
 1. **Recursive** Case
@@ -147,6 +156,22 @@ In all recursive solutions, we can always identify two **cases**:
 In the algorithm steps above, step 1 is the **base** case. Base case is usually trivial and easy to solve. Recall that the strategy for this way of divide and conquer is to divide the problem into smaller problems up to the point that the problem becomes trivial. In this example, a trivial problem is to sum an array with only one element. In this case, the sum is just that element.
 
 Step 2 is the **recursive** case. Notice in step 2.1 we are adding the first element with the _sum of the rest of the array_. The _sum of the rest of the array_ is the **same** problem but with one element less. In this way, we have made the problem smaller. It is called _recursive_ because this step calls the function itself with a smaller number of element in the array. How to break down and make the problem smaller will be one of the challenge in creating recursive solutions. Moreover, identifying the base case will also be important. Let's take a look at some more example in a later section. But for now, we will analyze the computation time.
+
+It's important to highlight some characteristics of the base case and the recursive case. The solution to the base case is usually:
+- trivial, and
+- terminating
+
+Trivial means that the solution is simple and easy to do. This is the reason why we want to break down the problem into smaller problems with the same substructure so that we can solve it easily. In our summation problem, the trivial solution is to sum a list of one element. The solution is trivial because the sum of one element is just that element itself.
+
+Terminating means that the recursive process stops here at the base case. Otherwise, recursive solutions may never stops and we may reach and infinite recursive process. One indication it is a base case is that we do not have anywhere in this part of code that calls the recursive function again.
+
+This is unlike the recursive case. In the recursive case, we do have some part of the code that actually calls the function again. We can call this function again because recursive case has two characteristics:
+- it is the **same** problem
+- it is a **smaller** problem
+
+We can solve a problem using recursion if it has the **same** substructure when we break the problem into smaller problem. This means that the solutions involves the same problem. In the case of summing a list of numbers, we break the problem by adding the first element with the *sum of the rest of the array*. Summing the rest of the array is the same problem as the original problem.
+
+The other characteristic is that the recursive case should solve a **smaller** problem and not the same problem. This is crucial because the aim is break down the problem into smaller problem which hopefully at the end will reach the base case. Therefore, there must be a way to reduce the problem into smaller problem. If not, we will never reach the base case and the recursion will never end. In our example of summing the list of numbers, we make the problem smaller by summing not the original array but rather the *rest of the array* except the first element. This reduces the size of the array by one. If we continue to apply the recursive case, we will reach the time when there is only one element left in the array and we have hit the base terminating case. 
 
 ## Computation Time
 
