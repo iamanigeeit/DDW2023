@@ -66,7 +66,6 @@ By the end of these lessons, students should be able to:
 - Draw UML class diagram of a class with attributes and methods
 - Explain `has-a` relationship
 - Use object-oriented programming to implement computation
-- Discuss object **aliasing** and **copying**
 - Draw UML class diagram for `has-a` relationship
 - Implement abstract data type for **Stack**, **Queue** using Object Oriented paradigm
 - Implement Queue using double **Stack** and discuss implementation **impact** on computation time
