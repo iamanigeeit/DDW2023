@@ -30,229 +30,11 @@ By the end of this lesson, you should be able to:
 
 A performance of a computer program can be measured using its computation time and its memory space that it occupies. In this section, we will focus on analysing and measuring computation time.
 
-## Asymptotic Notation
-
-Asymptotic notation is a shorthand used to give a quick measure of the behaviour of a function $f(n)$ as $n$ grows large. Here, we will introduce several notations that is common in analysing computer programs.
-
-### Big Oh
-
-Big Oh is the most frequently used notation in computing as it is used to give an upper bound on the growth of a function.
-
-$$
-f = O(g)
-$$
-
-if and only if,
-
-$$
-\lim_{x\to \infty}\text{sup} \frac{f(x)}{g(x)} < \infty
-$$
-
-Note the word "sup" means superior or above as it indicates the upper bound.
-
-For example,
-
-$$
-x^2 + 100x+10 = O(x^2)
-$$
-
-This is because
-
-$$
-\lim_{x\to\infty} \text{sup} \frac{x^2+100x+10}{x^2} = 1 < \infty
-$$
-
-
-### Little Oh
-
-This notation is to indicate that $f$ is _asymptotically smaller_ than $g$, or in symbols,
-
-$$
-f(x) = o(g(x))
-$$
-
-This is True if and only if
-
-$$
-\lim_{x\to \infty}  \frac{f(x)}{g(x)} = 0
-$$
-
-For example,
-
-$$
-1000x^{1.9} = o(x^2)
-$$
-
-This is because
-
-$$
-\lim_{x\to\infty} \frac{1000x^{1.9}}{x^2} = \lim_{x\to\infty} \frac{1000}{x^{0.1}} = 0
-$$
-
-### Example of Big Oh and Little Oh
-
-What's the difference between Big Oh and Little Oh. To illustrate this difference, let's take a look at three functions.
-- $f(x) = 2x + 4$
-- $g(x) = 3x^2 + 4x +5$
-- $h(x) = 2x^2 + 7$
-
-Let's check if $f(x)$ and $g(x)$ has Big Oh or Little Oh relationship with respect to $h(x)$. To do this, we will apply the mathematical definition. Let's start with $f(x)$. We are asking, what is the limit of the following.
-
-$$\lim_{x\to\infty}\frac{2x+4}{2x^2+7} = \lim_{x\to\infty}\frac{\frac{2}{x}+\frac{4}{x^2}}{2+\frac{7}{x^2}} = 0 $$
-
-Since the limit when $x$ approaches infinity is zero, it satisfies the little oh definition. This means that $f = o(h)$. 
-
-On the other hand, when we apply this to $g(x)$, we will get the following.
-
-$$\lim_{x\to\infty}\frac{3x^2+4x+5}{2x^2+7} = \lim_{x\to\infty}\frac{3+\frac{4}{x}+\frac{5}{x^2}}{2+\frac{7}{x^2}} = \frac{3}{2} < \infty $$
-
-This satisfies the Big Oh notation and so we can say that $g = O(h)$. 
-
-We can see that in this asymptotic notation, Little Oh notation behaves like $<$ in relational operation of arithmetic. Big Oh behaves like $<=$ relational operation. You may think that $g$ is not less than $h$ since the constant is b igger than 1. However, we do still say that when it approaches infinity the function $g$ is bounded by $h$ by some constant. The ratio does not grow to infinity. 
-
-### Big Omega
-
-The previous notation "Big Oh" is used to indicate an upper bound. The notation to indicate the lower bound is Big Omega, or simply Omega.
-
-$$
-f = \Omega(g)
-$$
-
-if and only if there exist a constant $c$ and an $x_0$ such that for all $x\ge x_0$, we have
-
-$$
-f(x) \ge c |g(x)|
-$$
-
-In other words, this simply means that $f(x)$ is greater than or equal to $g(x)$. As you can guess, this sounds like Big-Oh in reverse.
-
-$$
-f(x) = O(g(x)) \text{ if and only if } g(x) = \Omega(f(x))
-$$
-
-For example,
-
-$$
-x^2  = \Omega(x)
-$$
-
-We will use the definition for Big Oh to prove this by exchanging the terms $f$ and $g$. We are going to prove that
-
-$$
-x = O(x^2)
-$$
-
-This is true because
-
-$$
-\lim_{x\to\infty}\frac{x}{x^2} = \lim_{x\to\infty}\frac{1}{x} < \infty
-$$
-
-Therefore,
-
-$$
-x^2 = \Omega(x)
-$$
-
-### Little Omega
-
-This notation is used to denote that one function grows stricly faster than another function.
-
-$$
-f(x) = \omega(g(x))
-$$
-
-if and only if,
-
-$$
-\lim_{x\to\infty} \frac{g(x)}{f(x)} =0
-$$
-
-This is like the reverse of little Oh,
-
-$$
-f(x) = \omega(g(x)) \text{ if and only if } g(x) = o(f(x))
-$$
-
-For example,
-
-$$
-x^{1.5} = \omega(x)
-$$
-
-This is true because
-
-$$
-\lim_{x\to\infty} \frac{x}{x^{1.5}} = \lim_{x\to\infty} x^{-0.5} = \lim_{x\to\infty} \frac{1}{\sqrt{x}} = 0
-$$
-
-### Theta
-
-Sometimes, we want to specify both upper bound and lower bound at the same time. We use this notation,
-
-$$
-f = \Theta(g)
-$$
-
-if and only if,
-
-$$
-f=O(g)\text{ and } g=O(f)
-$$
-
-For example,
-
-$$
-10n^3-20n^2+1 = \Theta(n^3)
-$$
-
-We then have to prove both conditions, i.e. $f=O(g)$ and $g=O(f)$. So we will start with the first one.
-
-$$
-10n^3-20n^2+1 = O(n^3)
-$$
-
-This is true because
-
-$$
-\lim_{x\to\infty} \text{sup} \frac{10n^3-20n^2+1}{n^3} = 10 < \infty
-$$
-
-Now, we prove the second condition.
-
-$$
-n^3 = O(10n^3-20n^2+1 )
-$$
-
-This is also true because
-
-$$
-\lim_{x\to\infty} \text{sup} \frac{n^3}{10n^3-20n^2+1} = \frac{1}{10} < \infty
-$$
-
-Therefore,
-
-$$
-10n^3-20n^2+1 = \Theta(n^3)
-$$
-
-### Analogies with Relation Operators
-
-These asymptotic notations can be understood better in relation to analogies with relational operators of numbers.
-
-| relational operator | asymptotic notation |
-| :-----------------: | :-----------------: |
-|       $f = g$       |   $f = \Theta(g)$   |
-|       $f < g$       |     $f = o(g)$      |
-|      $f <= g$       |     $f= O(g)$       |
-|       $f > g$       |   $f = \omega(g)$   |
-|      $f >= g$       |   $f = \Omega(g)$   |
-
 ## Measuring Computation Time
 
 We are interested in the trend on the computation time as the number of input changes. For example, considering the sorting algorithms that we have considered thus far. How does the computation time increases as we increase the number of the input array? In analysing this, we are interested in the upper bound, and so we normally use the Big-Oh notation to indicate the upper bound of a computation time of a program.
 
-We can investigate this empirically by creating a list of different sizes, i.e. 10 elements, 100 elements, etc. We can then ask our sorting algorithm to sort these numbers. We can also compare the performance of the sorting algorithm when the input list is already sorted or when it is randomly shuffled.
+We can investigate this empirically by creating a list of different sizes, i.e. 10 elements, 100 elements, etc. We can then ask our sorting algorithm to sort these numbers. We can also compare the performance of the sorting algorithm when the input list is already sorted or when it is randomly shuffled. In this section, we make use an asymptotic notation called the Big Oh notation which is an upper bound limit. We will introduce the mathematical definition of this notation at the end of this notes.
 
 ### Setup
 
@@ -313,7 +95,7 @@ $$
 
 In this equation the slope is 2 as shown on the plot. We can also check if it is quadratic by calculating the square of our input and see if it is a straight line.
 
-This means that the computation time of Bubble Sort algorithm is quadratic.
+This means that the computation time of Bubble Sort algorithm is quadratic. We will write this computation time using an asymptotic Big Oh notation $O()$. The mathematical definition of this notation will be introduced at the end. 
 
 $$
 T(n) = O(n^2)
@@ -821,3 +603,229 @@ In summary, different algorithm may have different performance in terms of compu
 <ImageCard path={"https://interactivepython.org/runestone/books/published/pythonds/_images/newplot.png"} widthPercentage="50%"/>
 
 In our examples above, both Bubble Sort and Insertion sort is quadratic while Heapsort is log linear. We can see that Heapsort is much faster as the number of elements grows big.
+
+
+
+## Asymptotic Notation
+
+Asymptotic notation is a shorthand used to give a quick measure of the behaviour of a function $f(n)$ as $n$ grows large. Here, we will introduce several notations that is common in analysing computer programs.
+
+### Big Oh
+
+Big Oh is the most frequently used notation in computing as it is used to give an upper bound on the growth of a function.
+
+$$
+f = O(g)
+$$
+
+if and only if,
+
+$$
+\lim_{x\to \infty}\text{sup} \frac{f(x)}{g(x)} < \infty
+$$
+
+Note the word "sup" means superior or above as it indicates the upper bound.
+
+For example,
+
+$$
+x^2 + 100x+10 = O(x^2)
+$$
+
+This is because
+
+$$
+\lim_{x\to\infty} \text{sup} \frac{x^2+100x+10}{x^2} = 1 < \infty
+$$
+
+
+### Little Oh
+
+This notation is to indicate that $f$ is _asymptotically smaller_ than $g$, or in symbols,
+
+$$
+f(x) = o(g(x))
+$$
+
+This is True if and only if
+
+$$
+\lim_{x\to \infty}  \frac{f(x)}{g(x)} = 0
+$$
+
+For example,
+
+$$
+1000x^{1.9} = o(x^2)
+$$
+
+This is because
+
+$$
+\lim_{x\to\infty} \frac{1000x^{1.9}}{x^2} = \lim_{x\to\infty} \frac{1000}{x^{0.1}} = 0
+$$
+
+### Example of Big Oh and Little Oh
+
+What's the difference between Big Oh and Little Oh. To illustrate this difference, let's take a look at three functions.
+- $f(x) = 2x + 4$
+- $g(x) = 3x^2 + 4x +5$
+- $h(x) = 2x^2 + 7$
+
+Let's check if $f(x)$ and $g(x)$ has Big Oh or Little Oh relationship with respect to $h(x)$. To do this, we will apply the mathematical definition. Let's start with $f(x)$. We are asking, what is the limit of the following.
+
+
+$$
+\lim_{x\to\infty} \frac{2x+4}{2x^2+7}   = \lim_{x\to\infty}\frac{\frac{2}{x}+\frac{4}{x^2}}{2+\frac{7}{x^2}} = 0 
+$$
+
+Since the limit when $x$ approaches infinity is zero, it satisfies the little oh definition. This means that $f = o(h)$. 
+
+On the other hand, when we apply this to $g(x)$, we will get the following.
+
+$$
+\lim_{x\to\infty}\frac{3x^2+4x+5}{2x^2+7} = \lim_{x\to\infty}\frac{3+\frac{4}{x}+\frac{5}{x^2}}{2+\frac{7}{x^2}} = \frac{3}{2} < \infty 
+$$
+
+This satisfies the Big Oh notation and so we can say that $g = O(h)$. 
+
+We can see that in this asymptotic notation, Little Oh notation behaves like $<$ in relational operation of arithmetic. Big Oh behaves like $<=$ relational operation. You may think that $g$ is not less than $h$ since the constant is b igger than 1. However, we do still say that when it approaches infinity the function $g$ is bounded by $h$ by some constant. The ratio does not grow to infinity. 
+
+### Big Omega
+
+The previous notation "Big Oh" is used to indicate an upper bound. The notation to indicate the lower bound is Big Omega, or simply Omega.
+
+$$
+f = \Omega(g)
+$$
+
+if and only if there exist a constant $c$ and an $x_0$ such that for all $x\ge x_0$, we have
+
+$$
+f(x) \ge c |g(x)|
+$$
+
+In other words, this simply means that $f(x)$ is greater than or equal to $g(x)$. As you can guess, this sounds like Big-Oh in reverse.
+
+$$
+f(x) = O(g(x)) \text{ if and only if } g(x) = \Omega(f(x))
+$$
+
+For example,
+
+$$
+x^2  = \Omega(x)
+$$
+
+We will use the definition for Big Oh to prove this by exchanging the terms $f$ and $g$. We are going to prove that
+
+$$
+x = O(x^2)
+$$
+
+This is true because
+
+$$
+\lim_{x\to\infty}\frac{x}{x^2} = \lim_{x\to\infty}\frac{1}{x} < \infty
+$$
+
+Therefore,
+
+$$
+x^2 = \Omega(x)
+$$
+
+### Little Omega
+
+This notation is used to denote that one function grows stricly faster than another function.
+
+$$
+f(x) = \omega(g(x))
+$$
+
+if and only if,
+
+$$
+\lim_{x\to\infty} \frac{g(x)}{f(x)} =0
+$$
+
+This is like the reverse of little Oh,
+
+$$
+f(x) = \omega(g(x)) \text{ if and only if } g(x) = o(f(x))
+$$
+
+For example,
+
+$$
+x^{1.5} = \omega(x)
+$$
+
+This is true because
+
+$$
+\lim_{x\to\infty} \frac{x}{x^{1.5}} = \lim_{x\to\infty} x^{-0.5} = \lim_{x\to\infty} \frac{1}{\sqrt{x}} = 0
+$$
+
+### Theta
+
+Sometimes, we want to specify both upper bound and lower bound at the same time. We use this notation,
+
+$$
+f = \Theta(g)
+$$
+
+if and only if,
+
+$$
+f=O(g)\text{ and } g=O(f)
+$$
+
+For example,
+
+$$
+10n^3-20n^2+1 = \Theta(n^3)
+$$
+
+We then have to prove both conditions, i.e. $f=O(g)$ and $g=O(f)$. So we will start with the first one.
+
+$$
+10n^3-20n^2+1 = O(n^3)
+$$
+
+This is true because
+
+$$
+\lim_{x\to\infty} \text{sup} \frac{10n^3-20n^2+1}{n^3} = 10 < \infty
+$$
+
+Now, we prove the second condition.
+
+$$
+n^3 = O(10n^3-20n^2+1 )
+$$
+
+This is also true because
+
+$$
+\lim_{x\to\infty} \text{sup} \frac{n^3}{10n^3-20n^2+1} = \frac{1}{10} < \infty
+$$
+
+Therefore,
+
+$$
+10n^3-20n^2+1 = \Theta(n^3)
+$$
+
+### Analogies with Relation Operators
+
+These asymptotic notations can be understood better in relation to analogies with relational operators of numbers.
+
+| relational operator | asymptotic notation |
+| :-----------------: | :-----------------: |
+|       $f = g$       |   $f = \Theta(g)$   |
+|       $f < g$       |     $f = o(g)$      |
+|      $f <= g$       |     $f= O(g)$       |
+|       $f > g$       |   $f = \omega(g)$   |
+|      $f >= g$       |   $f = \Omega(g)$   |
+
