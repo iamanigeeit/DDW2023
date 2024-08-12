@@ -12,7 +12,7 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 This page summarises the links to all notes that are relevant to 10.020. Please read them **carefully** by the weeks stipulated. You will learn each of the big topics above in the following weeks:
 
-<ImageCard path={require("./images/DDW-2023-Flow.drawio.png").default} widthPercentage="70%"/>
+<ImageCard path={require("./images/DDW_Topics_Weeks.png").default} widthPercentage="70%"/>
 
 ### Week 01: Python Revision and Sorting Algorithm
 
@@ -47,26 +47,27 @@ This page summarises the links to all notes that are relevant to 10.020. Please 
 - [Breadth First Search](/notes/graph-traversal/bfs) and 
 - [Depth First Search](/notes/graph-traversal/dfs)
 
-### Week 08: Visualizing and Processing Data
-
-- [Working With Data](/notes/data-visualization/working-with-data)
-- [Creating Plots using Matplotlib and Seaborn](/notes/data-visualization/visualisation)
-
-### Week 09: Modeling Continuous Data
-
-- [Linear Regression](/notes/regression/linear-regresion)
-- [Multiple Linear Regression](/notes/regression/multiple-linear-regression)
-
-### Week 10: Classifying Categorical Data
-
-- [Logistic Regression](/notes/classification/logistic-regression)
-- [Confusion Matrix and Metrics](/notes/classification/metrics)
-
-### Week 12: Design of State Machines
+### Week 08: Design of State Machines
 
 - [State Machine](/notes/sm/state-machine)
 - [SM Abstract Class](/notes/sm/state-machine-abc)
 - [State Space Search](/notes/sm/state-space-search)
+
+### Week 09: Visualizing and Processing Data
+
+- [Working With Data](/notes/data-visualization/working-with-data)
+- [Creating Plots using Matplotlib and Seaborn](/notes/data-visualization/visualisation)
+
+### Week 10: Modeling Continuous Data
+
+- [Linear Regression](/notes/regression/linear-regresion)
+- [Multiple Linear Regression](/notes/regression/multiple-linear-regression)
+
+### Week 11: Classifying Categorical Data
+
+- [Logistic Regression](/notes/classification/logistic-regression)
+- [Confusion Matrix and Metrics](/notes/classification/metrics)
+
 
 ### Contributors
 

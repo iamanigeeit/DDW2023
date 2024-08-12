@@ -96,8 +96,20 @@ By the end of these lessons, students should be able to:
 - Explain and implement **breadth** first search 
 - Explain and implement **depth** first search
 
+## Week 8: Design of State Machines
 
-## Week 8: Visualizing and Processing Data
+#### [Concept Map](/learning-objectives/sm)
+
+By the end of these lessons, students should be able to:
+
+- Define a **state machine**
+- Implement an **Abstract Base Class** for State Machine using abc module
+- Define **output** function and **next** state function
+- Draw **state transition diagram** and **time-step table**
+- **Implement** output function and next state function inside `get_next_values` overridden method.
+- **Apply** breadth first search to perform state-space search
+
+## Week 9: Visualizing and Processing Data
 
 #### [Concept Map](/learning-objectives/vis-proc)
 
@@ -112,7 +124,7 @@ By the end of these lessons, students should be able to:
 - **Normalize** data using z-normalization and min-max normalization
 - Create **scatter** plot and statistical plots like box plot, histogram, and bar plot
 
-## Week 9: Modelling Continuous Data
+## Week 10: Modelling Continuous Data
 
 #### [Concept Map](/learning-objectives/modelling)
 
@@ -127,7 +139,7 @@ By the end of these lessons, students should be able to:
 - Plot **cost** function over iteration time
 - Plot **linear** regression
 
-## Week 10: Classifying Categorical Data
+## Week 11: Classifying Categorical Data
 
 #### [Concept Map](/learning-objectives/classify)
 
@@ -140,15 +152,3 @@ By the end of these lessons, students should be able to:
 - Classify **multi-class** problems using one-vs-all technique
 - Calculate **confusion** **matrix**, **precision**, and **recall**.
 
-## Week 12: Design of State Machines
-
-#### [Concept Map](/learning-objectives/sm)
-
-By the end of these lessons, students should be able to:
-
-- Define a **state machine**
-- Implement an **Abstract Base Class** for State Machine using abc module
-- Define **output** function and **next** state function
-- Draw **state transition diagram** and **time-step table**
-- **Implement** output function and next state function inside `get_next_values` overridden method.
-- **Apply** breadth first search to perform state-space search

@@ -8,7 +8,7 @@ import DeepDive from '@site/src/components/DeepDive';
 import ImageCard from '@site/src/components/ImageCard';
 import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
-# Week 10: Classifying Categorical Data
+# Week 11: Classifying Categorical Data
 
 
 
