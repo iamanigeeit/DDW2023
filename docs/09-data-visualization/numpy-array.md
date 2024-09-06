@@ -119,4 +119,143 @@ The output is shown as follows.
 
 ## Creating Numpy Array From Scratch
 
+In this lesson, we started creating Numpy's array by converting Pandas' Dataframe. However, there are times when it is useful to create Numpy array from scratch. In this section, we will show some simple ways to create numpy arrays. 
 
+The first simple array is an array of zeros. This can be used when you know the size of your data and you want to initialize them all to zeros. Numpy has a function for this, i.e. `np.zeros()`. The argument to this function is the shape of the array. For example, to create an array of ten zeros, you can write the following.
+
+```python
+zeros = np.zeros(5)
+```
+
+Notice that if we print the shape using `zeros.shape`, it gives us the following.
+```
+(5, )
+```
+
+Notice that there is only one number because it is a one-dimensional array. If we print out this array, we will get the following.
+
+```
+array([0., 0., 0., 0., 0.])
+```
+
+We can create two dimensional array by providing a tuple for the argument of the function `np.zeros()`. For example, the following creates a 2x3 array which all elements are zero.
+
+```python
+>>> zero_matrix = np.zeros((2,3))
+>>> zero_matrix
+array([[0., 0., 0.],
+       [0., 0., 0.]])
+>>> zero_matrix.shape
+(2, 3)
+```
+
+Notice the parenthesis `(2,3)` inside the argument of `np.zeros()`. With this, we can create a *row vector* or a *column vector*. For example, we can create a column vector of zeros with 10 elements using the following code.
+
+```python
+>>> col_vector = np.zeros((10,1))
+>>> col_vector
+array([[0.],
+       [0.],
+       [0.],
+       [0.],
+       [0.],
+       [0.],
+       [0.],
+       [0.],
+       [0.],
+       [0.]])
+```
+
+Notice that our column vector is a two-dimensional array with one column. 
+
+We also have another function `np.ones()` to create a numpy array which all elements are ones. For example, we can use the following code to create a column vector of one.
+
+```python
+>>> col_vector_one = np.ones((10,1))
+>>> col_vector_one
+array([[1.],
+       [1.],
+       [1.],
+       [1.],
+       [1.],
+       [1.],
+       [1.],
+       [1.],
+       [1.],
+       [1.]])
+```
+
+Sometimes, what we have is just a Python's list. Numpy allow us to convert Python's built-in list to Numpy array using `np.array()` function. For example, let's say we have a list of lists representing a matrix. We can convert this into a numpy array using this function. Below is an example of how we can do so.
+
+```python
+>>> list_matrix = [[1, 2, 3],
+...                [4,5,6]]
+>>> array_matrix = np.array(list_matrix)
+>>> array_matrix
+array([[1, 2, 3],
+       [4, 5, 6]])
+```
+
+## Operations on Array Elements
+
+We can do various operations on the elements of the array. In the following section, we will show some of them. You should explore the Numpy documentation for more detail.
+
+### Summation of Elements
+
+One of the useful function is to sum the elements of the array. Numpy provides `np.sum()` to do this. 
+
+```python
+>>> array_matrix
+array([[1, 2, 3],
+       [4, 5, 6]])
+>>> np.sum(array_matrix)
+21
+```
+
+We can see that `np.sum()` sums all the elements into a single number. We can change the behaviour if we want to sum across the rows or the columns by providing the optional argument `axis`. For example, to sum across the rows, we do the following.
+
+```python
+>>> np.sum(array_matrix, axis=0)
+array([5, 7, 9])
+```
+
+Recall that axis 0 is the dimension across the row. By providing `axis=0`, we sum the elements across the rows and we get three numbers for each of the column. We can also sum across the columns by specifying `axis=1`.
+
+```python
+>>> np.sum(array_matrix, axis=1)
+array([ 6, 15])
+```
+
+Notice that we only have two numbers because we only have two rows. We get `6` from summing `[1, 2, 3]` which is the first row. We get `15` from summing `[4, 5, 6]`. 
+
+### Statistical Functions
+
+Similar to sum, we can also get some descriptive statistics of the elements. For example, we can get the mean or median using `np.mean()` and `np.median()`.
+
+```python
+>>> np.mean(array_matrix)
+3.5
+```
+
+Similar to `np.sum()`, we can provide the `axis` information. 
+
+```python
+>>> np.mean(array_matrix, axis=0)
+array([2.5, 3.5, 4.5])
+>>> np.mean(array_matrix, axis=1)
+array([2., 5.])
+```
+
+There are other statistical functions besides mean, such as standard deviation.
+
+```python
+>>> np.std(array_matrix, axis=0)
+array([1.5, 1.5, 1.5])
+>>> np.std(array_matrix, axis=1)
+array([0.81649658, 0.81649658])
+>>> 
+```
+
+For a more complete list of available functions, please refer to [Numpy statistics documentation](https://numpy.org/doc/stable/reference/routines.statistics.html).
+
+### Matrix Multiplication and Broadcasting
