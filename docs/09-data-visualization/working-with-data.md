@@ -19,8 +19,6 @@ By the end of this lesson, you should be able to:
 
 - Give example of **linear regression and classification**
 - Create a **Panda's DataFrame** and selecting data from DataFrame
-- Convert Panda's DataFrame to Numpy Array
-- Selecting data from Numpy Array
 - Using Panda's library to read `CSV` file
 - **Split** data randomly into training set and testing set
 - **Normalize** data using z-normalizatin and min-max normalization
