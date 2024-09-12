@@ -116,12 +116,12 @@ By the end of these lessons, students should be able to:
 By the end of these lessons, students should be able to:
 
 - Give example of **linear regression and classification**
-- Create a **Panda's DataFrame** and selecting data from DataFrame
-- Convert Panda's DataFrame to **NumPy Array**
+- Create a **Pandas DataFrame** and selecting data from DataFrame
+- Convert Pandas DataFrame to **NumPy Array**
 - Selecting data from NumPy Array
 - Use mathematical, statistical and linear algebra functions on NumPy Array
 - Creating new Numpy Arrays
-- Using Panda's library to read `CSV` file
+- Using Pandas library to read `CSV` file
 - **Split** data randomly into training set and testing set
 - **Normalize** data using z-normalization and min-max normalization
 - Create **scatter** plot and statistical plots like box plot, histogram, and bar plot
