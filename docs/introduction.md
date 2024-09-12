@@ -56,6 +56,7 @@ This page summarises the links to all notes that are relevant to 10.020. Please 
 ### Week 09: Visualizing and Processing Data
 
 - [Working With Data](/notes/data-visualization/working-with-data)
+- [NumPy Array](/notes/data-visualization/numpy-array)
 - [Creating Plots using Matplotlib and Seaborn](/notes/data-visualization/visualisation)
 
 ### Week 10: Modeling Continuous Data
