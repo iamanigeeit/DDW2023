@@ -18,8 +18,8 @@ Python Pandas is a powerful open-source library that provides high-performance d
 By the end of this lesson, you should be able to:
 
 - Give example of **linear regression and classification**
-- Create a **Panda's DataFrame** and selecting data from DataFrame
-- Using Panda's library to read `CSV` file
+- Create a **Pandas DataFrame** and selecting data from DataFrame
+- Using Pandas library to read `CSV` file
 - **Split** data randomly into training set and testing set
 - **Normalize** data using z-normalizatin and min-max normalization
 
