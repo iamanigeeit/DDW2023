@@ -14,8 +14,8 @@ Insertion sort is a comparison-based sorting algorithm that builds the final sor
 ### Goals
 
 By the end of this lesson, you should be able to:
-- describe **insertion sort** algorithm steps and ways to optimise them.
-- implement **insertion sort** algorithm.
+- Describe **insertion sort** algorithm and ways to optimise it.
+- Implement insertion sort algorithm to **sort** a sequence of number.
 
 :::keyword Keywords
 `sorting`, `insertion sort`
