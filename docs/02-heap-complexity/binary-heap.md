@@ -16,11 +16,13 @@ Binary heap is a complete binary tree-based data structure that satisfies the he
 ### Goals
 
 By the end of this lesson, you should be able to:
-- Implement **binary heap** using Python's built-in list
-- Describe **heap property**
-- Describe the steps to **build heap**
-- Implement algorithm to restore **heap property**
-- Write functions to do **binary heap** data structure operation
+- Implement a **binary heap** using Python's built-in list.
+- Describe **heap property**.
+- Write functions to do **binary heap** data structure operations.
+- Implement algorithm to restore the **heap property**.
+- Describe the steps to **build a heap**.
+
+
 
 :::keyword Keywords
 `tree`, `binary tree`, `root`, `binary heap`, `heap property`, `heapify`, `node`, `leaf`, `parent node`, `child node`

@@ -27,11 +27,11 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
-- Implement **binary heap** using Python's built-in list.
+- Implement a **binary heap** using Python's built-in list.
 - Describe **heap property**.
-- Describe the steps to **build heap**.
-- Implement algorithm to restore **heap property**.
-- Write functions to do **binary heap** data structure operation.
+- Write functions to do **binary heap** data structure operations.
+- Implement algorithm to restore the **heap property**.
+- Describe and implement the algorithm to **build a heap**.
 - Implement **heapsort** using iteration.
 - Define **Big-O** notation and other asymptotic notations.
 - Derive **complexity** of a code using Python computation model.

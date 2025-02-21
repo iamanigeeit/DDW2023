@@ -17,10 +17,10 @@ Computation time, also known as runtime or execution time, refers to the amount 
 
 By the end of this lesson, you should be able to:
 
-- Define **Big-O** notation and other asymptotic notations
-- Derive **complexity** of a code using its computation model
-- **Measure** computation time for bubble sort, insertion sort, built-in sort, and heapsort
-- Create **plots** from array data for **visualising** computational time
+- Define **Big-O** notation and other asymptotic notations.
+- Derive **complexity** of a code using its computation model.
+- **Measure** computation time for bubble sort, insertion sort, built-in sort, and heapsort.
+- Create **plots** from array data for **visualising** computational time.
 
 :::keyword Keywords
 `complexity`, `time complexity`, `asymptotic notation`, `computation time`, `computational model`, `logarithmic`, `linear`, `log-linear`, `quadratic`, `polynomial`, `exponential`
@@ -598,11 +598,13 @@ $T(n) = O(n\log(n))$
 
 ## Computational Time Summary
 
-In summary, different algorithm may have different performance in terms of computational time. The following image shows the different plots for some common computational time in computing.
+In summary, different algorithm may have different performance in terms of computational time. The following image shows the different plots for some common computational time in computing. [^1]
 
-<ImageCard path={"https://interactivepython.org/runestone/books/published/pythonds/_images/newplot.png"} widthPercentage="50%"/>
+<ImageCard path={"https://runestone.academy/ns/books/published/pythonds/_images/newplot.png"} widthPercentage="50%"/>
 
 In our examples above, both Bubble Sort and Insertion sort is quadratic while Heapsort is log linear. We can see that Heapsort is much faster as the number of elements grows big.
+
+[^1]: [Problem Solving with Algorithms and Data Structures using Python by Bradley N. Miller, David L. Ranum is licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.](https://runestone.academy/ns/books/published/pythonds/index.html?mode=browsing)
 
 
 
