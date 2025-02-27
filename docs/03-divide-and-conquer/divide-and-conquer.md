@@ -17,11 +17,15 @@ Recursion is a programming technique in which a function calls itself to solve a
 
 By the end of this lesson, you should be able to:
 
-- Solve problems using **recursion**
-- Identify problems that has recursive solutions
+- Solve problems using **recursion**.
+- Identify problems that has recursive solutions.
+- Identify **base case** and **recursive case** in a recursive problem and its solution.
+- Explain and implement the recursive solution of **Tower of Hanoi**.
+- Derive solution for **recurrence** of Tower of Hanoi using **recursion-tree** method.
+
 
 :::keyword Keywords
-`recursion`, `base case`, `recursive case`, `helper function`, `recursive tree`
+`recursion`, `base case`, `recursive case`, `recursion tree`
 :::
 
 ## Introduction
