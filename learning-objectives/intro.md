@@ -60,15 +60,16 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
-- Use object-oriented programming to abstract data.
+- Use object-oriented programming to **abstract data**.
 - Create `class` definitions with initialization and other methods.
 - Create **stored** property and **computed** property.
-- Draw UML class diagram of a class with attributes and methods.
+- Draw **UML class diagram** of a class with attributes and methods.
 - Explain `has-a` relationship.
-- Use object-oriented programming to implement computation.
+- Use object-oriented programming to implement **computation**.
 - Draw UML class diagram for `has-a` relationship.
-- Implement abstract data type for **Stack**, **Queue** using Object Oriented paradigm.
-- Implement Queue using double **Stack** and discuss implementation **impact** on computation time.
+- Implement abstract data type for **Stack and Queue** using Object Oriented paradigm.
+- Implement Queue using **double Stack** and discuss implementation impact on **computation time**.
+- **Apply** Stack and Queue for some applications.
 
 
 ## Week 5: Inheritance and Intro to Graph
@@ -77,22 +78,24 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 - **Apply** Stack and Queue for some applications.
-- Inherit a class to create a **child** class.
-- Explain `is-a` relationship.
-- Draw **UML** diagram for `is-a` relationship.
+- Use **object-oriented programming** to implement both data and **computation**.
+- Explain `is-a` relationship for inheritance.
+- Draw **UML class diagram** for `is-a` relationship.
+- **Inherit** a class to create a child class from a base class.
 - **Override** operators to extend parent's methods.
-- Use **Dictionary** and **OOP** to represent graph.
+- Implement **Deque** data structure as a subclass of **Queue**
 - Define **graph**, **vertices**, **edges** and **weights**.
+- Use Dictionary and OOP to **represent graph**.
+- Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation.
 - Differentiate **directed** and **undirected** graphs.
 - Define **paths**.
 - Create a `Vertex` class and a `Graph` class.
-- Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation.
-- Extend class **Vertex** and **Graph** for graph traversal algorithm.
 
 ## Week 6: Graph Traversal
 
 #### [Concept Map](/learning-objectives/graph-traversal)
 By the end of these lessons, students should be able to:
+- **Extend** class Vertex and Graph for graph **traversal** algorithm.
 - Explain and implement **breadth** first search .
 - Explain and implement **depth** first search.
 

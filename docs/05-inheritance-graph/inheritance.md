@@ -17,16 +17,16 @@ In Python, inheritance in classes allows a child class to inherit and extend the
 
 By the end of this lesson, you should be able to:
 
-- Use object-oriented programming to implement computation
-- Inherit a class to create a **child** class
-- Explain `is-a` relationship
-- Draw **UML** diagram for `is-a` relationship
-- **Override** operators to extend parent's methods
-- **Apply** Stack and Queue for some applications
+- **Apply** Stack and Queue for some applications.
+- Use **object-oriented programming** to implement both data and **computation**.
+- Explain `is-a` relationship for inheritance.
+- Draw **UML class diagram** for `is-a` relationship.
+- **Inherit** a class to create a child class from a base class.
+- **Override** operators to extend parent's methods.
 - Implement **Deque** data structure as a subclass of **Queue**
 
 :::keyword Keywords
-`inheritance`, `child class`, `parent class`, `super`, `override`, 
+`inheritance`, `is-a relationship`, `child class`, `parent class`, `base class`, `UML class diagram`, `super`, `override`, `deque`
 :::
 
 ## Inheritance
