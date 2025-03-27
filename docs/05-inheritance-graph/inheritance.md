@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import CollapsibleAnswer from '@site/src/components/CollapsibleAnswer';
@@ -18,7 +18,6 @@ In Python, inheritance in classes allows a child class to inherit and extend the
 By the end of this lesson, you should be able to:
 
 - **Apply** Stack and Queue for some applications.
-- Use **object-oriented programming** to implement both data and **computation**.
 - Explain `is-a` relationship for inheritance.
 - Draw **UML class diagram** for `is-a` relationship.
 - **Inherit** a class to create a child class from a base class.
