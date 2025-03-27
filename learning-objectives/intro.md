@@ -74,7 +74,7 @@ By the end of these lessons, students should be able to:
 
 ## Week 5: Inheritance and Intro to Graph
 
-#### [Concept Map](/learning-objectives/inheritance-graph)
+#### [Concept Map](/learning-objectives/oop-inheritance)
 
 By the end of these lessons, students should be able to:
 - **Apply** Stack and Queue for some applications.
