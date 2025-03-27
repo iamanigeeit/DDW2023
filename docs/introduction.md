@@ -37,13 +37,14 @@ This page summarises the links to all notes that are relevant to 10.020. Please 
 
 ### Week 05: Inheritance and Introduction to Graph
 
-- [Inheritance](/notes/inheritance-graph/inheritance)
-- [Introduction to Graph](/notes/inheritance-graph/basics-graph)
-- Optional: [Abstract Base Class](/notes/inheritance-graph/abc)
-- Optional: [Fixed-Size Array and Linked List](/notes/inheritance-graph/array-linkedlist)
+- [Computation as Object](/notes/oop-inheritance/oop-computation)
+- [Inheritance](/notes/oop-inheritance/inheritance)
+- Optional: [Abstract Base Class](/notes/oop-inheritance/abc)
+- Optional: [Fixed-Size Array and Linked List](/notes/oop-inheritance/array-linkedlist)
 
 ### Week 06: Graph Traversal
 
+- [Introduction to Graph](/notes/graph-traversal/basics-graph)
 - [Breadth First Search](/notes/graph-traversal/bfs) and 
 - [Depth First Search](/notes/graph-traversal/dfs)
 
