@@ -17,7 +17,7 @@ State machine state space search refers to the process of systematically explori
 
 By the end of this lesson, you should be able to:
 
-- **Apply** breadth first search to perform state-space search
+- Apply breadth first search to perform **state-space search**.
 
 :::keyword Keywords
 `state space search`, `legal inputs`, `state map`, `graph traversal`, `breadth first search`, `queue`, `path`, `step`

@@ -17,7 +17,7 @@ A state machine is a computational model that describes the behavior of a system
 
 By the end of this lesson, you should be able to:
 
-- Define a **state machine**
+- Define a **state machine**.
 
 :::keyword Keywords
 `state machine`, `start state`, `pure function`, `state transition diagram`, `time step table`

@@ -84,17 +84,17 @@ By the end of these lessons, students should be able to:
 - **Inherit** a class to create a child class from a base class.
 - **Override** operators to extend parent's methods.
 - Implement **Deque** data structure as a subclass of **Queue**
+
+## Week 6: Graph Traversal
+
+#### [Concept Map](/learning-objectives/graph-traversal)
+By the end of these lessons, students should be able to:
 - Define **graph**, **vertices**, **edges** and **weights**.
 - Use Dictionary and OOP to **represent graph**.
 - Represent graphs using **adjacency-list** representation or **adjacency-matrix** representation.
 - Differentiate **directed** and **undirected** graphs.
 - Define **paths**.
 - Create a `Vertex` class and a `Graph` class.
-
-## Week 6: Graph Traversal
-
-#### [Concept Map](/learning-objectives/graph-traversal)
-By the end of these lessons, students should be able to:
 - **Extend** class Vertex and Graph for graph **traversal** algorithm.
 - Explain and implement **breadth** first search .
 - Explain and implement **depth** first search.
@@ -106,11 +106,10 @@ By the end of these lessons, students should be able to:
 By the end of these lessons, students should be able to:
 
 - Define a **state machine**.
-- Implement an **Abstract Base Class** for State Machine using abc module.
-- Define **output** function and **next** state function.
+- Define **output** function and **next state** function.
 - Draw **state transition diagram** and **time-step table**.
-- **Implement** output function and next state function inside `get_next_values` overridden method..
-- **Apply** breadth first search to perform state-space search.
+- **Implement** output function and next state function inside `get_next_values` overridden method.
+- Apply breadth first search to perform **state-space search**.
 
 ## Week 9: Visualizing and Processing Data
 

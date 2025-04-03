@@ -19,7 +19,6 @@ You can refer further to the optional reading on [Abstract Base Class](/notes/oo
 
 By the end of this lesson, you should be able to:
 
-- Implement an **Abstract Base Class** for State Machine using abc module
 - Define **output** function and **next** state function
 - Draw **state transition diagram** and **time-step table**
 - **Implement** output function and next state function inside `get_next_values` overridden method.
