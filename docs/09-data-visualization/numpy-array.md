@@ -16,10 +16,10 @@ In the subsequent lessons, we will work with NumPy array instead of Pandas dataf
 ### Goals
 
 By the end of this lesson, you should be able to:
-- Convert Pandas Dataframe to NumPy Array
-- Selecting data from NumPy Array
-- Use mathematical, statistical and linear algebra functions on NumPy Array
-- Creating new Numpy Arrays
+- Creating new **Numpy Arrays**.
+- **Selecting** data from NumPy Array.
+- **Convert** Pandas DataFrame to NumPy Array.
+- Use mathematical, statistical and linear algebra functions on NumPy Array.
 
 :::keyword Keywords
 `Data Frame`, `row`, `column`, `numpy array`, `zeros array`, `ones arrays`, `shape`, `axis`, `dimension`
