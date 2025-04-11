@@ -17,13 +17,14 @@ Logistic regression is a statistical technique used to model and predict the pro
 
 By the end of this lesson, you should be able to:
 
-- Write **cost** function of **logistic** regression
-- Use logistic regression to **calculate** probabilities of binary classification
-- Train **logistic** regression model
-- Split data into **training**, **validation**, and **testing** set
+- Write **cost function** of **logistic** regression.
+o- Use logistic regression to calculate probabilities of **binary classification**.
+- **Train** logistic regression model.
+- Classify **multi-class** problems using **one-vs-all** technique.
 
 :::keyword Keywords
-`classification`, `hypothesis`, `probability`, `logistic function`, `coefficients`, `binary classification`, `cost function`, `gradient descent`, `update function`, `matrix notation`
+`classification`, `hypothesis`, `probability`, `logistic function`, `coefficients`, `binary classification`, `cost function`, `gradient descent`, `update function`, `matrix notation`, `multi-class`
+
 :::
 
 ## Introduction

@@ -17,10 +17,11 @@ Machine learning metrics are quantitative measures used to evaluate the performa
 
 By the end of this lesson, you should be able to:
 
-- Calculate **confusion matrix**, **precision**, and **recall**.
+- Calculate **confusion** **matrix**, **accuracy**, **precision**, **specificity** and **recall**.
 
 :::keyword Keywords
-`metrics`, `confusion matrix`, `accuracy`, `precision`, `sensitivity`, `specificity`,   `positive case`, `negative case`
+`metrics`, `confusion matrix`, `accuracy`, `precision`, `sensitivity`, `specificity`,   `positive case`, `negative case`, `recall`
+
 :::
 
 ## Introduction

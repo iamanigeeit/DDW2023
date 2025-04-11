@@ -134,14 +134,14 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
-- Write **cost** function of linear regression.
-- Implement **Gradient Descent algorithm** for optimisation.
-- Train **linear regression model** using gradient descent.
+- Write **cost function** of **linear regression**.
+- Implement **Gradient Descent** algorithm for optimisation.
+- **Train** linear regression model using gradient descent.
 - Transform data for **polynomial** model.
-- Evaluate linear regression model using `r^2` and mean-squared-error.
+- **Evaluate** linear regression model using `r^2` and mean-squared-error.
 - Evaluate and choose **learning rate**.
-- Plot **cost** function over iteration time.
-- Plot **linear** regression.
+- Plot cost function over iteration time.
+- Plot linear regression.
 
 ## Week 11: Classifying Categorical Data
 
@@ -149,10 +149,9 @@ By the end of these lessons, students should be able to:
 
 By the end of these lessons, students should be able to:
 
-- Write **cost** function of **logistic** regression.
-- Use logistic regression to **calculate** probabilities of binary classification.
-- Train **logistic** regression model.
-- Split data into **training**, **validation**, and **testing** set.
-- Classify **multi-class** problems using one-vs-all technique.
-- Calculate **confusion** **matrix**, **precision**, and **recall**.
+- Write **cost function** of **logistic** regression.
+o- Use logistic regression to calculate probabilities of **binary classification**.
+- **Train** logistic regression model.
+- Classify **multi-class** problems using **one-vs-all** technique.
+- Calculate **confusion** **matrix**, **accuracy**, **precision**, **specificity** and **recall**.
 

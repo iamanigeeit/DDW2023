@@ -17,15 +17,16 @@ Linear regression is a statistical modeling technique that seeks to establish a 
 
 By the end of this lesson, you should be able to:
 
-- Write **cost** function of linear regression
-- Implement **Gradient Descent algorithm** for optimisation
-- Train **linear regression model** using gradient descent
-- Evaluate linear regression model using `r^2` and mean-squared-error
-- Plot **cost** function over iteration time
-- Plot **linear** regression
+- Write **cost function** of **linear regression**.
+- Implement **Gradient Descent** algorithm for optimisation.
+- **Train** linear regression model using gradient descent.
+- **Evaluate** linear regression model using `r^2` and mean-squared-error.
+- Evaluate and choose **learning rate**.
+- Plot cost function over iteration time.
+- Plot linear regression.
 
 :::keyword Keywords
-`linear regression`, `hypothesis`, `coefficients`, `update function`, `gradient descent`, `matrix form`, `metrics`, `mean squared error`, `coefficient of determination`
+`linear regression`, `cost function`, `hypothesis`, `coefficients`, `update function`, `gradient descent`, `matrix form`, `metrics`, `mean squared error`, `coefficient of determination`, `train`
 :::
 
 ## Introduction
