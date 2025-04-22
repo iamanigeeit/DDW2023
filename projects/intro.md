@@ -19,21 +19,15 @@ These projects require you to utilise the Command Line Inverface. Before you beg
 
 ## Mini Project 1
 
-This mini project is to create a simple html pages to generate random number and sort them. [Read the handout here](/projects/sorting-app).
+This mini project is to create a simple html pages to generate random number and sort them. Read the handout from the Github repository.
 
 <ImageCard path={require(".//images/intro/2023-07-13-15-21-51.png").default} widthPercentage="50%"/>
 
 ## Mini Project 2
 
-This mini project is to create a simple web application for math quiz where users can create simple math challenges and take up challenge from others. [Read the handout here](/projects/calculator).
+This mini project is to create a simple web application for math quiz where users can create simple math challenges and take up challenge from others. Read the handout from the Github repository.
 
 <ImageCard path={require(".//images/intro/2023-07-13-15-23-06.png").default} widthPercentage="100%"/>
-
-## (Optional ) Mini Project 3
-
-This mini project is to create a simple AI Tic Tac Toe game where a user can play Tic Tac Toe against a computer. There is no grading on this part and you just need to explore on your own. [Here's the project starter code and handout.](https://github.com/Data-Driven-World/d2w_mini_projects/tree/master/mp_tictactoe)
-
-<ImageCard path={require(".//images/intro/2023-07-13-15-26-01.png").default} widthPercentage="40%"/>
 
 ## Groupings
 
