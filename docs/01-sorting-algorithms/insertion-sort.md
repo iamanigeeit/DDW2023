@@ -14,8 +14,8 @@ Insertion sort is a comparison-based sorting algorithm that builds the final sor
 ### Goals
 
 By the end of this lesson, you should be able to:
-- Describe **insertion sort** algorithm and ways to optimise it.
-- Implement insertion sort algorithm to **sort** a sequence of number.
+- Describe the **insertion sort** algorithm and ways to optimize it.
+- Implement the insertion sort algorithm to **sort** a sequence of numbers.
 
 :::keyword Keywords
 `sorting`, `insertion sort`
@@ -134,7 +134,7 @@ We want to write some steps that sort the numbers such that the output will be:
 
    [**2**, 3, 7, 8, 8, 10, 14, 16, 4, 1]
 
-9. Similarly, with the _nineth_ element, i.e. 4. However, this element will stop swapping when it sees the number lower than itself, so it will stop when it sees 3.
+9. Similarly, with the _ninth_ element, i.e. 4. However, this element will stop swapping when it sees the number lower than itself, so it will stop when it sees 3.
 
    [2, 3, **4**, 7, 8, 8, 10, 14, 16, 1]
 
@@ -150,18 +150,18 @@ Looking at the above case, we can try to write down our algorithm in pseudocode.
 
 There are **two** iterations in the steps above:
 
-1. <span style={{ "color":"red", "fontWeight": "bold" }}>outer</span> iteration is moving from the <span><i>second</i></span> element to the last element in the list. What the outer iteration does is to place that n-th element into its position.
+1. The <span style={{ "color":"red", "fontWeight": "bold" }}>outer</span> iteration is moving from the <span><i>second</i></span> element to the last element in the list. What the outer iteration does is to place that n-th element into its position.
 2. <span style={{ "color":"red", "fontWeight": "bold" }}>inner</span> iteration is swapping the n-th element until either: a) it reaches the most left position, or b) the number on its left is smaller
 
 ### Fixed Outer Iteration
 
-The number of _outer_ iteration is fixed, which is $n-1$. This is because it starts from the second element to the last element. So if there are $n$ elements, it will repeat itself $n-1$ times.
+The number of _outer_ iterations is fixed at $n-1$. This is because it starts from the second element to the last element. So if there are $n$ elements, it will repeat itself $n-1$ times.
 
 The _outer_ iteration starts from the second element, which is index 1.
 
 ### Non-Fixed Inner Iteration
 
-The number of _inner_ iteration is not fixed since it depends on the two cases stated above. The **maximum** number of iteration is when the number reaches the most left position. In this case for element at position $i$, it will repeat $i$ times. If it sees a number that is smaller than itself, the number of iteration for the element at position $i$ will be less than $i$.
+The number of _inner_ iteration is not fixed since it depends on the two cases stated above. The **maximum** number of iteration is when the number reaches the left-most position. In this case for element at position $i$, it will repeat $i$ times. If it sees a number that is smaller than itself, the number of iteration for the element at position $i$ will be less than $i$.
 
 ### Insertion Sort v1
 
@@ -220,7 +220,7 @@ We can improve the algorithm slightly by reducing the number of assignment in th
 
    [7, 8, **8**, 10, 14, 16, 3, 2, 4, 1] , temporary = 8
 
-This is an animation example for a different sequence of number from Wikipedia.
+This is an animation example for a different sequence of numbers from Wikipedia.
 
 ![Animation for Insertion Sort](https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif)
 
@@ -251,10 +251,18 @@ Steps:
 :::note Note
 The additional step is on 2.2 where we store the $i$-th element to a temporary variable.
 
-- Step 2.3 condition is modified to compare the temporary variable with the element pointed by `inner_index - 1`.
-- Step 2.3.1 now only have **one** assignment instead of **two**.
+- Step 2.3 modifies the condition to compare the temporary variable with the element at `inner_index - 1`.
+- Step 2.3.1 now only has **one** assignment instead of **two**.
 
-We only assign the temporary to the final position in step 2.4. The position stored in 2.4 is `inner_index` instead of `inner_index - 1`. The reason is that in the last iteration, we have executed 2.3.2 which reduces the index by one.
+We only assign the temporary var to the final position in step 2.4. The position stored in 2.4 is `inner_index` instead of `inner_index - 1`. The reason is that in the last iteration, we have executed 2.3.2 which reduces the index by one.
 
 Assignment from temporary variable to the array only happens at the end of _inner_ iteration.
 :::
+
+
+
+<CollapsibleAnswer title="Question: What is the key difference between Bubble Sort and Insertion Sort? Which is more human?">
+
+   Bubble Sort finds the n-th largest element on each pass and moves it to the end. Insertion Sort looks at the n-th element and moves it to the correct position. Humans typically use Insertion Sort intuitively when sorting, for example on a card deck.
+
+</CollapsibleAnswer>
