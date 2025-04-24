@@ -6,24 +6,36 @@ You can contribute by forking this repository and creating pull requests 😊
 
 ## Getting started
 
-1. Clone this project, then `npm install`
-2. Afterwards, type `npm start`
-3. You can publish this site to github automatically by pushing this to your `master` branch. See `.github/workflows/deploy.yml` action script
-4. You need to give **read and write** Action permission in your workflow
-   ![](images/README/2023-07-13-10-45-47.png)
-5. Edit `docusaurus.config.js` accordingly to use on your site and deploy it on your repo, namely the `baseUrl`
-6. The file `src/pages/index.js` contains the homepage. Edit it to your liking.
+1. The website is built from files in this repo using Github workflows.
+2. To contribute, fork this repo, then **create a test branch**. This allows you to create a self-hosted site to test any changes.
+3. **In your `test` branch**:
+   - Go to `docusaurus.config.js` and edit the `url` and `baseUrl` to match your username and repo name.
+   - Go to `.github/workflows/deploy.yml`and change `on push branches` from `main` to `test`.
+4. Go to your repo on the Github site > Settings > Pages > change Source to **Github Actions**
+5. Commit your `docusaurus.config.js` and `deploy.yml` and push to test branch
+6. In Github > Actions, check that the workflow to build is triggered on the `test` branch. If it doesn't work, you may need to set the permissions under Actions > General. When successful, Github should create a new branch `gh-pages` for the built website files.
+7. Go to Github > Settings > Pages again and switch source back to **Deploy from a branch**. Select `gh-pages` and Save (you must force it to save if it doesn't).
+8. The site should be up at your given URL. If it is not (404 error), go back to Github > Actions and check the `pages build and deployment` workflow ran correctly on the `gh-pages` branch.
 
-## Custom modifications
+Now you can checkout the main repo, and push new commits to both main and test branch. View the changes on your site, and when you are done, submit pull requests through the `main` branch.
 
-1. Add icons to /static/img
-2. Installed local search `npm install --save @easyops-cn/docusaurus-search-local`
-3. enable math `npm install --save remark-math@3 rehype-katex@5 hast-util-is-element@1.1.0`
-4. enable brython `npm i docusaurus-live-brython`
-5. add docs plugin to have docs on another folder `npm install --save @docusaurus/plugin-content-docs`
-6. Add setting to the docusaurus search local to include other docs route base path like psets labs etc that's defined in (5)
-7. Swizzled Admonitions: see `docusaurus.config.js`
-8. Custom components: see `src/components`
+
+## Building Locally
+
+1. If you have admin / sudo rights to your workstation, it could be easier to build the site locally.
+2. [Install Node Version Manager](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm), reopen Terminal and `nvm install 18`. Important: you **must** install Node v18 because v20 breaks Docusaurus!
+3. Clone this project, `cd` to the root folder and run `nvm install`.
+4. Run `npm start`. The site should be up.
+
+
+## Possible Customizations
+
+1. The file `src/pages/index.js` contains the homepage. Edit it to your liking.
+2. Add icons to /static/img
+3. Add setting to the docusaurus search local to include other docs route base path like psets labs etc
+4. Enable brython `npm i docusaurus-live-brython`
+5. Swizzled Admonitions: see `docusaurus.config.js`
+6. Custom components: see `src/components`
 
 ## Markdown features
 
