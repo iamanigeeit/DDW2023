@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksite_docusaurus_template=self.webpackChunksite_docusaurus_template||[]).push([[2024],{82024:(e,s,t)=>{t.d(s,{createArchitectureServices:()=>u.S});var u=t(98815);t(73579)}}]);
