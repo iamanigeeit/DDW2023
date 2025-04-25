@@ -62,15 +62,14 @@ There are **8 checks** for both exercises in MP1. Each is worth **0.25 pts**, to
 
 1. 10 **integers** (OK to have repeated value) appear when `Generate 10 numbers` button is clicked
 2. Totally sorted **integer** output is displayed when `Sort` button is clicked
-3. In `/app/static/library.py`, the implementation in `sortnumber1()` is **NOT hardcoded** like this, but some sorting function is called to actually compute the sorted value.
+3. In `1_Exercise\ 1.py`, the implementation in `sort_generated_numbers()` is **NOT hardcoded** like this, but the `mysort()` function is called to actually compute the sorted value.
 4. A **custom** sort function (e.g: `bubble_sort` with actual implementation) is used to compute (2), and not using python's default [`list.sort()`](https://docs.python.org/3/howto/sorting.html)
 
 ### Exercise 2 [4 checks]
 
 1. The textbox can accept **integers**, separated by a comma. **NO NEED** to test for float, string, or other weird data types (but it is good practice, just that we aren't so strict for this checkoff)
-2. Some kind of **warning** should appear when the textbox is empty but `Sort` is clicked (no error)
-3. The output **integers** are sorted properly when the button `Sort` is clicked.
-4. A **custom** sort function (e.g: `bubble_sort` with actual implementation) is used to compute (2), and not using python's default [`list.sort()`](https://docs.python.org/3/howto/sorting.html)
+2. The output **integers** are sorted properly when the button `Sort` is clicked.
+3. A **custom** sort function (e.g: `bubble_sort` with actual implementation) is used to compute (2), and not using python's default [`list.sort()`](https://docs.python.org/3/howto/sorting.html)
 
 ### Q&A
 
@@ -83,7 +82,7 @@ It is pretty clear cut questions we might ask: we will ask about any instruction
 Project-related question involves **understanding** the project structure:
 
 1. Command-line related question (all commands that we ask you to type for MP1 is fair game)
-2. Flask project structure brief overview (what **each** file is for?)
+2. Streamlit project structure brief overview (what **each** file is for?)
 3. Web Server and Browser Client communication (very basic idea)
 4. General understanding of Python modules used in the project
 5. General understanding of the Python virtual environment
@@ -102,20 +101,19 @@ There are **8 checks** for both exercises in MP1. Each is worth 0.25 pts, totall
 
 ### Exercise 1 [3 checks]
 
-1. In `/app/serverlibrary.py`, there exist a `mergesort` implementation **from scratch**, no other sorting libraries can be used.
-2. Able to **create** users **and** login as that user.
+1. Able to **create** users and its updated in the Google Sheet.
 3. Able to **create** many users and display all registered users under `Users` page.
 
 ### Exercise 2 [5 checks]
 
-1. In `/app/serverlibrary.py`, there exist a `Stack` implementation in there **from scratch**, e.g: `pop`, `peek`, etc is implemented/
-2. In `/app/serverlibrary.py`, there exist a `EvaluateExpression` implementation in there **from scratch**.
-3. Users can create questions and the answer displayed in `/questions` page is correct. Users can also send it to multiple other users.
-4. Users can `Show/Hide` questions and enter the correct answer in the `/challenges` page, afterwhich the timer value is displayed at the row.
-5. In the **Hall of Fame**, we can see the **ranks** properly, where each ROW is a question, and WITHIN the same row of question, the display of username and score must be shown properly (top 3)/
+1. In `library.py`, there exist a `Stack` implementation in there **from scratch**, e.g: `pop`, `peek`, etc is implemented/
+2. In `library.py`, there exist a `EvaluateExpression` implementation in there **from scratch**.
+3. Users can create questions and the answer displayed in `Questions` page is correct. Users can also send it to multiple other users.
+4. Users can `Show/Hide` questions and enter the correct answer in the `Challenges` page, afterwhich the timer value is displayed at the row.
+5. In the **Hall of Fame**, we can see the **ranks** properly. Each challenge is displayed as a new section and in each section the question and the correct answer is displayed. After that, a table of top three users are displayed.
 
 ### Q&A
 
-Similar protocol like MP [above](#qa). Please read all necessary markdown files: [Bootstrap](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Bootstrap.md), [Database](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Database.md), and [Forms](https://github.com/Data-Driven-World/d2w_mini_projects/blob/master/mp_calc/Forms.md) that was available at the [mini project 2 repository](https://github.com/Data-Driven-World/d2w_mini_projects/tree/master/mp_calc) before going for the checkoff.
+Similar protocol like MP [above](#qa). 
 
 <ChatBaseBubble/>
