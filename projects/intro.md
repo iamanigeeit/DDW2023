@@ -9,25 +9,25 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 # Overview
 
-There are 3 Mini Projects in 10.020. Two are compulsory, and one is optional.
+There are two Mini Projects in 10.020.
 
 <ChatBaseBubble/>
 
 :::caution
-These projects require you to utilise the Command Line Inverface. Before you begin, please read the [background notes first](/projects/category/background).
+These projects require you to utilise the Command Line Interface. Before you begin, please read the [background notes first](/projects/category/background).
 :::
 
 ## Mini Project 1
 
 This mini project is to create a simple html pages to generate random number and sort them. Read the handout from the Github repository.
 
-<ImageCard path={require(".//images/intro/2023-07-13-15-21-51.png").default} widthPercentage="50%"/>
+<ImageCard path={require(".//images/intro/mp1_screenshot.png").default} widthPercentage="50%"/>
 
 ## Mini Project 2
 
 This mini project is to create a simple web application for math quiz where users can create simple math challenges and take up challenge from others. Read the handout from the Github repository.
 
-<ImageCard path={require(".//images/intro/2023-07-13-15-23-06.png").default} widthPercentage="100%"/>
+<ImageCard path={require(".//images/intro/mp2_screenshot.png").default} widthPercentage="100%"/>
 
 ## Groupings
 

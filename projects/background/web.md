@@ -61,72 +61,88 @@ We **don't know**. Github does not exactly advertise its server locations for se
 
 ### Local Web Server
 
-When you type in the command `flask run` for the mini projects, you are essentially spawning a **web server** in your own computer. That is why you can access your website by typing the URL `http://127.0.0.1:5000/` in your web browser. The value `127.0.0.1` means **yourself** (your own addresss), so your browser will send a **request packet** addressed to yourself, which will arrive at the python web server you are currently running. It will then reply with the necessary files for your browser to render the MP1 welcome page:
+When you type in the command `streamlit run Home.py` in your own computer, you are essentially spawning a **web server** in your own computer. That is why you can access your website by typing the URL `http://127.0.0.1:5000/` in your web browser. The value `127.0.0.1` means **yourself** (your own addresss), so your browser will send a **request packet** addressed to yourself, which will arrive at the python web server you are currently running. It will then reply with the necessary files for your browser to render the MP1 welcome page:
 
 <ImageCard path={require("./images/21.png").default} widthPercentage="100%"/>
 
-## Hello Flask!
+## Hello Streamlit!
 
-It is useful to try to create your very basic own web server in Python with `flask` before going further into the MP.
+It is useful to try to create your very basic own web server in Python with `streamlit` before going further into the MP.
 
-Flask is a Python **web framework**. It is a tool that you can use so that it is easy to make and deploy a website. It abstracts away the **need to know how** to:
+Streamlit is an open-source Python library that makes it easy to create and share custom web apps for machine learning and data science. With a few lines of code, you can turn data scripts into interactive dashboards and tools, all without needing front-end experience. It's fast, intuitive, and great for prototyping or showcasing models and data insights.
 
-1. Process incoming request from the web browser
-2. Craft the **correct** "response" to the web browser
-3. Run a web server in **port** `5000` (just think of this like buying a house and getting a unit number so people can reach you)
-4. Other unpleasant detail on how the web works, optimisation, etc, making developing and maintaining website so much easier
+There are **plenty of web frameworks** out there: [Ruby on Rails](https://rubyonrails.org/), [Angular](https://angular.io/), [React](https://reactjs.org/), and [Svelte](https://svelte.dev) to name a few. You need to know that not all web frameworks are the same. Some of them are **full stack**, some **front-end**, and some are **micro-framework**. Streamlit is designed more for hosting machine learning and data science. However, we in these mini projects, we will use it to create a simple web app. You can use Streamlit for ML and Data science project if you do the 2D project for DDW.
 
-There are **plenty of web frameworks** out there: [Ruby on Rails](https://rubyonrails.org/), [Angular](https://angular.io/), [React](https://reactjs.org/), and [Svelte](https://svelte.dev) to name a few. You need to know that not all web frameworks are the same. Some of them are **full stack**, some **front-end**, and some are **micro-framework**. Flask is micro-framework (simple, does not require any pre-existing third-library parties to provide common functionalities).
-
-Create a new folder named `flaskexample` in a **path** of your choice, and "open" that folder in your terminal by `cd`-ing to it. Then, you can run the command `pipenv install flask` to install it to the `flaskexample` (matching the folder name) virtual environment.
-
-<ImageCard customClass={"no-invert-color"} path={require("./images/22.png").default} widthPercentage="100%"/>
-
-Now create a new file called `app.py` inside `flaskexample` folder with the following content:
+To create your first web app, create a file called `hello_app.py`. Edit the file and key in the following:
 
 ```python
-from flask import Flask
+import streamlit as st
 
-app = Flask(__name__)
+# Set the title of the app
+st.title("👋 Welcome to the Hello App")
 
-@app.route('/')
-def index():
-    return 'My first server!'
+# Text input for user's name
+name = st.text_input("Enter your name:")
 
-app.run(host='0.0.0.0', port=81)
+# Button to trigger greeting
+if st.button("Say Hello"):
+    if name:
+        st.success(f"Hello {name}!")
+    else:
+        st.warning("Please enter your name.")
 ```
 
-The file `app.py` **must** be in this name. `flask` looks for `app` folder or `app.py` file as an **entry point**.
+In your terminal, navigate to the folder where you saved the file and run:
 
-This will prompt you to open `http://127.0.0.1:5000/` on your browser, and you will be met with the message `My first server!` which is what's returned by the `index()` function above.
+```shell
+streamlit run hello_app.py
+```
 
-<ImageCard customClass={"no-invert-color"} path={require("./images/23.png").default} widthPercentage="100%"/>
-
-The mini project is **more complicated** than just sending a text back to your browser. There are several **routes** (like different **paths**) in the MP; that is if you add a slash `/[path]` at the back of the URL, the `flask` app knows which files to **serve** (send back) to your browser. Looking at routes.py, this should be **obvious**:
+Here's a line-by-line explanation of the `hello_app.py` Streamlit code:
 
 ```python
-from flask import render_template
-from app import application
-
-@application.route('/')
-@application.route('/index')
-def index():
-    return render_template('index.html', title='Mini Project 1 Home')
-
-@application.route('/ex1')
-def exercise1():
-    return render_template('ex1.html', title='Mini Project 1 Exercise 1')
-
-@application.route('/ex2')
-def exercise2():
-    return render_template('ex2.html', title='Mini Project 1 Exercise 2')
+import streamlit as st
 ```
+- This line imports the Streamlit library and gives it the alias `st`, which is used to access all Streamlit functions.
 
-1. If we type `http://127.0.0.1:5000/` (homepage) in the browser, this server send `index.html` file back to the browser
-2. Else if we type `http://127.0.0.1:5000/ex1` (homepage) in the browser, this server send `ex1.html` file back to the browser
-3. Else if we type `http://127.0.0.1:5000/ex2` (homepage) in the browser, this server send `ex2.html` file back to the browser
-4. Else, a generic URL not found message will be sent back to the browser (automatically handled by Flask unless you override)
-   - Try typing `http://127.0.0.1:5000/ex3` and see what happens
+```python
+st.title("👋 Welcome to the Hello App")
+```
+- This sets the title of the web app. It appears at the top of the page. The emoji is optional but makes it more friendly.
+
+```python
+name = st.text_input("Enter your name:")
+```
+- This creates a text input box in the app where the user can type their name.
+- The text `"Enter your name:"` is the label shown above the input field.
+- The user's input is stored in the variable `name`.
+
+```python
+if st.button("Say Hello"):
+```
+- This adds a button labeled `"Say Hello"` to the app.
+- When the button is clicked, the code inside the `if` block runs.
+
+```python
+    if name:
+        st.success(f"Hello {name}!")
+```
+- This checks if the user has entered something in the `name` input.
+- If so, it displays a success message that says `"Hello <name>!"`.
+
+```python
+    else:
+        st.warning("Please enter your name.")
+```
+- If the user clicks the button but didn’t type anything, this shows a warning message asking them to enter their name.
+
+
+This simple app demonstrates:
+- Taking user input with `st.text_input`
+- Reacting to a button click with `st.button`
+- Displaying messages using `st.success` and `st.warning`
+
+It's a great beginner project to get familiar with how Streamlit handles interaction.
 
 ## Conclusion
 
@@ -141,4 +157,4 @@ We don't need to know or care how `HTTP` works to send the `My first server!` re
 
 ### Where to go from here?
 
-If you have not tried any other web development framework before, you can give Flask a try. There are plenty of amazing online tutorials about Flask out there [like this one](https://www.youtube.com/watch?v=mqhxxeeTbu0&list=PLzMcBGfZo4-n4vJJybUVV3Un_NFS5EOgX). If you want something else fancier then you can give [Svelte](https://www.youtube.com/watch?v=zojEMeQGGHs&list=PL4cUxeGkcC9hlbrVO_2QFVqVPhlZmz7tO) a try.
+The above example show a single page app. Streamlit can also be used to create multipage app which will be the case for your mini projects. You can read the [Tutorial for creating a multipage app](https://docs.streamlit.io/get-started/tutorials/create-a-multipage-app). This will help you understand the mini project better.
