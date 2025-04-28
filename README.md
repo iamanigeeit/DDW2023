@@ -4,7 +4,17 @@ This is an experimental course website for 10.020 Data Driven World module.
 
 You can contribute by forking this repository and creating pull requests 😊
 
-## Getting started
+## Getting Started (For your own use)
+
+1. Clone this project, then `npm install`
+2. Afterwards, type `npm start`
+3. You can publish this site to github automatically by pushing this to your `master` branch. See `.github/workflows/deploy.yml` action script
+4. You need to give **read and write** Action permission in your workflow
+   ![](images/README/2023-07-13-10-45-47.png)
+5. Edit `docusaurus.config.js` accordingly to use on your site and deploy it on your repo, namely the `baseUrl`
+6. The file `src/pages/index.js` contains the homepage. Edit it to your liking.
+
+## How to Contribute
 
 1. The website is built from files in this repo using Github workflows.
 2. To contribute, fork this repo, then **create a test branch**. This allows you to create a self-hosted site to test any changes.
@@ -12,7 +22,7 @@ You can contribute by forking this repository and creating pull requests 😊
    - Go to `docusaurus.config.js` and edit the `url` and `baseUrl` to match your username and repo name.
    - Go to `.github/workflows/deploy.yml`and change `on push branches` from `main` to `test`.
 4. Go to your repo on the Github site > Settings > Pages > change Source to **Github Actions**
-5. Commit your `docusaurus.config.js` and `deploy.yml` and push to test branch
+5. Commit your `docusaurus.config.js` and `deploy.yml` and push to `test` branch
 6. In Github > Actions, check that the workflow to build is triggered on the `test` branch. If it doesn't work, you may need to set the permissions under Actions > General. When successful, Github should create a new branch `gh-pages` for the built website files.
 7. Go to Github > Settings > Pages again and switch source back to **Deploy from a branch**. Select `gh-pages` and Save (you must force it to save if it doesn't).
 8. The site should be up at your given URL. If it is not (404 error), go back to Github > Actions and check the `pages build and deployment` workflow ran correctly on the `gh-pages` branch.
