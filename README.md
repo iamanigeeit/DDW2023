@@ -26,8 +26,9 @@ You can contribute by forking this repository and creating pull requests 😊
 6. In Github > Actions, check that the workflow to build is triggered on the `test` branch. If it doesn't work, you may need to set the permissions under Actions > General. When successful, Github should create a new branch `gh-pages` for the built website files.
 7. Go to Github > Settings > Pages again and switch source back to **Deploy from a branch**. Select `gh-pages` and Save (you must force it to save if it doesn't).
 8. The site should be up at your given URL. If it is not (404 error), go back to Github > Actions and check the `pages build and deployment` workflow ran correctly on the `gh-pages` branch.
+9. To stop deployment on your `main` branch, go to Github > Settings > Environments > github-pages > Deployment branches and tags, then remove `main`.
 
-Now you can checkout the main repo, and push new commits to both main and test branch. View the changes on your site, and when you are done, submit pull requests through the `main` branch.
+Now you can checkout the main repo, push new commits to both `main` and force-push to `test`. View the changes on your site, and when you are done, submit pull requests through the `main` branch.
 
 
 ## Building Locally
