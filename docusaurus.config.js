@@ -10,16 +10,16 @@ const katex = require("rehype-katex");
 const config = {
   title: "Data Driven World 🌏",
   tagline: "The best way to learn programming is to write programs",
-  url: "https://data-driven-world.github.io",
-  baseUrl: "/2023/",
+  url: "https://iamanigeeit.github.io",
+  baseUrl: "/DDW2023/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "data-driven-world", // Usually your GitHub org/user name.
-  projectName: "2023", // Usually your repo name.
+  organizationName: "iamanigeeit", // Usually your GitHub org/user name.
+  projectName: "DDW2023", // Usually your repo name.
 
   presets: [
     [
