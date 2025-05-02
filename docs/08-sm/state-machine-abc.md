@@ -491,7 +491,8 @@ print(acc.step(11)) # outputs 41
 print(acc.step(-41)) # outputs 0
 ```
 
-    ---------------------------------------------------------------------------
+```python
+---------------------------------------------------------------------------
 
     AttributeError                            Traceback (most recent call last)
 
@@ -512,8 +513,10 @@ print(acc.step(-41)) # outputs 0
 
 
     AttributeError: 'AccumulatorSM' object has no attribute 'state'
+```
 
 Python produces and error saying that the `AccumulatorSM` object has no attribute called `state`. The reason is that the attribute `state` is only created and assigned inside the method `start()`. Recall in our class definition how the method is implemented.
+
 
 ```python
 class StateMachine(ABC):

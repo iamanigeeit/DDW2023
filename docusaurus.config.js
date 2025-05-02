@@ -32,7 +32,6 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           routeBasePath: "notes",
           admonitions: {
-            tag: ":::",
             keywords: [
               "info",
               "success",
@@ -73,7 +72,6 @@ const config = {
         routeBasePath: "projects",
         sidebarPath: require.resolve("./sidebars.js"),
         admonitions: {
-          tag: ":::",
           keywords: [
             "info",
             "success",

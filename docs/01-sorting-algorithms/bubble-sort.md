@@ -14,8 +14,8 @@ Bubble sort is a simple comparison-based sorting algorithm that repeatedly swaps
 ### Goals
 
 By the end of this lesson, you should be able to:
-- Describe **bubble sort** algorithm and ways to optimise it.
-- Implement bubble sort algorithm to **sort** a sequence of number.
+- Describe the **bubble sort** algorithm and ways to optimize it.
+- Implement the bubble sort algorithm to **sort** a sequence of numbers.
 
 :::keyword Keywords
 `sorting`, `bubble sort`
@@ -38,7 +38,7 @@ Steps:
 The purpose of this button is to show you the pseudocode of the algorithm. But more importantly, the button is placed there so that you **don't immediately** see the pseudocode. The purpose is for you to **write down your own pseudocode** and compare your pseudocode with what is provided in these notes.
 </DeepDive>
 
-Another thing about pseudocode is that it is <span style={{ "color":"red", "fontWeight": "bold" }}>not</span> a Python code.
+Another thing about pseudocode is that it is <span style={{ "color":"red", "fontWeight": "bold" }}>not</span> Python code.
 
 :::warning Pseudocode ≠ Code
 **Do not copy and paste the pseudocode** into any Python interpreter or Jupyter notebook cell and expect it to work. There is a good reason why it is called _pseudocode_ and not _pythoncode_. See [definition of pseudo](https://www.google.com/search?client=opera&q=define%3A+pseudo&sourceid=opera&ie=UTF-8&oe=UTF-8).
@@ -167,11 +167,11 @@ Here's an animated example from Wikipedia,sorting a different sequence of number
 
 After we work on the test cases, we can now write down the steps in pseudocode. Several things to note from the above test cases:
 
-- There are two kind of iterations:
+- There are two iteration levels:
   1. the _inner_ iteration is when we compare the pairs (a, b) and do a swap if $a>b$,
   1. the _outer_ iteration is when repeat the inner iteration pass starting from the first pair again.
-- The number of _inner_ iteration is the $n-1$, where $n$ is the number of elements in the list. This is because the inner iteration compares a pair. So if there is $n$ elements, there will be $n-1$ pairs to compare.
-- The number of _outer_ iteration is also $n-1$. You can refer back to the case above that there were 9 _outer_ iterations for the 10 elements.
+- The number of _inner_ iterations is $n-1$, where $n$ is the number of elements in the list. This is because the inner iteration compares a pair. So if there is $n$ elements, there will be $n-1$ pairs to compare.
+- The number of _outer_ iterations is also $n-1$. You can refer back to the case above that there were 9 _outer_ iterations for the 10 elements.
 
 Let's write down what we did in the above case. Note that in this algorithm we chose not to return the sorted list as a new object, but rather _sort the list in place_. This means that the input list is modified and the sorted list exists in the object pointed by the input list. The advantage of this is that the list need not be duplicated and the memory is saved as we deal only with one list.
 
@@ -194,13 +194,13 @@ Steps:
 
 </DeepDive>
 
-## Optimised Bubble Sort
+## Optimized Bubble Sort
 
 ### Bubble Sort v2
 
-We can optimized bubble sort algorithm by noting the following:
+We can optimize bubble sort by noting that:
 
-> If the sequence is already in order, we can reduce the next _outer_ iteration.
+> If the sequence is already in order, we can stop the _outer_ iteration.
 
 For example, if the input is
 
@@ -210,7 +210,7 @@ The first iteration will push 16 to the last position.
 
 [1, 2, 3, 4, 5, **16**]
 
-In the second iteration, no swap is made since all the numbers are already in the correct order. However, with the above algorithm, the outer iteration will still repeat for $n-1$ times. We can conclude therefore that if no swap is made in one pass of _outer_ iteration, the sequence is already in order, and we can stop the _outer_ iteration. We can then modify the pseudocode as follows.
+In the second iteration, no swap is made since all the numbers are already in the correct order. However, in v1, the outer iteration will still repeat for $n-1$ times. We can conclude therefore that if no swap is made in one pass of _outer_ iteration, the sequence is already in order, and we can stop the _outer_ iteration. Thus in this example, the number of _outer_ iterations is much less in v2 compared to v1. We can then modify the pseudocode as follows.
 
 <DeepDive title="Show Pseudocode">
 
@@ -234,9 +234,9 @@ Steps:
 
 </DeepDive>
 
-### Comparison with v1
+### Bubble Sort v3
 
-Let's compare this with version 1. Notice that the number of _outer_ iteration is much less in version two as compared to version one. The n-th pass of the _outer_ iteration will place the n-th largest number to its final position. For example, in the given input below,
+The n-th pass of the _outer_ iteration will always place the n-th largest number to its final position. For example, in the given input below,
 
 [16, 14, 10, 8, 7, 8, 3, 2, 4, 1]
 
@@ -244,11 +244,9 @@ In the 1-st _outer_ pass, the 1-st largest number (i.e. 16) will be placed to it
 
 [14, 10, 8, 7, 8, 3, 2, 4, 1, **16**]
 
-This means that we can reduce the number of _inner_ iteration. Instead of comparing $n-1$ pairs for each _inner_ iteration, we can reduce the number of _inner_ iteration after each pass of _outer_ iteration is done. For example, in the above example, we have 10 elements. In the first _outer_ iteration, we have 9 comparisons in the _inner_ iteration. In the next _outer_ iteration, we can simply do 8 comparisons instead of 9. In the third _outer_ iteration, we can do just 7 comparisons instead of 9, and so on.
+This means that we can reduce the number of _inner_ iterations. Instead of comparing $n-1$ pairs for each _inner_ iteration, we can reduce the number of _inner_ iteration after each pass of _outer_ iteration is done. For example, in the above example, we have 10 elements. In the first _outer_ iteration, we have 9 comparisons in the _inner_ iteration. In the next _outer_ iteration, we can simply do 8 comparisons instead of 9. In the third _outer_ iteration, we can do just 7 comparisons instead of 9, and so on.
 
-### Bubble Sort v3
-
-We can further optimise and re-write the pseudocode as follows.
+We can further optimize and re-write the pseudocode:
 
 <DeepDive title="Show Pseudocode">
 
@@ -277,7 +275,7 @@ The additional step is 3.3 which is to reduce the number of $n$. With this, Step
 
 ### Bubble Sort v4
 
-It can happen that more than one elements are place in their final positions in one _outer_ iteration pass. This means that we don't have to decrease the number of _inner_ iteration by 1 on each step of _outer_ iteration. We can record down, at which position was the last swap, and on the next _outer_ iteration, we can do comparison up to that last position. To illustrate this, consider the following input.
+It can happen that more than one elements are in their final positions in one _outer_ iteration pass. This means that we don't have to decrease the number of _inner_ iteration by 1 on each step of _outer_ iteration. We can record down which position was the last swap at, and on the next _outer_ iteration, we can do comparison up to that last position. To illustrate this, consider the following input.
 
 [1000, 1, 4, 7, 3, 10, 100]
 
