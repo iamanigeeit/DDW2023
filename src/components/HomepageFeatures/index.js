@@ -15,6 +15,16 @@ const FeatureList = [
     ),
   },
   {
+    title: "State Machine",
+    Svg: require("@site/static/assets/icons/sm.svg").default,
+    description: (
+      <>
+        Towards the end of the course, students will focus on various state
+        machine designs and implement it using object oriented paradigm.
+      </>
+    ),
+  },
+  {
     title: "Intro to Machine Learning",
     Svg: require("@site/static/assets/icons/ml.svg").default,
     description: (
@@ -23,16 +33,6 @@ const FeatureList = [
         machine learning for categorical and continuous data. Students will be
         able to apply both algorithms and basic machine learning techniques to
         solve real-world problems driven by data and computation.
-      </>
-    ),
-  },
-  {
-    title: "State Machine",
-    Svg: require("@site/static/assets/icons/sm.svg").default,
-    description: (
-      <>
-        Towards the end of the course, students will focus on various state
-        machine designs and implement it using object oriented paradigm.
       </>
     ),
   },
