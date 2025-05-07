@@ -32,3 +32,7 @@ This mini project is to create a simple web application for math quiz where user
 ## Groupings
 
 Students should work as a **pair** and practice pair programming in doing the mini project.
+
+## (Optional) Additional Projects
+
+If you are keen to learn more about web technologies, you can try to do a similar project using Flask web framework. You can find the instructions in the [old mini project repository](https://github.com/Data-Driven-World/d2w_mini_projects). There is one additional project which is to implement a single player Tic Tac Toe where you have to write a code on the computer's algorithm to choose a move and a two player Tic Tac Toe web app. Enjoy.
