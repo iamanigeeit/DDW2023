@@ -41,7 +41,7 @@ One reason why we introduce different sorting algorithms is to show you that the
 Before discussing the Heapsort algorithm, we have to introduce a new data structure called _binary heap_ or simply called _heap_.
 
 :::info Heap
-The heap is an array of object that we can view as a nearly perfect binary tree (or we can call it a _complete_ binary tree).
+The heap is an array of objects that we can view as a nearly perfect binary tree (or we can call it a _complete_ binary tree).
 :::
 
 > A perfect binary tree is a full binary tree which **all** leaf nodes are at the same level. Complete binary trees are nearly perfect **except** the last level and all the leaves at the last level are packed towards the left.
@@ -56,13 +56,13 @@ We have indicated the indices of each element in the array, which starts from 0.
 
 <ImageCard path={require("./images/Binary_Heap.png").default} widthPercentage="70%"/>
 
-A _tree_ in computer science is up-side down. It consists of _nodes_ and it has one _root_ node, which is at the top. In a _binary_ tree, each node has only _two_ children, which we will call the _left_ child and the _right_ child. Every node, except the root, has a _parent_ node. The node without children is what we called a _leaf_.
+A _tree_ in computer science is upside-down. It consists of _nodes_ and it has one _root_ node, which is at the top. In a _binary_ tree, each node has only _two_ children, which we will call the _left_ child and the _right_ child. Every node, except the root, has a _parent_ node. A node without children is called a _leaf_.
 
 Let's take a look at the example above and put in all the terms we have mentioned:
 
-- In the above tree, we have 10 nodes, where each node is each element in the array.
-- The _root_ node is the element 16, which has an index 0 in the array.
-- Node with element 16 (root node) has two children. The _left_ child is a node with the element 14, while the _right_ child is a node with the element 10.
+- In the above tree, we have 10 nodes, where each node is an element in the array.
+- The _root_ node is the element 16, which has index 0 in the array.
+- The node with element 16 (root node) has two children. The _left_ child is a node with the element 14, while the _right_ child is a node with the element 10.
 - Elements 9, 3, 2, 4, and 1 are all _leaves_ because they do not have any children.
 - The node with element 7 (index 4) has only one child, which is the node with element 1 (index 9).
 - The node with element 1 (index 9) has node with index 4 as its _parent_.
@@ -91,7 +91,7 @@ def parent(index):
     # Input: index of current node
     # Output: index of the parent node
     # Steps: return integer((index-1) / 2)
-    return int((index-1) / 2)
+    return (index-1) // 2
 
 # Test
 print(parent(0))
@@ -104,7 +104,7 @@ print(parent(8))
 Test the above pseudocode and ensure it gives the correct left child nodes. You can directly edit the live codeblock above and run it on your browser.
 :::
 
-We can test the above pseudocode. $(1-1)/2 = 0$ and $(2-1)/2 = 0$ for the second level nodes. Similarly, $(3-1)/2 = 1$ and $(4-1)/2 = 1$ for the third level nodes with the parent index 1. And $(5-1)/2 =2$ together with $(6-1)/2= 2$ for the third level nodes with the parent index 2. Note that we use _integer_ division to get the correct parent node.
+We can test the above pseudocode. $(1-1)//2 = 0$ and $(2-1)//2 = 0$ for the second level nodes. Similarly, $(3-1)//2 = 1$ and $(4-1)//2 = 1$ for the third level nodes with the parent index 1. And $(5-1)//2 =2$ together with $(6-1)//2= 2$ for the third level nodes with the parent index 2. Note that we use _integer_ division to get the correct parent node.
 
 #### Left Child Index
 
@@ -121,6 +121,9 @@ We can get the left child index using the following:
 # @args: index (int)
 def left(index):
     # Input: index of current node
+    # Output: index of the left child node
+    # Steps: return 2 * index + 1
+    return 2 * index + 1
     # Output: index of the left child node
     # Steps:
     # 1. return (index * 2) + 1
@@ -158,7 +161,7 @@ print(right(3))
 
 ## Heap Property
 
-There are two kinds of _heap_: max-heaps and min-heaps. In this case we will discuss only _max-heaps_. Both heaps must satisfy the **heap property**, which specifies the kind of heap we are dealing with. The **max-heap property** is specified as follows:
+There are two kinds of _heap_: max-heaps and min-heaps. In this case we will discuss only _max-heaps_. The **max-heap property** is specified as follows:
 
 :::note Max Heap Property
 For all nodes except the root:
@@ -173,11 +176,11 @@ This means that in a max-heap, the parent nodes are always greater that their ch
 
 ## Maintaining The Heap Property with `Heapify`
 
-We will now describe an algorithm on how to maintain the _heap property_ and in this example is the _max-heap property_. We will call this procedures to maintain the _max-heap property_ as max-heapify. The idea is that for a given node, we will push down this node in such a way that the _max-heap property is satisfied_. This assumes that the _left_ child of the given node forms a tree that satisfies _max-heap property_. Similarly, the _right_ child of the given node forms a tree that satisfies _max-heap property_. The only part that does not satisfy the _max-heap property_ is the current node and its two children.
+We will now describe an algorithm on how to maintain the _heap property_ and (here the _max-heap property_). We will call the procedure to maintain the _max-heap property_ `max-heapify`. The idea is that for a given node, we will push down this node in such a way that the _max-heap property is satisfied_. We will assume that both the _left_ and _right_ child of the given node forms a tree that satisfies _max-heap property_. The only part that does not satisfy the _max-heap property_ is the current node and its two children.
 
 ### (P)roblem Statement
 
-Given an index of a node in a binary tree, where the left and the right children of that node satisfies the _max-heap property_, restore the _max-heap property_ of the tree starting from the current node.
+Given an index of a node in a binary tree, where the left and the right children of that node satisfy the _max-heap property_, restore the _max-heap property_ of the tree starting from the current node.
 
 ```
     Input: index of the current node in a heap
@@ -204,7 +207,7 @@ Note the following:
 - The left child, i.e. tree starting from index 3 (elements 14, with children of 2 and 8), forms a tree that satisfies the _max-heap property_.
 - The right child, i.e. tree starting from index 4 (element 7, with one children of 1), forms a tree that satisfies the _max-heap property_.
 
-The procedure of _max-heapify_ will push the current node by swapping with the largest node along the way to satisfy the _max-heap property_. To do that, in the process of pushing the nodes, we will swap that node with the _largest_ child. In this way, we satisfy the _max-heap property_.
+The procedure of `max_heapify` will push the current node by swapping with the largest node along the way to satisfy the _max-heap property_. To do that, in the process of pushing the nodes, we will swap that node with the _largest_ child. In this way, we satisfy the _max-heap property_.
 
 Let's look at the particular example above. Given the tree above, we do the folloing:
 
@@ -229,6 +232,7 @@ Let's look at the particular example above. Given the tree above, we do the foll
 #### Max-Heapify v1
 
 We can write down the steps we did in the previous section as follows.
+
 <DeepDive title="Show Pseudocode">
 
 ```
@@ -280,13 +284,13 @@ We introduced a boolean variable called `swapped`. At every iteration, we set `s
 
 ## Building A Heap
 
-We can then use the previous procedure _max-heapify_ to build a _binary heap_ data structure from any arbitrary array. The idea is to go through every nodes in the tree and _heapify_ them. However, we need not do for all the nodes, but rather only _half_ of those nodes. The reason is that we do not need to heapify the _leaves_.
+We can then use the previous procedure `max-heapify` to build a _binary heap_ data structure from any arbitrary array. The idea is to go through every node in the tree and `heapify` them. However, we need to do this for only _half_ of those nodes, because we do not need to heapify the _leaves_.
 
-We can show that the elements in the array from index $n/2$ to $n-1$ are all leaves. We do not need to push down these nodes as they do not have any children. So we can stry from element at position $n/2 - 1$ and move up to element at position 0.
+We can show that the elements in the array from index $n/2$ to $n-1$ are all leaves. We do not need to push down these nodes as they do not have any children. So we can start from index $n/2 - 1$ and move up to position 0.
 
 ### (P)roblem Statement
 
-Given an arbitrary array, re-order the elements in such a way that it satisfies _max-heap property_.
+Given an arbitrary array, re-order the elements in such a way that it satisfies the _max-heap property_.
 
 ```
 Input: any arbitrary array of integers
@@ -304,7 +308,7 @@ We first visualize this array as a binary tree as shown below. Note that this tr
 
 <ImageCard path={require("./images/Build_Heap_1.png").default} widthPercentage="70%"/>
 
-We will start from the middle index, i.e. $n/2 - 1 = 10/2 - 1 = 4$, which is the fifth element, i.e. 14. Notice that all the elements after 14 are all _leaves_. We call _max-heapify_ on 14 and the result is a swap between 14 and 16. We only have one iteration because now 14 has reached the end of the array and cannot be compared with any other nodes. In the figure below, we indicate the next element to consider with a _dotted_ circle.
+We will start from the middle index, i.e. $n//2 - 1 = 10//2 - 1 = 4$, which is the fifth element, i.e. 14. Notice that all the elements after 14 are all _leaves_. We call `max-heapify` on 14 and the result is a swap between 14 and 16. We only have one iteration because now 14 has reached the end of the array and cannot be compared with any other nodes. In the figure below, we indicate the next element to consider with a _dotted_ circle.
 
 [1, 2, 8, 7, **14**, 9, 3, 10, 4, 16]
 
@@ -312,7 +316,7 @@ We will start from the middle index, i.e. $n/2 - 1 = 10/2 - 1 = 4$, which is the
 
 [1, 2, 8, 7, **16**, 9, 3, 10, 4, **14**]
 
-Now we move to the element on the left of 16, which is 7. The result of _max-heapify_ will swap 7 with 10.
+Now we move to the element on the left of 16, which is 7. The result of `max_heapify` will swap 7 with 10.
 
 [1, 2, 8, **7**, 16, 9, 3, 10, 4, 14]
 
@@ -320,7 +324,7 @@ Now we move to the element on the left of 16, which is 7. The result of _max-hea
 
 [1, 2, 8, **10**, 16, 9, 3, **7**, 4, 14]
 
-Now, we move to the next element, which is 8. The result of _max-heapify_ will swap 8 with 9.
+Now, we move to the next element, which is 8. The result of `max_heapify` will swap 8 with 9.
 
 [1, 2, **8**, 10, 16, 9, 3, 7, 4, 14]
 
@@ -328,7 +332,7 @@ Now, we move to the next element, which is 8. The result of _max-heapify_ will s
 
 [1, 2, **9**, 10, 16, **8**, 3, 7, 4, 14]
 
-We move on to the next element, which is 2. The result of _max-heapify_ will swap 2 with 16, and then 2 with 14.
+We move on to the next element, which is 2. The result of `max_heapify` will swap 2 with 16, and then 2 with 14.
 
 [1, **2**, 9, 10, **16**, 8, 3, 7, 4, 14]
 
@@ -344,7 +348,7 @@ and then,
 
 [1, 16, 9, 10, **14**, 8, 3, 7, 4, **2**]
 
-And now we move to the last element, which is 1. The result of _max-heapify_ will swap 1 with 16, and then 1 with 14, and finally 1 with 2.
+And now we move to the last element, which is 1. The result of `max_heapify` will swap 1 with 16, and then 1 with 14, and finally 1 with 2.
 
 [**1**, **16**, 9, 10, 14, 8, 3, 7, 4, 2]
 
@@ -375,6 +379,7 @@ Once we reach the last element, the whole array now satisfies the _max-heap prop
 ### (D)esign of Algorithm
 
 We can then write down the steps above as a pseudocode as follows:
+
 <DeepDive title="Show Pseudocode">
 
 ```
@@ -384,7 +389,7 @@ Input:
 Output: None, sort the element in place
 Steps:
 1. n = length of array
-2. starting_index = integer(n / 2) - 1 # start from the middle or non-leaf node
+2. starting_index = floor(n / 2) - 1 # start from the middle or non-leaf node
 3. For current_index in Range(from starting_index down to 0), do:
     3.1 call max-heapify(array, current_index)
 ```
