@@ -71,15 +71,15 @@ export default function Home() {
               />
               <LinkCard
                 topIcon
-                label="Introduction to Machine Learning"
-                description="The core idea behind machine learning is to enable computers to analyze and interpret large amounts of data, identify patterns, and make informed predictions or decisions based on that information. Instead of relying on explicit instructions, machine learning algorithms are designed to learn from examples and adapt their behavior accordingly."
-                Svg={gs_3}
-              />
-              <LinkCard
-                topIcon
                 label="State Machines"
                 description="State machines are essential tools in computer science and control systems, and understanding their principles is crucial for building robust and efficient software and hardware systems. "
                 Svg={gs_4}
+              />
+              <LinkCard
+                topIcon
+                label="Introduction to Machine Learning"
+                description="The core idea behind machine learning is to enable computers to analyze and interpret large amounts of data, identify patterns, and make informed predictions or decisions based on that information. Instead of relying on explicit instructions, machine learning algorithms are designed to learn from examples and adapt their behavior accordingly."
+                Svg={gs_3}
               />
             </LinkCardGrid>
           </div>

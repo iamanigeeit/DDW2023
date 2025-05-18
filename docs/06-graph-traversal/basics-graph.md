@@ -11,6 +11,15 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 Graph theory is a mathematical discipline that studies the properties and relationships of graphs, which consist of nodes (vertices) connected by edges, enabling analysis of various real-world systems and phenomena.
 
+Graph theory is also a fundamental aspect of Artificial Intelligence (AI) that enables the representation and analysis of complex relationships and structures. In AI, graphs are used to model networks, where nodes (vertices) represent entities and edges represent connections or interactions between these entities. This allows for the visualization and manipulation of data in a way that reveals patterns, optimizes processes, and solves problems. For instance, in social network analysis, graphs can represent individuals and their connections, helping to identify influential nodes and community structures. In computer vision, graphs can model the relationships between different parts of an image, aiding in object recognition and scene understanding. Additionally, graphs are used in natural language processing to represent the syntactic structure of sentences, facilitating tasks such as parsing and semantic analysis. Other applications include pathfinding algorithms in robotics, where graphs help in navigating environments, and recommendation systems, where graphs model user-item interactions to suggest relevant content. Overall, graph theory provides a versatile and powerful toolset for AI, enabling the efficient handling and interpretation of complex data.
+
+Applications of Graph in AI:
+1. **Social Network Analysis**: Identifying influential nodes and community structures.
+2. **Computer Vision**: Modeling relationships between parts of an image for object recognition and scene understanding.
+3. **Natural Language Processing**: Representing syntactic structures of sentences for parsing and semantic analysis.
+4. **Robotics**: Pathfinding algorithms for navigating environments.
+5. **Recommendation Systems**: Modeling user-item interactions to suggest relevant content.
+
 <ChatBaseBubble/>
 
 ### Goals
