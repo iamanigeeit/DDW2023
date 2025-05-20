@@ -82,6 +82,7 @@ First make sure that you have installed `pipenv` package. If not, run the follow
 python -m pip install --user pipenv
 ```
 
+<a id="local"></a>
 We will call `mini-project-2-template` the **root** folder of our application. 
 
 From the root folder, install the packages specified in the `Pipfile`.
@@ -465,16 +466,19 @@ git clone https://your-mini-project-2-repo-url
 
 **Replace the URL** with your mini project 2 URL from the Github repository page, then follow all the Virtual Environment steps above.
 
-### Installing Enviroment Locally
+### Installing Environment Locally
 
-The `Pipfile` was tested in Vocareum with Python 3.10. If you use another version of Python, you can edit `Pipfile` to your system Python version.
+The `Pipfile` was tested in Vocareum with Python 3.10. Some packages may break if you use a different Python version -- welcome to software engineering dependency hell! We recommend using Miniconda just for this course and create a separate environment for it.
 
-```text
-[requires]
-python_version = "3.10" # edit this part to your Python version
+[Download Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install), then open Anaconda Prompt (Windows) or Terminal (Mac/Linux). Run
+
+```shell
+conda create -n ddw python=3.10 pipenv
+conda activate ddw 
 ```
+This will create a new environment called `ddw` with Python 3.10 and Pipenv installed, and activate it.
 
-Then follow the steps [above](#creating-a-virtual-environment).
+Then follow the steps [above](#local). You can directly use `pipenv` for all commands instead of `python -m pipenv`.
 
 ### Submission
 
