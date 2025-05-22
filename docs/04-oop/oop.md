@@ -220,7 +220,10 @@ TypeError                                 Traceback (most recent call last)
 TypeError: can only concatenate str (not "int") to str
 ```
 
-Encapsulation also allows us to change the internal data without changing the interface to access the data. In the above example, we store the position as a tuple. But what if we want to use *list* or *dictionary* instead? If we create methods to access these internal data, we can change the internal data without changing the way other objects interact with our data. The key is to keep the interface consistent and stable. We do these by creating methods to access our internal data. For example, if we want to change `_pos` internally to be a _dict_, we can change `move` as well:
+Encapsulation also allows us to change the internal data without changing the interface to access the data. In the above example, we store the position as a tuple. But what if we want to use *list* or *dictionary* instead? If we create methods to access these internal data, we can change the internal data without changing the way other objects interact with our data. The key is to keep the interface consistent and stable. We do these by creating methods to access our internal data. 
+
+<!---
+For example, if we want to change `_pos` internally to be a _dict_, we can change `move` as well:
 
 ```python live_py
 class RobotTurtle:
@@ -243,10 +246,11 @@ class RobotTurtle:
     def tell_name(self):
         print(f"My name is {self._name}")
 ```
+-->
 
 Therefore, it is important that we do encapsulation. Encapsulation ensures that any access to the data should be done through some specific methods.
 
-Let's look at another example of why we want to do encapsulation. Let's say we want to _update_ our Robot class definition to implement relative coordinates where the robot has a absolute position and a relative position with respect to some initial position in the map. Let's say, the robot can start at any other position other than `0, 0` and we want to store the absolute position of the robot as its attribute. This change requires a change in the way the programmers set the value of the robot's position since previously the position is always relative to the origin of `0,0`. Such changes may break the code since now the `_pos` attribute means something different. Previously, it is relative to `0, 0` and now it is going to be some absolute position in the map. With encapsulation, however, we can keep the way position is set while changing the internal attributes. For example, we can create `pos` as relative to the initial origin while storing the absolute position internally based on where the initial origin is. Encapsulation simply separates the internal data representation from how others interact with this object. Without encapsulation, we will break the code and require new methods to be created.
+Let's look at another example of why we want to do encapsulation. Let's say we want to _update_ our Robot class definition to implement relative coordinates where the robot has a absolute position and a relative position with respect to some initial position in the map. Let's say, the robot can start at any other position other than `0, 0` and we want to store the absolute position of the robot as its attribute. This change requires a change in the way the programmers set the value of the robot's position since previously the position is always relative to the origin of `0,0`. Such changes may break the code since now the `_pos` attribute means something different. Previously, it is relative to `0, 0` and now it is going to be some absolute position in the map. With encapsulation, however, we can keep the way position is set while changing the internal attributes. For example, we can create `_pos` as relative to the initial origin while storing the absolute position internally based on where the initial origin is. Encapsulation simply separates the internal data representation from how others interact with this object. Without encapsulation, we will break the code and require new methods to be created.
 
 To achieve this data encapsulation, we usually create two kinds of methods:
 
