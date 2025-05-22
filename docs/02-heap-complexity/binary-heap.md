@@ -90,7 +90,8 @@ How do we get index 0 from both indices 1 and 2? And how do we get index 1 from 
 def parent(index):
     # Input: index of current node
     # Output: index of the parent node
-    # Steps: return integer((index-1) / 2)
+    # Steps:
+    # 1. return integer((index-1) / 2)
     return (index-1) // 2
 
 # Test
@@ -122,7 +123,8 @@ We can get the left child index using the following:
 def left(index):
     # Input: index of current node
     # Output: index of the left child node
-    # Steps: return 2 * index + 1
+    # Steps: 
+    # 1. return 2 * index + 1
     return 2 * index + 1
 
 # Test
