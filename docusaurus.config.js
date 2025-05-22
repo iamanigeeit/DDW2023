@@ -242,4 +242,14 @@ const config = {
   },
 };
 
+const fs = require('fs');
+const path = require('path');
+
+// Optional local override
+const localConfigPath = path.resolve(__dirname, 'docusaurus.local.config.js');
+if (fs.existsSync(localConfigPath)) {
+  const localConfig = require(localConfigPath);
+  Object.assign(config, localConfig);
+}
+
 module.exports = config;
