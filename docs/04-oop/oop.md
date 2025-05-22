@@ -118,10 +118,9 @@ My name is T1
 ```
 
 - `my_robot.tell_name()` is calling the method `tell_name()` using the **dot operator**. To call any method, we use the format of
-  ```python live_py
+  ```python
   object.method_name(arguments)
   ```
-- If you run the cell above, you will see "My name is T1" printed on the output
 
 You can actually access the attributes directly and change it, for example
 
