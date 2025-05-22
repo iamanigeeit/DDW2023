@@ -124,10 +124,6 @@ def left(index):
     # Output: index of the left child node
     # Steps: return 2 * index + 1
     return 2 * index + 1
-    # Output: index of the left child node
-    # Steps:
-    # 1. return (index * 2) + 1
-    return (index * 2) + 1
 
 # Test
 print(left(0))

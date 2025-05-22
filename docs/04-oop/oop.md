@@ -54,8 +54,8 @@ The class definition tells Python about your user-defined object and how to crea
 
 First, let's start by defining our `RobotTurtle` class.
 
-```python3
-# Class definitin
+```python live_py
+# Class definition
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
@@ -89,7 +89,7 @@ Some notes on the class definition:
 
 It is important to remember that the class definition is just a description of the object and works as a kind of template or contract. The definition does not create the object itself. The object creation happens by doing the following:
 
-```python
+```python live_py
 # Object Instantiation
 my_robot = RobotTurtle("T1")
 ```
@@ -106,7 +106,7 @@ The above line is what we call as **object instantiation**. When Python executes
 
 Once the object is created, we can access its attributes and methods. For example, you can ask the robot to tell its name.
 
-```python
+```python live_py
 # Accessing object's method
 my_robot.tell_name()
 ```
@@ -118,14 +118,14 @@ My name is T1
 ```
 
 - `my_robot.tell_name()` is calling the method `tell_name()` using the **dot operator**. To call any method, we use the format of
-  ```python
+  ```python live_py
   object.method_name(arguments)
   ```
 - If you run the cell above, you will see "My name is T1" printed on the output
 
 You can actually access the attributes directly and change it, for example
 
-```python
+```python live_py
 # accessing object's attribute
 print(my_robot._speed)
 my_robot._speed = 2
@@ -145,7 +145,7 @@ The output is
 
 The following examples show more examples on how one can access object's attributes and methods using the dot operator.
 
-```python
+```python live_py
 my_robot = RobotTurtle("T2", 2)
 
 print(f'Robot {my_robot._name} initially at {my_robot._pos}')
@@ -185,7 +185,7 @@ Why would we want to have this encapsulation? One purpose is **abstraction**. An
 
 If we let others access the attributes directly, one can assign invalid data into the position attribute, such as the following example.
 
-```python
+```python live_py
 my_robot._pos = "This is not supposed to be allowed"
 print(my_robot._pos)
 ```
@@ -198,7 +198,7 @@ This is not supposed to be allowed
 
 Such assignment should not be allowed in the first place. If it is allowed, then our `move()` method will produce an error now as shown by running the following cell.
 
-```python
+```python live_py
 my_robot.move("up")
 ```
 
@@ -222,7 +222,7 @@ TypeError: can only concatenate str (not "int") to str
 
 Encapsulation also allows us to change the internal data without changing the interface to access the data. In the above example, we store the position as a tuple. But what if we want to use *list* or *dictionary* instead? If we create methods to access these internal data, we can change the internal data without changing the way other objects interact with our data. The key is to keep the interface consistent and stable. We do these by creating methods to access our internal data. For example, if we want to change `_pos` internally to be a _dict_, we can change `move` as well:
 
-```python
+```python live_py
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
@@ -259,7 +259,7 @@ In Python, we do this using the concept of **property**. A _property_ represents
 
 Let's show how we can create a property for position attribute. 
 
-```python
+```python live_py
 # Class definition
 class RobotTurtle:
     # Attributes:
@@ -289,13 +289,13 @@ class RobotTurtle:
 
 Notice the last line of this class definition. We have the following.
 
-```python
+```python live_py
 pos = property(get_pos)
 ```
 
 This line creates a *property* with the name `pos` using the function `property()`. This function takes in at least one argument which is the **getter** function. In the case above, our getter function is `get_pos()`. This is defined as follows in the class.
 
-```python
+```python live_py
     #  getter method
     def get_pos(self):
         return self._pos
@@ -303,7 +303,7 @@ This line creates a *property* with the name `pos` using the function `property(
 
 The function `property()` can take in another argument for the **setter** function. In our case, our position should not be modified directly and so we do not want to create a setter function for our position data. Our position data should be modified only by the `move()` method. On the other hand, we may want to have setter function for `name` of the robot turtle. We can write the following code snippet.
 
-```python
+```python live_py
 class RobotTurtle:
     ...
     # getter method
@@ -319,7 +319,7 @@ class RobotTurtle:
 
 In this case, we created a `name` property that encapsulates the `_name` attribute. To set the data `_name`, one has to use the `set_name()` function. Similarly, to get the data from `_name`, one has to use the `get_name()` function. This may seem pointless, but the getter and setter may contain some logic to it. For example, let's say that we want to make sure only string data is passed to `_name`, we can write:
 
-```python
+```python live_py
     # setter method
     def set_name(self, value):
         if isinstance(value, str) and value != "":
@@ -330,7 +330,7 @@ The above code ensures that the data passed on to our attribute is always a stri
 
 Python provides a "shortcut" to create a property using **function decorators**. This makes the code cleaner and easier to read. The syntax is simple, you just put a decorator `@property` on a getter method of your property. Just make sure that the name of the method is the name of your property. To create the setter, we put another decorator `@property_name.setter` just before our setter function. To rewrite the above code using function decorators, we end up with the following.
 
-```python
+```python live_py
 class RobotTurtle:
     ...
     # getter method
@@ -354,7 +354,7 @@ In the following section, we will use the syntax using the function decorator in
 
 Let's rewrite our `RobotTurtle` class using property to encapsulate the `_name` attribute and `_speed` attribute. To do this, we are going to create two properties, one for `name` and the other one for `speed`. On the other hand, we will create a property for position only with a getter. The reason is that we want position to be modified only by calling the `move()` method.
 
-```python
+```python live_py
 # Class definition
 class RobotTurtle:
     # Attributes:
@@ -405,7 +405,7 @@ class RobotTurtle:
 
 We define a property for `name` as follows:
 
-```python
+```python live_py
     # property getter
     @property
     def name(self):
@@ -426,7 +426,7 @@ Note:
 
 The property for the `speed` is defined similarly.
 
-```python
+```python live_py
     # property getter
     @property
     def speed(self):
@@ -446,7 +446,7 @@ Note:
 
 Let's see some examples on how to use the properties.
 
-```python
+```python live_py
 # this is to create a new object with property, make sure you run the cell with the class definition first
 my_robot = RobotTurtle("T4")
 
@@ -466,7 +466,7 @@ Notice that you use the property name, which are `name` and `speed` respectively
 
 Moreover, you can also change the value using the assignment operator which will call the **setter** method.
 
-```python
+```python live_py
 my_robot.name = "T4new"
 print(my_robot.name)
 my_robot.name = ""
@@ -482,7 +482,7 @@ T4new
 
 Notice that in the second assignment, the name is not assigned to an empty string. It remains as `T4new`. The reason is that our setter only assigns the value if the value is a string and non-empty. Similarly, we can see the same behaviour for speed property.
 
-```python
+```python live_py
 my_robot.speed = 2
 print(my_robot.speed)
 my_robot.speed = -2
@@ -500,7 +500,7 @@ Notice that the second assignment to -2 did not go through because of our setter
 
 On the other hand, we do not have any setter for position. The reason is that we want position to always start from `(0, 0)` and it can only change its position through the method `move()`. Note, however, that we are using a **single leading underscore** as a convention for people not to touch it. We can still enquire the position using the property's getter.
 
-```python
+```python live_py
 print(my_robot.pos)
 ```
 
@@ -512,7 +512,7 @@ The output is
 
 To change its position, it should call the `move()` method.
 
-```python
+```python live_py
 my_robot.move("up")
 my_robot.move("up")
 print(my_robot.pos)
@@ -520,7 +520,7 @@ print(my_robot.pos)
 
 Note that we use the **properties**'s names `self.pos` and `self.speed` in updating the attribute `_pos` and `_speed`. See the `move()` method.
 
-```python
+```python live_py
     def move(self, direction):
         update = {'up' : (self.pos[0], self.pos[1] + self.speed),
                   'down' : (self.pos[0], self.pos[1] - self.speed),
@@ -531,7 +531,7 @@ Note that we use the **properties**'s names `self.pos` and `self.speed` in updat
 
 You can actually still access the attributes since Python does not have a concept of private attribute. This is how you access the attributes with a leading underscore in its name.
 
-```python
+```python live_py
 my_robot._pos
 ```
 
@@ -555,7 +555,7 @@ The above summary are taken from [this article](https://stackoverflow.com/questi
 
 Both `name` and `speed` are what is commonly called **stored** properties. For each stored property there is a corresponding attribute. We can also create what is called **computed** property. A computed property retrieves its value from some other attributes and does not have a setter. To illustrate, let's create a new user-defined object called `Coordinate`.
 
-```python
+```python live_py
 import math
 
 class Coordinate:
@@ -571,7 +571,7 @@ class Coordinate:
 
 In the above class, we have two attributes `x` and `y`. We do not create any properties for these attributes for simplicity. Python encourages simplicity anyway. But here, we create a computed property called `distance`. This property returns the distance of the current x and y from its origin (0, 0). We can test by instantiating the object and assign some values to its attributes.
 
-```python
+```python live_py
 # object instantiation
 p1 = Coordinate(3, 4)
 print(p1.x, p1.y)
@@ -602,7 +602,7 @@ So when should we use a computed property?
 
 An object can be composed of other objects. For example, we have seen that our `RobotTurtle` object is made up of other objects such as `str` for its name, `int` for its speed and tuple for its position. We can also compose an object from other **user-defined** objects. For example, instead of using a tuple for its position, our Robot Turtle class can use the `Coordinate` class.
 
-```python
+```python live_py
 # Class definition
 class RobotTurtle:
     # Attributes:
@@ -653,7 +653,7 @@ class RobotTurtle:
 
 We made two main changes. First, in the `__init__()` instead of initializing to a tuple, we instantiate an object `Coordinate()`.
 
-```python
+```python live_py
     def __init__(self, name, speed=1):
         self.name = name
         self.speed = speed
@@ -662,7 +662,7 @@ We made two main changes. First, in the `__init__()` instead of initializing to 
 
 The initial position is still at (0, 0) but now the type is no longer a tuple, but rather, a `Coordinate` class. The second change is on the `move()` method.
 
-```python
+```python live_py
     def move(self, direction):
         update = {'up' : Coordinate(self.pos.x, self.pos.y + self.speed),
                   'down' : Coordinate(self.pos.x, self.pos.y - self.speed),
@@ -675,7 +675,7 @@ Instead of using indices like `self.pos[0]` and `self.pos[1]`, we now use the do
 
 We can now create the object and test our new class as follows.
 
-```python
+```python live_py
 my_robot = RobotTurtle("T with Coordinate")
 print(my_robot.pos)
 ```
@@ -688,7 +688,7 @@ The output is
 
 Notice that now `pos` is a `Coordinate` object. We can access its attributes as usual.
 
-```python
+```python live_py
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
@@ -700,7 +700,7 @@ The output is
 
 We can move the robot using the `move()` method.
 
-```python
+```python live_py
 my_robot.move("right")
 my_robot.move("down")
 print(my_robot.pos.x, my_robot.pos.y)
@@ -718,7 +718,7 @@ Some method names in Python are special and can be overridden. One example of sp
 
 If we print the `Coordinate()` object, we will see the following output.
 
-```python
+```python live_py
 p1 = Coordinate(2, 3)
 print(p1)
 ```
@@ -731,7 +731,7 @@ The output is
 
 Python basically does not understand how to print a `Coordinate()`. But we can tell Python how to convert this object into an `str` which Python can display into the screen. Let's override the method `__str__()`.
 
-```python
+```python live_py
 import math
 
 class Coordinate:
@@ -750,7 +750,7 @@ class Coordinate:
 
 In the above method `__str__()` we return a string whenever Python tries to convert this object into a string. Once we define this special method, we can print a `Coordinate` object.
 
-```python
+```python live_py
 p1 = Coordinate(2, 3)
 print(p1)
 ```
@@ -763,7 +763,7 @@ The output is
 
 Once Coordinate has this method, it can be used whenever the object has some `Coordinate` attributes. For example, we can print our robot position simply by doing the following.
 
-```python
+```python live_py
 my_robot = RobotTurtle("T with Coordinate")
 print(my_robot.pos)
 ```
@@ -776,7 +776,7 @@ The output is
 
 Recall, that previously you have to specify it as
 
-```python
+```python live_py
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
