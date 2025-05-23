@@ -159,7 +159,7 @@ print(right(3))
 
 ## Heap Property
 
-There are two kinds of _heap_: max-heaps and min-heaps. In this case we will discuss only _max-heaps_. The **max-heap property** is specified as follows:
+There are two kinds of _heap_: max-heaps and min-heaps. Both heaps must satisfy the _heap property_, and the heap property tells us whether it is a _min-heap_ or _max_heap. For _max-heaps_, the **max-heap property** is specified as follows:
 
 :::note Max Heap Property
 For all nodes except the root:
@@ -174,7 +174,7 @@ This means that in a max-heap, the parent nodes are always greater that their ch
 
 ## Maintaining The Heap Property with `Heapify`
 
-We will now describe an algorithm on how to maintain the _heap property_ and (here the _max-heap property_). We will call the procedure to maintain the _max-heap property_ `max-heapify`. The idea is that for a given node, we will push down this node in such a way that the _max-heap property is satisfied_. We will assume that both the _left_ and _right_ child of the given node forms a tree that satisfies _max-heap property_. The only part that does not satisfy the _max-heap property_ is the current node and its two children.
+We will now describe an algorithm on how to maintain the _heap property_ (here the _max-heap property_). We will call the procedure to maintain the _max-heap property_ `max-heapify`. The idea is that for a given node, we will push down this node in such a way that the _max-heap property is satisfied_. We will assume that both the _left_ and _right_ child of the given node forms a tree that satisfies _max-heap property_. The only part that does not satisfy the _max-heap property_ is the current node and its two children.
 
 ### (P)roblem Statement
 
@@ -186,7 +186,7 @@ Given an index of a node in a binary tree, where the left and the right children
     Process: re-order the elements in the heap
              in such a way that the max-heap property is satisfied
              from the current index node.
-    assumption:
+    Assumption:
         - left child forms a tree that satisfies max-heap property
         - right child forms a tree that satisfies max-heap property
         - current node with its children may not satisfy max-heap property
