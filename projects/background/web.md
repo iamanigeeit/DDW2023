@@ -19,7 +19,7 @@ Note that everything described here is a **gross** oversimplification of what ac
 
 ## How the Web Works (Baby Edition)
 
-When you type in a URL (a.k.a web address) in your web browser's search bar, you can think of your browser as sending a **request** message out to the internet to reach the recepient with that address matching the URL you just typed. For example, type: `http://natalieagus.net:1234` in your web browser (you need to allow unsecure connection), and you will be faced with this output:
+When you type in a URL (a.k.a web address) in your web browser's search bar, you can think of your browser as sending a **request** message out to the internet to reach the recipient with that address matching the URL you just typed. For example, type: `https://data-driven-world.github.io/2023/webserver.txt` in your web browser, and you will be faced with this output:
 
 <ImageCard path={require("./images/17.png").default} widthPercentage="40%"/>
 
@@ -31,7 +31,7 @@ This is a _website_, an **overtly simple** website containing just a **single** 
 
 ### Looking at Sources
 
-Under `Sources` tab you should see that there's only **one** file called `index` that's sent by `natalieagus.net:1234`. Inside that file we can find a text `My first server!` and **nothing else**. No color, no styling, no images, no videos, no fancy stuffs that you will find in a modern website. Whereas if you load our course website and **inspect**, under Sources tab you will see a lot more files being sent over by `https://data-driven-world.github.io`:
+Under `Sources` tab you should see that there's only **one** file called `index` that's sent by `data-driven-world.github.io`. Inside that file we only have the text `My first server!` and **nothing else**. No color, no styling, no images, no videos, no fancy stuff that you will find in a modern website. Whereas if you load our main course website and **inspect**, under Sources tab you will see a lot more files being sent over by `https://data-driven-world.github.io`:
 
 <ImageCard path={require("./images/20.png").default} widthPercentage="100%"/>
 
@@ -43,7 +43,7 @@ The big question now is: **who** sent these files over to our browser? **Who** i
 
 This "entity" is called a **web server**. Just like a regular restaurant _server_, the web server's job is to **give** (serve) relevant files when **requested**.
 
-A web server is an application (just like any regular application in your computer such as your Elden Ring, Telegram, Web Browser, VSCode, etc) and it _typically_ does not have a graphical user interface. It has **one main job**, to reply to website-related requests directed to it. The "internet" is just a generic name of various **infrastructures** to make it possible for your computer to **communicate** (send "packets" of data) with other computers (servers) around the world so that you can load your Netflix series and play Valorant.
+A web server is an application (just like any regular application in your computer such as your Elden Ring, Telegram, Web Browser, VSCode, etc) and it _typically_ does not have a graphical user interface. It has **one main job**, to reply to website-related requests directed to it. The "internet" is just a generic name of various **infrastructure** to make it possible for your computer to **communicate** (send "packets" of data) with other computers (servers) around the world so that you can load your Netflix series and play Valorant.
 
 > You can think of the Internet as a bunch of _roads_ (medium) made for these "packets" of data to "travel".
 
@@ -51,9 +51,11 @@ A web server is an application (just like any regular application in your comput
 
 ### Physical Location
 
+<!--
 So **where** is the Web Server for `http://natalieagus.net:1234`?
 
 By _where_, we mean _where_ is the computer running the web server to answer requests by browsers accessing `http://natalieagus.net:1234` located? Well, the web server is run on AWS EC2, so the **actual** device running that piece of server program can be [any of these AWS server locations](https://aws.amazon.com/about-aws/global-infrastructure/).
+-->
 
 What about the location of the computer running the web server for `https://data-driven-world.github.io`?
 
