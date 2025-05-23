@@ -15,5 +15,4 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
-![](https://www.dropbox.com/scl/fi/dkcuqrjjg6cwag810zjjm/DDW-Concept-Map-Week-5.drawio.png?rlkey=5wndc999e6q8hm6zdc7sj7ryy&raw=1)
-
+<ImageCard path={require("./images/DDW Concept Map-Week 5.drawio.png").default} widthPercentage="100%"/>

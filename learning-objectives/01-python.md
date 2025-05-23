@@ -13,8 +13,7 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 ### Concept Map
 
-![](https://www.dropbox.com/scl/fi/6c1ia4r827d6ytpm58gel/DDW-Concept-Map-Week-1.drawio.png?rlkey=1udko2cgf6xa3nyej3c1k2g3g&raw=1)
-
+<ImageCard path={require("./images/DDW Concept Map-Week 1.drawio.png").default} widthPercentage="100%"/>
 
 ```mermaid
 flowchart TD
