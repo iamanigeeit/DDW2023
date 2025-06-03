@@ -457,13 +457,6 @@ print(my_robot.name)
 print(my_robot.speed)
 ```
 
-The output is
-
-```sh
-T4
-1
-```
-
 Notice that you use the property name, which are `name` and `speed` respectively instead of its attributes name, i.e. `_name` and `_speed`. This access calls the **getter** method of the respective properties.
 
 Moreover, you can also change the value using the assignment operator which will call the **setter** method.
@@ -491,13 +484,6 @@ my_robot.speed = -2
 print(my_robot.speed)
 ```
 
-The output is
-
-```sh
-2
-2
-```
-
 Notice that the second assignment to -2 did not go through because of our setter method's checking.
 
 On the other hand, we do not have any setter for position. The reason is that we want position to always start from `(0, 0)` and it can only change its position through the method `move()`. Note, however, that we are using a **single leading underscore** as a convention for people not to touch it. We can still enquire the position using the property's getter.
@@ -506,11 +492,6 @@ On the other hand, we do not have any setter for position. The reason is that we
 print(my_robot.pos)
 ```
 
-The output is
-
-```sh
-(0, 0)
-```
 
 To change its position, it should call the `move()` method.
 
@@ -537,11 +518,6 @@ You can actually still access the attributes since Python does not have a concep
 my_robot._pos
 ```
 
-The output is
-
-```sh
-(0, 0)
-```
 
 But it is a convention in Python that when you use a single leading underscore, people should not touch it directly. On the other hand, one can also use **double leading underscores**. This allows [Name Mangling](https://stackoverflow.com/questions/7456807/python-name-mangling) that prevents accidental overloading of methods and name conflicts when you extend a class.
 
@@ -580,12 +556,6 @@ print(p1.x, p1.y)
 print(p1.distance)
 ```
 
-The output is
-
-```sh
-3 4
-5.0
-```
 
 The last line prints the computed property `distance` which is computed from the two attributes `x` and `y`. Notice here that `distance` is printed without parentheses and so it is not a **method** but rather a **property**.
 
@@ -682,11 +652,6 @@ my_robot = RobotTurtle("T with Coordinate")
 print(my_robot.pos)
 ```
 
-The output is
-
-```sh
-<__main__.Coordinate object at 0x7fa838655760>
-```
 
 Notice that now `pos` is a `Coordinate` object. We can access its attributes as usual.
 
@@ -694,11 +659,6 @@ Notice that now `pos` is a `Coordinate` object. We can access its attributes as 
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
-The output is
-
-```sh
-0 0
-```
 
 We can move the robot using the `move()` method.
 
@@ -708,11 +668,6 @@ my_robot.move("down")
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
-The output is
-
-```sh
-1 -1
-```
 
 ## Special Methods
 
@@ -725,11 +680,6 @@ p1 = Coordinate(2, 3)
 print(p1)
 ```
 
-The output is
-
-```sh
-<__main__.Coordinate object at 0x7fa838655b80>
-```
 
 Python basically does not understand how to print a `Coordinate()`. But we can tell Python how to convert this object into an `str` which Python can display into the screen. Let's override the method `__str__()`.
 
@@ -757,11 +707,6 @@ p1 = Coordinate(2, 3)
 print(p1)
 ```
 
-The output is
-
-```sh
-(2, 3)
-```
 
 Once Coordinate has this method, it can be used whenever the object has some `Coordinate` attributes. For example, we can print our robot position simply by doing the following.
 
@@ -770,11 +715,6 @@ my_robot = RobotTurtle("T with Coordinate")
 print(my_robot.pos)
 ```
 
-The output is
-
-```sh
-(0, 0)
-```
 
 Recall, that previously you have to specify it as
 
