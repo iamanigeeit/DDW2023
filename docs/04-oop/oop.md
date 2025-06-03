@@ -111,11 +111,6 @@ Once the object is created, we can access its attributes and methods. For exampl
 my_robot.tell_name()
 ```
 
-The output is
-
-```sh
-My name is T1
-```
 
 - `my_robot.tell_name()` is calling the method `tell_name()` using the **dot operator**. To call any method, we use the format of
   ```python
@@ -131,12 +126,6 @@ my_robot._speed = 2
 print(my_robot._speed)
 ```
 
-The output is
-
-```sh
-1
-2
-```
 
 - the first and the third line access the object's attribute using the **dot operator**.
 - the second line assigned the value 2 into the object's `_speed` attribute.
@@ -153,20 +142,6 @@ for _ in range(4):
     print(f'Robot {my_robot._name} now at {my_robot._pos}')
     my_robot.move('right')
     print(f'Robot {my_robot._name} now at {my_robot._pos}')
-```
-
-The output is
-
-```sh
-Robot T2 initially at (0, 0)
-Robot T2 now at (0, 2)
-Robot T2 now at (2, 2)
-Robot T2 now at (2, 4)
-Robot T2 now at (4, 4)
-Robot T2 now at (4, 6)
-Robot T2 now at (6, 6)
-Robot T2 now at (6, 8)
-Robot T2 now at (8, 8)
 ```
 
 Note:
@@ -189,11 +164,6 @@ my_robot._pos = "This is not supposed to be allowed"
 print(my_robot._pos)
 ```
 
-The output is
-
-```sh
-This is not supposed to be allowed
-```
 
 Such assignment should not be allowed in the first place. If it is allowed, then our `move()` method will produce an error now as shown by running the following cell.
 
@@ -201,23 +171,6 @@ Such assignment should not be allowed in the first place. If it is allowed, then
 my_robot.move("up")
 ```
 
-The output is
-
-```sh
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-/var/folders/9l/s5tr888d1yldwlfg3_yyk7380000gq/T/ipykernel_18003/3587695430.py in <module>
-----> 1 my_robot.move("up")
-
-/var/folders/9l/s5tr888d1yldwlfg3_yyk7380000gq/T/ipykernel_18003/2532245999.py in move(self, direction)
-      9     # Methods:
-     10     def move(self, direction):
----> 11         update = {'up' : (self._pos[0], self._pos[1] + self._speed),
-     12                   'down' : (self._pos[0], self._pos[1] - self._speed),
-     13                   'left' : (self._pos[0] - self._speed, self._pos[1]),
-
-TypeError: can only concatenate str (not "int") to str
-```
 
 Encapsulation also allows us to change the internal data without changing the interface to access the data. In the above example, we store the position as a tuple. But what if we want to use *list* or *dictionary* instead? If we create methods to access these internal data, we can change the internal data without changing the way other objects interact with our data. The key is to keep the interface consistent and stable. We do this by creating methods to access our internal data. 
 
@@ -466,13 +419,6 @@ my_robot.name = "T4new"
 print(my_robot.name)
 my_robot.name = ""
 print(my_robot.name)
-```
-
-The output is
-
-```sh
-T4new
-T4new
 ```
 
 Notice that in the second assignment, the name is not assigned to an empty string. It remains as `T4new`. The reason is that our setter only assigns the value if the value is a string and non-empty. Similarly, we can see the same behaviour for speed property.
