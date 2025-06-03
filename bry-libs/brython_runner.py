@@ -1,4 +1,3 @@
-import __main__
 from browser import document  # type: ignore
 import sys
 import time
@@ -13,7 +12,7 @@ def run(code, node_id, line_shift):
     notify(node_id, {'type': 'start', 'time': time.time()})
     Config.set_id(node_id)
     try:
-        ns = __main__.__dict__
+        ns = sys.modules['__main__'].__dict__
         ns['RESULT_DIV'] = document[Config.OUTPUT_DIV]
         exec(code, ns)
     except Exception as exc:
