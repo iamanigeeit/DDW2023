@@ -244,13 +244,13 @@ class RobotTurtle:
 
 Notice the last line of this class definition. We have the following.
 
-```python live_py
+```python
 pos = property(get_pos)
 ```
 
-This line creates a *property* with the name `pos` using the function `property()`. This function takes in at least one argument which is the **getter** function. In the case above, our getter function is `get_pos()`. This is defined as follows in the class.
+This line creates a *property* with the name `pos` using the function `property()`. This function takes in at least one argument which is the **getter** function. In the case above, our getter function is `get_pos()`. This is defined in the class.
 
-```python live_py
+```python
     #  getter method
     def get_pos(self):
         return self._pos
@@ -258,7 +258,7 @@ This line creates a *property* with the name `pos` using the function `property(
 
 The function `property()` can take in another argument for the **setter** function. In our case, our position should not be modified directly and so we do not want to create a setter function for our position data. Our position data should be modified only by the `move()` method. On the other hand, we may want to have setter function for `name` of the robot turtle. We can write the following code snippet.
 
-```python live_py
+```python
 class RobotTurtle:
     ...
     # getter method
@@ -274,7 +274,7 @@ class RobotTurtle:
 
 In this case, we created a `name` property that encapsulates the `_name` attribute. To set the data `_name`, one has to use the `set_name()` function. Similarly, to get the data from `_name`, one has to use the `get_name()` function. This may seem pointless, but the getter and setter may contain some logic to it. For example, let's say that we want to make sure only string data is passed to `_name`, we can write:
 
-```python live_py
+```python
     # setter method
     def set_name(self, value):
         if isinstance(value, str) and value != "":
@@ -301,7 +301,7 @@ class RobotTurtle:
 ```
 Notice a few things here:
 - We no longer have the line which calls `property()`. 
-- How do we define the name of our property? The answer is that the method name under the decorator `@property` defines the name of our property. 
+- The method name under the decorator `@property` defines the property name. 
 - By default, a property must have a getter function. The function with the decorator `@property` is the getter method. 
 - To create the setter, we need to specify which property this setter belongs, so the syntax specifies the name of the property, i.e. `@name.setter`. 
 
@@ -314,8 +314,9 @@ Let's rewrite our `RobotTurtle` class using property to encapsulate the `_name` 
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        assert isinstance(name, str) and name
+        self._name = name
+        self._speed = speed
         self._pos = (0, 0)
 
     # property getter
@@ -358,9 +359,9 @@ class RobotTurtle:
         print(f"My name is {self.name}")
 ```
 
-We define a property for `name` as follows:
+In the above, we have a property for `name`:
 
-```python live_py
+```python
     # property getter
     @property
     def name(self):
@@ -381,7 +382,7 @@ Note:
 
 The property for the `speed` is defined similarly.
 
-```python live_py
+```python
     # property getter
     @property
     def speed(self):
@@ -449,7 +450,7 @@ print(my_robot.pos)
 
 Note that we use the **properties**'s names `self.pos` and `self.speed` in updating the attribute `_pos` and `_speed`. See the `move()` method.
 
-```python live_py
+```python
     def move(self, direction):
         update = {'up' : (self.pos[0], self.pos[1] + self.speed),
                   'down' : (self.pos[0], self.pos[1] - self.speed),
@@ -458,18 +459,18 @@ Note that we use the **properties**'s names `self.pos` and `self.speed` in updat
         self._pos = update[direction]
 ```
 
-You can actually still access the attributes since Python does not have a concept of private attribute. This is how you access the attributes with a leading underscore in its name.
+You can actually still access the attributes since Python does not have private attributes. This is how you access the attributes with a leading underscore in its name.
 
 ```python live_py
 my_robot._pos
 ```
 
 
-But it is a convention in Python that when you use a single leading underscore, people should not touch it directly. On the other hand, one can also use **double leading underscores**. This allows [Name Mangling](https://stackoverflow.com/questions/7456807/python-name-mangling) that prevents accidental overloading of methods and name conflicts when you extend a class.
+But it is a convention in Python that when you use a single leading underscore, people should not touch it directly. On the other hand, one can also use **double leading underscores**. This allows [Name Mangling](https://stackoverflow.com/questions/7456807/python-name-mangling) that prevents accidental overloading of methods and name conflicts when you inherit a class.
 
 In summary on the use of leading underscore for attribute's name:
 
-- When in doubt, leave it "public". This means that we should not add anything to obscure the name of your class' attribute.
+- When in doubt, leave it "public". This means that we should not add anything to obscure the name of your class attribute.
 - If you really want to send the message "Can't touch this!" to your users, the usual way is to precede the variable with one underscore. This is just a convention, but people understand it and take double care when dealing with such stuff.
 - The double underscore magic is used mainly to avoid accidental overloading of methods and name conflicts with superclasses' attributes. It can be quite useful if you write a class that is expected to be extended many times. We will talk about inheritance to extend a class in the subsequent lessons.
 
@@ -525,8 +526,9 @@ An object can be composed of other objects. For example, we have seen that our `
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        assert isinstance(name, str) and name
+        self._name = name
+        self._speed = speed
         self._pos = Coordinate(0, 0)
 
     # property getter
@@ -571,16 +573,16 @@ class RobotTurtle:
 
 We made two main changes. First, in the `__init__()` instead of initializing to a tuple, we instantiate an object `Coordinate()`.
 
-```python live_py
+```python
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        self._name = name
+        self._speed = speed
         self._pos = Coordinate(0, 0)
 ```
 
 The initial position is still at (0, 0) but now the type is no longer a tuple, but rather, a `Coordinate` class. The second change is on the `move()` method.
 
-```python live_py
+```python
     def move(self, direction):
         update = {'up' : Coordinate(self.pos.x, self.pos.y + self.speed),
                   'down' : Coordinate(self.pos.x, self.pos.y - self.speed),
@@ -743,8 +745,8 @@ class Coordinate:
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        self._name = name
+        self._speed = speed
         self._pos = Coordinate(0, 0)
 
     # property getter
