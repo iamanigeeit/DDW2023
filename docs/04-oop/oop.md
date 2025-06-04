@@ -111,6 +111,11 @@ Once the object is created, we can access its attributes and methods. For exampl
 my_robot.tell_name()
 ```
 
+Output:
+```shell
+My name is T1
+```
+
 
 - `my_robot.tell_name()` is calling the method `tell_name()` using the **dot operator**. To call any method, we use the format of
   ```python
@@ -124,6 +129,12 @@ You can actually access the attributes directly and change it, for example
 print(my_robot._speed)
 my_robot._speed = 2
 print(my_robot._speed)
+```
+
+Output:
+```shell
+1
+2
 ```
 
 
@@ -142,6 +153,19 @@ for _ in range(4):
     print(f'Robot {my_robot._name} now at {my_robot._pos}')
     my_robot.move('right')
     print(f'Robot {my_robot._name} now at {my_robot._pos}')
+```
+
+Output:
+```shell
+Robot T2 initially at (0, 0)
+Robot T2 now at (0, 2)
+Robot T2 now at (2, 2)
+Robot T2 now at (2, 4)
+Robot T2 now at (4, 4)
+Robot T2 now at (4, 6)
+Robot T2 now at (6, 6)
+Robot T2 now at (6, 8)
+Robot T2 now at (8, 8)
 ```
 
 Note:
@@ -164,11 +188,28 @@ my_robot._pos = "This is not supposed to be allowed"
 print(my_robot._pos)
 ```
 
+Output:
+```shell
+This is not supposed to be allowed
+```
+
 
 Such assignment should not be allowed in the first place. If it is allowed, then our `move()` method will produce an error now as shown by running the following cell.
 
 ```python live_py
 my_robot.move("up")
+```
+
+Output:
+```shell
+Traceback (most recent call last):
+  File "2023/notes/oop/oop/#python_script_42287435219288", line 2, in <module>
+    run("""my_robot.move("up")""", 'code_python_8fd2b980_0edd_4e46_81fc_f33f9a605ddd', 0)
+  File "https://data-driven-world.github.io/2023/bry-libs/brython_runner.py", line 20, in run
+    exec(code, ns)
+  File "<string>", line 1, in <module>
+  File "<string>", line 11, in move
+TypeError: unsupported operand type(s) for +: 'str' and 'int'
 ```
 
 
@@ -411,6 +452,12 @@ print(my_robot.name)
 print(my_robot.speed)
 ```
 
+Output:
+```shell
+T4
+1
+```
+
 Notice that you use the property name, which are `name` and `speed` respectively instead of its attributes name, i.e. `_name` and `_speed`. This access calls the **getter** method of the respective properties.
 
 Moreover, you can also change the value using the assignment operator which will call the **setter** method.
@@ -422,6 +469,12 @@ my_robot.name = ""
 print(my_robot.name)
 ```
 
+Output:
+```shell
+T4new
+T4new
+```
+
 Notice that in the second assignment, the name is not assigned to an empty string. It remains as `T4new`. The reason is that our setter only assigns the value if the value is a string and non-empty. Similarly, we can see the same behaviour for speed property.
 
 ```python live_py
@@ -429,6 +482,12 @@ my_robot.speed = 2
 print(my_robot.speed)
 my_robot.speed = -2
 print(my_robot.speed)
+```
+
+Output:
+```shell
+2
+2
 ```
 
 Notice that the second assignment to -2 did not go through because of our setter method's checking.
@@ -439,6 +498,10 @@ On the other hand, we do not have any setter for position. The reason is that we
 print(my_robot.pos)
 ```
 
+Output:
+```shell
+(0, 0)
+```
 
 To change its position, it should call the `move()` method.
 
@@ -446,6 +509,11 @@ To change its position, it should call the `move()` method.
 my_robot.move("up")
 my_robot.move("up")
 print(my_robot.pos)
+```
+
+Output:
+```shell
+(0, 4)
 ```
 
 Note that we use the **properties**'s names `self.pos` and `self.speed` in updating the attribute `_pos` and `_speed`. See the `move()` method.
@@ -463,6 +531,11 @@ You can actually still access the attributes since Python does not have private 
 
 ```python live_py
 print(my_robot._pos)
+```
+
+Output:
+```shell
+(0, 4)
 ```
 
 
@@ -501,6 +574,12 @@ In the above class, we have two attributes `x` and `y`. We do not create any pro
 p1 = Coordinate(3, 4)
 print(p1.x, p1.y)
 print(p1.distance)
+```
+
+Output:
+```shell
+3 4
+5.0
 ```
 
 
@@ -600,6 +679,11 @@ my_robot = RobotTurtle("T with Coordinate")
 print(my_robot.pos)
 ```
 
+Output:
+```shell
+<exec.Coordinate object>
+```
+
 
 Notice that now `pos` is a `Coordinate` object. We can access its attributes as usual.
 
@@ -607,6 +691,10 @@ Notice that now `pos` is a `Coordinate` object. We can access its attributes as 
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
+Output:
+```shell
+0 0
+```
 
 We can move the robot using the `move()` method.
 
@@ -616,6 +704,10 @@ my_robot.move("down")
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
+Output:
+```shell
+1 -1
+```
 
 ## Special Methods
 
@@ -656,7 +748,7 @@ print(p1)
 ```
 
 
-Once Coordinate has this method, it can be used whenever the object has some `Coordinate` attributes. For example, we can print our robot position simply by doing the following.
+Once `Coordinate` has this method, it can be used whenever the object has some `Coordinate` attributes. For example, we can print our robot position simply by doing the following.
 
 ```python live_py
 my_robot = RobotTurtle("T with Coordinate")
@@ -709,7 +801,7 @@ class RobotTurtle {
 
 <br/>
 
-UML diagram also allows us to specify the relationship between different classes. For example, `RobotTurtle` and `Coordinate` relationship can be drawn as shown below.
+UML diagrams also allow us to specify the relationship between different classes. For example, `RobotTurtle` and `Coordinate` relationship can be drawn as shown below.
 
 ```mermaid
 classDiagram
