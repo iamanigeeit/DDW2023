@@ -52,7 +52,7 @@ For example, let's say you want to create a computer game with a Robot Turtle as
 
 The class definition tells Python about your user-defined object and how to create it. It tells Python what attributes this object has using some existing built-in data types or other defined objects. It tells Python what methods the object can do. But it is important to note that a class definition is just like a kind of contract on a piece of paper. The contract does not create the object. _Instantiation_ is the step that actually creates the object in the computer's memory. We will show these two steps below.
 
-First, let's start by defining our `RobotTurtle` class.
+First, let's start by defining our `RobotTurtle` class. Please run the below code (you won't see any output yet, but you will later when there is `print`).
 
 ```python live_py
 # Class definition
@@ -148,7 +148,7 @@ Note:
 
 - We create a new object with the name "T2" and speed of 2.
 - We first printed its initial position by access `my_robot._pos` attribute.
-- Then, we iterate four times. Since we don't use of the iteration variable, we make use of `_`.
+- Then, we iterate four times. By convention we use `_` when the iteration variable is not needed.
 - In the iteration, we move up and then move right. After each movement, we print the position.
 
 ## Encapsulation and Properties
@@ -285,7 +285,7 @@ The above code ensures that the data passed on to our attribute is always a stri
 
 Python provides a "shortcut" to create a property using **function decorators**. This makes the code cleaner and easier to read. The syntax is simple, you just put a decorator `@property` on a getter method of your property. Just make sure that the name of the method is the name of your property. To create the setter, we put another decorator `@property_name.setter` just before our setter function. To rewrite the above code using function decorators, we end up with the following.
 
-```python live_py
+```python
 class RobotTurtle:
     ...
     # getter method
@@ -462,7 +462,7 @@ Note that we use the **properties**'s names `self.pos` and `self.speed` in updat
 You can actually still access the attributes since Python does not have private attributes. This is how you access the attributes with a leading underscore in its name.
 
 ```python live_py
-my_robot._pos
+print(my_robot._pos)
 ```
 
 
@@ -513,7 +513,7 @@ So we may ask when we should use a method that returns a value and when to use a
 
 So when should we use a computed property?
 
-- When the property describes some intrinsic quality of the object. Property is similar in many ways to attribute and it is usually a "noun". It should describes some kind of property of the object rather than some action that the object can do.
+- When the property describes some intrinsic quality of the object. Property is similar in many ways to attribute and it is usually a "noun". It should describe some kind of property of the object rather than some action that the object can do.
 - When the computation is simple and cheap. We should prefer property for simple values you can get by doing a quick calculation. Distance property in the example above is a good example of this.
 - When you can compute the value only with the object's attributes. Remember that getter of a property does not take any other argument besides `self`. This means that the computed value must be obtained only from the object's attributes.
 
@@ -591,7 +591,7 @@ The initial position is still at (0, 0) but now the type is no longer a tuple, b
         self._pos = update[direction]
 ```
 
-Instead of using indices like `self.pos[0]` and `self.pos[1]`, we now use the dot operator with its attribute names like `self.pos.x` and `self.pos.y`. This is much clearer and easy to read as compared to using indices. Moreover, instead of using a tuple, we instantiate `Coordinate()` object as the value of the dictionary `update`.
+Instead of using indices like `self.pos[0]` and `self.pos[1]`, we now use the dot operator with its attribute names like `self.pos.x` and `self.pos.y`. This is much clearer and easier to read as compared to using indices. Moreover, instead of using a tuple, we instantiate `Coordinate()` object as the value of the dictionary `update`.
 
 We can now create the object and test our new class as follows.
 

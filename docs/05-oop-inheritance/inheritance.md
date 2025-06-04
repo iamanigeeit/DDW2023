@@ -59,7 +59,7 @@ RobotTurtle <|-- ArmyTurtle
 RobotTurtle <|-- ScavengerTurtle 
 ```
 
-In this case, `ArmyTurtle` and `ScavengerTurtle` are child classes of `RobotTurtle`. We also call the child class as *sub class* and the parent class as *base class.
+In this case, `ArmyTurtle` and `ScavengerTurtle` are child classes of `RobotTurtle`. We also call the child class as *subclass* and the parent class as *base class*.
 
 The syntax in Python for deriving a class from some base class is as follows:
 

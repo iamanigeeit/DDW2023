@@ -161,7 +161,7 @@ Radix sort will go through each digit of all numbers, from the smallest to large
 
 A simple animation for radix sorting:
 
-<ImageCard path={require("./images/radix_sort.gif").default} />
+<ImageCard path={require("./images/radix_sort.gif").default widthPercentage="100%"} />
 
 > Source: [visualgo.net](https://visualgo.net/en/sorting?slide=16). (Visualgo provides a lot of nice animations of many different algorithms that may help you visualize them better.)
 
