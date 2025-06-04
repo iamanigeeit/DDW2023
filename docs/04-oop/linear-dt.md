@@ -159,7 +159,11 @@ We have seen how Stack is used to evaluate post-fix notation. Now, we will work 
 
 Radix sort will go through each digit of all numbers, from the smallest to largest digit, and put them in the buckets matching their digit, and take them out again, repeating until all digits are checked.
 
-You can check out this [visualgo.net](https://visualgo.net/en/sorting?slide=16) animation for radix sorting. (Visualgo provides a lot of nice animations of many different algorithms that may help you visualize them better.)
+A simple animation for radix sorting:
+
+<ImageCard path={require("./images/radix_sort.gif").default} />
+
+> Source: [visualgo.net](https://visualgo.net/en/sorting?slide=16). (Visualgo provides a lot of nice animations of many different algorithms that may help you visualize them better.)
 
 There are two kinds of Queues used in Radix sort:
 
