@@ -4,7 +4,7 @@ This is an experimental course website for 10.020 Data Driven World module.
 
 You can contribute by forking this repository and creating pull requests 😊
 
-## Getting Started (For your own use)
+## Getting Started (For your own use only)
 
 1. Clone this project, then `npm install`
 2. Afterwards, type `npm start`
@@ -17,19 +17,32 @@ You can contribute by forking this repository and creating pull requests 😊
 ## How to Contribute
 
 1. The website is built from files in this repo using Github workflows.
-2. To contribute, fork this repo, then **create a test branch**. This allows you to create a self-hosted site to test any changes.
-3. **In your `test` branch**:
-   - Go to `docusaurus.config.js` and edit the `url` and `baseUrl` to match your username and repo name.
-   - Go to `.github/workflows/deploy.yml`and change `on push branches` from `main` to `test`.
-4. **Rename** your `main` branch to something else, e.g. `default`. This makes sure that deployment is only triggered on the `test` branch. 
-5. Go to your repo on the Github site > Settings > Pages > change Source to **Github Actions**
-6. Commit your `docusaurus.config.js` and `deploy.yml` and push to `test` branch
-7. In Github > Actions, check that the workflow to build is triggered on the `test` branch. If it doesn't work, you may need to set the permissions under Actions > General. When successful, Github should create a new branch `gh-pages` for the built website files.
-8. Go to Github > Settings > Pages again and switch source back to **Deploy from a branch**. Select `gh-pages` and Save (you must force it to save if it doesn't).
-9. The site should be up at your given URL. If it is not (404 error), go back to Github > Actions and check the `pages build and deployment` workflow ran correctly on the `gh-pages` branch.
-
-
-Now you can checkout the `default` repo, push new commits to both `default` and force-push to `test`. View the changes on your site, and when you are done, submit pull requests through the `default` branch.
+2. To contribute, fork this repo, then create `docusaurus.local.config.js` locally. This allows you to create a self-hosted site to test any changes.
+3. In `docusaurus.local.config.js`, add this:
+   ```javascript
+   const config = {
+       url: YOUR_NEW_URL,
+       baseUrl: "/2023/", // or your new baseURL
+       organizationName: YOUR_USERNAME,
+       projectName: "2023", // or your new projectName
+   }
+   ```
+4. If you want Github Pages to deploy the site for you, do:
+   ```shell
+   git add docusaurus.local.config.js
+   git commit -m 'Local'
+   git push
+   ```
+5. In Github > Actions, check that the workflow to build is triggered. If it doesn't work, you may need to set the permissions under Actions > General. When successful, Github should create a new branch `gh-pages` for the built website files and the site should be up at your given URL.
+6. Now we should remove this `'Local'` commit to avoid it going into the PR for the upstream repo, but still retain `docusaurus.local.config.js` for Github Actions.
+7. Add `docusaurus.local.config.js` to `.gitignore`. Run `git update-index --assume-unchanged .gitignore` to avoid committing the `.gitignore` itself.
+8. On your next change, amend the `'Local'` commit:
+   ```shell
+   git add .
+   git commit --amend -m 'First change'
+   git push --force
+   ```
+9. Now, your commit history should not contain `docusaurus.local.config.js`, but should have your new changes. Then you can start the pull request.
 
 
 ## Building Locally

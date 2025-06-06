@@ -23,7 +23,7 @@ By the end of this lesson, you should be able to:
 
 ## Introduction
 
-Now, we can consider Heapsort algorithm. The idea of a heapsort is pretty simple. For any arbitrary array, we can sort the integers in the array by first building a _max-heap_. Once the max-heap is built, we know that the maximum is at the _root_ node. With this, we can swap the _root_ node with the last element and then exclude it from our heap. We then should restore the _max-heap property_ after this swap because now the _root_ node will be a small number. We can do this repetitively until there is no more element in the heap.
+Now, we can consider the Heapsort algorithm. The idea of heapsort is pretty simple. For any arbitrary array, we can sort the integers in the array by first building a _max-heap_. Once the max-heap is built, we know that the maximum is at the _root_ node. With this, we can swap the _root_ node with the last element and then exclude it from our heap. We then should restore the _max-heap property_ after this swap because now the _root_ node will be a small number. We can do this repetitively until there is no more element in the heap.
 
 ### (P)roblem Statement
 
@@ -37,7 +37,7 @@ Process: Sort the elements of the array in place using heapsort
 
 ### Test (C)ases
 
-Let's use the same example as in the previous seciton. Let's say we have the following array.
+Let's use the same example as in the previous section. Let's say we have the following array.
 
 `[1, 2, 8, 7, 14, 9, 3, 10, 4, 16]`
 

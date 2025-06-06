@@ -64,13 +64,11 @@ Notes:
 - `library.py` is the Python file for you to do your exercises.
 - `pages` is a folder containing a few files which creates multiple pages in your web app.
 
-## Creating a Virtual Environment 
+## Creating a Virtual Environment
 
 > A **virtual environment** is a collection of packages that you separate out for specific projects. For example, this project requires Streamlit and runs on Python 3.10. Since we do not want conflict with our default system Python, we install the packages we need into a different space and activate that space (the _environment_) when we run our project. (It is _virtual_ because all your environments are still on the same physical machine.) 
 
-**If you work on your local Windows computer, you should install Miniconda and open Anaconda Power Shell to do the following steps.**
-
-In the following steps, we will only display the Unix/Linux commands which you can do in Vocareum:
+In the following steps, we will only display the Unix/Linux commands which you can do in Vocareum. If you want to work locally, see the [appendix](#appendix-setup-for-local-machine).
 
 Go to the root folder of mini project 2 template.
 
@@ -84,6 +82,7 @@ First make sure that you have installed `pipenv` package. If not, run the follow
 python -m pip install --user pipenv
 ```
 
+<a id="local"></a>
 We will call `mini-project-2-template` the **root** folder of our application. 
 
 From the root folder, install the packages specified in the `Pipfile`.
@@ -436,10 +435,13 @@ Hint: You can refer to `pages/1_Users.py` to see how to write a DataFrame into a
 Once you are done with this part, your web app should be working fine. The other two pages are written for you and you need not do anything. However, it is good if you try to understand what the code is doing and see if you can rewrite and modify this page to make it better.
 
 
-## Apendix: Setup on Local Machine
+## Appendix: Setup for Local Machine
+
+You can choose to do the mini project on your local machine first before submitting to Vocareum. 
+
 ### Install Git
 
-You need to have Git to do the project in your local computer. Download and install the software according to your OS:
+You need to have Git to do the project. Download and install the software according to your OS:
 
 - Windows: [Git for Windows](https://git-scm.com/download/win)
 - Mac OS: [Git for MacOS](https://git-scm.com/download/mac)
@@ -451,23 +453,46 @@ Find the link to accept the Github Classroom assignment from eDimension for the 
 
 If you do the project with more than one person, add your teammates when accepting the assignment in Github classroom. This allows your teammates to have access to the repository as well. 
 
-Once you have your own local copy of the repository, you can clone the repository to your local machine.
+Once you have your own student copy of the repository, you can clone the repository to your local machine.
 
-### Downloading a Repository
+### Downloading Repository
 
 Clone the mini project repository from Github. On your local computer's terminal or Git Bash, type the following:
 
 ```shell
+cd /path/to/your/projects/folder  # change this
 git clone https://your-mini-project-2-repo-url
 ```
 
-Replace the URL with your mini project 2 URL from the Github repository page, then follow all the Virtual Environment steps above.
+**Replace the URL** with your mini project 2 URL from the Github repository page, then follow all the Virtual Environment steps above.
 
-### Setting Python Version
+### Installing Environment Locally
 
-The `Pipfile` was tested in Vocareum with Python 3.10. If you use other version of Python that is higher than 3.10, you can edit `Pipfile` to your Python version.
+The `Pipfile` was tested in Vocareum with Python 3.10. Some packages may break if you use a different Python version -- welcome to software engineering dependency hell! We recommend using Miniconda just for this course and create a separate environment for it.
 
-```text
-[requires]
-python_version = "3.10" # edit this part to your Python version
+[Download Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/install), then open Anaconda Prompt (Windows) or Terminal (Mac/Linux). Run
+
+```shell
+conda create -n ddw python=3.10 pipenv
+conda activate ddw 
+```
+This will create a new environment called `ddw` with Python 3.10 and Pipenv installed, and activate it.
+
+Then follow the steps [above](#local). You can directly use `pipenv` for all commands instead of `python -m pipenv`.
+
+### Submission
+
+When you are done with local changes, do this to get all your updates into Github:
+
+```shell
+cd /path/to/your/projects/folder/mini-project-2  # change this
+git add .
+git commit -m "Completed version"  # or some update message
+git push  # follow the instructions
+```
+
+Then, in Vocareum, use the terminal to clone your updated project.
+```shell
+cd work
+git clone https://your-mini-project-2-repo-url
 ```

@@ -374,6 +374,6 @@ document.onclick = function (e) {
       chatButtonIcon.innerHTML = getChatButtonIcon();
       has_been_opened = false;
     }
-    console.log("close chat");
+    // console.log("close chat");
   }
 };

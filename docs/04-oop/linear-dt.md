@@ -17,7 +17,7 @@ A linear data structure is a collection of elements where each element has a dir
 
 By the end of this lesson, you should be able to:
 
-- Implement abstract data type for **Stack and Queue** using Object Oriented paradigm.
+- Implement abstract data type for **Stack and Queue** using the Object-Oriented paradigm.
 - Implement Queue using **double Stack** and discuss implementation impact on **computation time**.
 - **Apply** Stack and Queue for some applications.
 
@@ -27,21 +27,21 @@ By the end of this lesson, you should be able to:
 
 ## Introduction
 
-You have encountered `list` as one of the built-in data types that Python support. You can use list to represent one dimensional or linear data collection where sequence and order matters. There are other kinds of linear data structures and we will explore some of them in this lesson.
+You have encountered `list` as one of the built-in data types that Python support. You can use `list` to represent one-dimensional or linear data collection where sequence and order matter. There are other kinds of linear data structures and we will explore some of them in this lesson.
 
 ## Stack
 
-Stack is a type of data structure that follows the LIFO (Last in First out) principle. Stack is common in daily life. Consider a **stack** of books.
+**Stack** is a type of data structure that follows the LIFO (Last in First out) principle. Stack is common in daily life. Consider a **stack** of books.
 
 <ImageCard path={"https://cdn.pixabay.com/photo/2012/04/03/13/26/books-25154_960_720.png"} widthPercentage="20%"/>
 
-Now, let's think about what are the operations we can do with such a structure. We can do the following:
+What are the operations we can do with such a structure? We can do the following:
 
-- We can add new book into the stack by putting it at the top. This operation is called a **push**.
+- We can add a new book into the stack by putting it at the top. This operation is called a **push**.
 - Or you can remove a book from the stack by taking the one at the top. This operation is called a **pop**.
 - Or you can simply look at the book at the top of the stack. This operation is called a **peek**.
 
-What you cannot do, however, are the following:
+What we cannot do, however, are the following:
 
 - insert a book somewhere in the middle of the stack
 - take out a book from somewhere in the middle of the stack
@@ -53,9 +53,9 @@ As you can see, there are three operations related to Stack:
 
 - push
 - pop
-- and peek
+- peek
 
-We can create a stack using Object Oriented Programming by defining a class. A Stack class has at least the following attributes and methods.
+We can create a stack using Object-Oriented Programming by defining a class. A Stack class has at least the following attributes and methods.
 
 ```
 Stack
@@ -72,7 +72,7 @@ You can use [this animation](https://yongdanielliang.github.io/animation/web/Sta
 
 ## Queue
 
-Queue is another common data structure that we find frequently in daily life. For example, the image below shows a queue of people to Louvre Museum.
+**Queue** is another common data structure that we find frequently in daily life. For example, the image below shows a queue of people to Louvre Museum.
 
 <ImageCard path={"https://upload.wikimedia.org/wikipedia/commons/6/61/Queue-to-the-Louvre.jpg"} customClass={"no-invert-color"} widthPercentage="100%"/>
 
@@ -80,13 +80,13 @@ Notice that Queue is different from Stack. Stack follows Last in First out princ
 
 <ImageCard path={"https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Data_Queue.svg/405px-Data_Queue.svg.png"} widthPercentage="50%"/>
 
-Queues are similar to Stacks in some manners. For example, you can't access the elements in middle of the queue. This is like taking someone from the middle of the queue and let him or her enter the museum before those who are at the front of the queue. You can't also insert an element to somewhere in the middle of the queue. This is called cutting queues. No one will be happy with this. So we can only access item from the front of the queue and insert an item from the rear of the queue. These are the two operations of Queues.
+Queues are similar to Stacks in some manners. For example, you can't access the elements in middle of the queue. This is like taking someone from the middle of the queue and let him/her enter the museum before those at the front of the queue. Also, you can't insert an element to somewhere in the middle of the queue. This is cutting the queue. No one will be happy with this. So we can only access an item from the front of the queue and insert an item from the rear of the queue. These are the two operations of Queues.
 
 - `enqueue` is to put an item from the rear of the queue,
 - `dequeue` is to take an item out from the front of the queue,
-- and `peek` is similar to Stack operation which is just to read the item at the front of the queue without removing it from the queue.
+- `peek` is just to read the item at the front of the queue without removing it from the queue (similar to `peek` in Stack).
 
-As such a Queue data structure must have at least the following attributes and methods:
+As such, a Queue data structure must have at least the following attributes and methods:
 
 ```
 Queue
@@ -103,7 +103,7 @@ You can use [this animation](https://yongdanielliang.github.io/animation/web/Que
 
 ## Applications
 
-How or when do we use such data structures like Stack and Queue. In this section we will illustrate two examples. The first one is an example of Stack's application and the second one is an example for Queue's application.
+How or when do we use such data structures like Stack and Queue? In this section we will illustrate with two examples, one for Stack and one for Queue.
 
 ### Post-Fix Expression Evaluation
 
@@ -113,10 +113,10 @@ $$
 3 + 4 \times 2
 $$
 
-In this notation, $4 \times 2$ is evaluated first and the result is added to 3 to get the final result. In this notation, the operators are _in between_ the operands. This is why it is called _infix_ notation. But, this is not the only notation. We can represent the same mathematical operations using a **Post-Fix** notation. In this notation, the operators are placed before the operands justyifing its name, i.e. _postfix_. Let's write the same mathematical expression using a post-fix notation.
+In this notation, $4 \times 2$ is evaluated first and the result is added to 3 to get the final result. In this notation, the operators are _in between_ the operands. This is why it is called _infix_ notation. But we can also represent the same mathematical operations using **post-fix** notation. In this notation, the operators are placed before the operands justifying its name, i.e. _post-fix_. Let's write the same mathematical expression using post-fix notation.
 
 $$
-4 2 \times 3 +
+4\ \ 2 \times 3\ +
 $$
 
 In the above notation, we can see that the operators are placed after the operands. The first two numbers are the operands. The third one is an operator for multiplication. So we will multiply the first two numbers 4 and 2. The next one is another number, i.e. 3. And the last one is an addition operator. This means that we will add 3 with the result of the multiplication of 4 and 2.
@@ -130,14 +130,14 @@ Post-Fix Evaluation Steps:
     2.1. put the operand into the stack.
 3. Otherwise (this is an operator), do the following:
     3.1. pop out the top of the stack as the *right* operand
-    3.1. pop out the top of the stack as the *left* operand
-    3.1. evaluate the operator with the operands
-    3.1. push the result into the stack
+    3.2. pop out the top of the stack as the *left* operand
+    3.3. evaluate the operator with the operands
+    3.4. push the result into the stack
 ```
 
-### Program's Stack
+### Program Stack
 
-In fact, perhaps unknowingly, you have had an encounter with stacks just a week ago. Computer actually uses stacks in recursion! (Call stacks are an important concept in general programming too!) Let's look at this in action with the factorial fuction. factorial(3), or 3! = 3\*2\*1. Here's a recursive function to calculate the factorial of a number:
+In fact, perhaps unknowingly, you have had an encounter with stacks just a week ago. Your computer actually uses stacks in recursion, and indeed any function call! (Call stacks are an important concept in general programming.) Let's look at this in action with the factorial fuction where `factorial(3)` $=3! = 3\times 2 \times 1$. Here's a recursive function to calculate the factorial of a number:
 
 ```python live_py
 def factorial(x):
@@ -149,22 +149,21 @@ def factorial(x):
 print(factorial(3))
 ```
 
-[You can visualize the Stack calls using Python Tutor](http://pythontutor.com/visualize.html#code=def%20factorial%28x%29%3A%0A%20%20if%20x%20%3D%3D%201%3A%0A%20%20%20%20return%201%0A%20%20else%3A%0A%20%20%20%20return%20x%20*%20factorial%28x-1%29%0A%0Aprint%28factorial%283%29%29&cumulative=false&curInstr=9&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false). Notice that the computer treats the frames for factorial in a way like Stack operations that grows downward.
+You can visualize the Stack calls using [Python Tutor](http://pythontutor.com/visualize.html#code=def%20factorial%28x%29%3A%0A%20%20if%20x%20%3D%3D%201%3A%0A%20%20%20%20return%201%0A%20%20else%3A%0A%20%20%20%20return%20x%20*%20factorial%28x-1%29%0A%0Aprint%28factorial%283%29%29). Notice that the computer treats the frames for factorial as a Stack that grows downward.
 
-As mentioned, stacks are an important concept on how computer works. You may wonder why the name most voted for the most popular website for programmers is called [**Stack** Overflow](https://meta.stackoverflow.com/questions/266557/why-was-stack-overflow-chosen-as-a-name-for-this-site#:~:text=overflow%22%20error%20occurs.-,Thus%2C%20naming%20the%20site%20Stack%20Overflow%20is%20a%20bit%20of,Share%20and%20enjoy.).
+As mentioned, stacks are an important concept on how computer works. That is why the most popular website for programmers is called [**Stack** Overflow](https://meta.stackoverflow.com/questions/266557/why-was-stack-overflow-chosen-as-a-name-for-this-site).
 
 ### Radix Sort with Queue
 
 We have seen how Stack is used to evaluate post-fix notation. Now, we will work with another algorithm called Radix sort to show how Queue can be used. Radix sort is a non-comparison sorting algorithm for **integers** by grouping integers by individual digits that share the same positon and value. It utilizes 10 "buckets" numbered from 0-9 to sort.
 
-Radix sort will go through each digit of all numbers and put them in the buckets matching their digit, and take them out again, repeating until all digits are checked.
+Radix sort will go through each digit of all numbers, from the smallest to largest digit, and put them in the buckets matching their digit, and take them out again, repeating until all digits are checked.
 
 A simple animation for radix sorting:
 
-<ImageCard path={"https://drive.google.com/uc?export=view&id=1CUsu4T_Q7N9Lc6s4F6lUNugkkdYG0A70"} widthPercentage="70%"/>
+<ImageCard path={require("./images/radix_sort.gif").default} widthPercentage="100%" />
 
-> Source: [visualgo.net](https://visualgo.net/en/sorting?slide=16).  
-> (Visualgo provides a lot of nice animations of many different algorithms that may help you visualize the algorithm better)
+> Source: [visualgo.net](https://visualgo.net/en/sorting?slide=16). (Visualgo provides a lot of nice animations of many different algorithms that may help you visualize them better.)
 
 There are two kinds of Queues used in Radix sort:
 
@@ -173,7 +172,7 @@ There are two kinds of Queues used in Radix sort:
 
 The Radix sort operation can be described as follows:
 
-1. First, put all the item into the Main bin queue.
+1. First, put all items into the Main bin queue.
 1. The next step is to start with the lowest digit. In this case, it is the _ones_ digit. We take out all the items from the Main bin and put it into the respective radix bins. If the ones is 0, we put into radix bin 0. If the ones is 1, we put into the radix bin 1. If the ones is 2, we put into the radix bin 2, and so on until 9.
 1. Once we finish putting all the items into the respective radix bins, we empty out the radix bin queue and put the items back into the Main bin queue. We start from radix 0 and continue until radix bin 9.
 1. We repeat this step until we reach the highest digits.
@@ -181,7 +180,7 @@ The Radix sort operation can be described as follows:
 Let's give some example using four numbers: 101, 21, 4000, 7. We can rewrite these numbers up to four digits:
 
 ```
-0101, 0021, 4000, and 0007.
+0101, 0021, 4000, 0007
 ```
 
 We can then start from the lowest digit, the ones. As we take out the items from the Main bin queue, we do the following:
@@ -204,7 +203,7 @@ The radix bin will be filled as follows:
 - Bin 8:
 - Bin 9:
 
-Once we are done, we will take out the items from the radix bins and put it back into the Main bin queue. We do this starting from radix bin 0. The main queue now contains.
+Once we are done, we will take out the items from the radix bins and put it back into the Main bin queue. We do this starting from radix bin 0. The main queue now contains:
 
 ```
 4000, 0101, 0021, 0007
@@ -236,7 +235,7 @@ Now, we will put back into the Main bin queue.
 4000, 0101, 0007, 0021
 ```
 
-We repeat again the steps for the hundreds.
+We repeat the steps for the hundreds.
 
 1. put `4(0)00` into radix bin 0
 1. put `0(1)01` into radix bin 1
@@ -279,7 +278,7 @@ And the state of the radix bin will be as follows.
 After we take out and put into the Main bin, we will have
 
 ```
-0007, 0021, 0101, and 4000
+0007, 0021, 0101, 4000
 ```
 
 or
@@ -299,16 +298,16 @@ def enqueue(self, item):
     self.items.append(item)
 ```
 
-In this example, whenever we add item into the Queue, we always add it to the back. This operation takes constant time $O(1)$. However, the removal part, must be written as
+In this example, whenever we add item into the Queue, we always add it to the end. This operation takes constant time $O(1)$. However, the removal part, must be written as
 
 ```python
 def dequeue(self):
     return self.items.pop(0)
 ```
 
-The problem with this implementation is that it is very slow. The reason is that Python has to move all the elements after index 0 one position to the left. This takes $O(n)$ where $n$ is the number of item in the Queue. This motivates us to think whether there is any other way of implementing Queue.
+The problem with this implementation is that it is very slow, because Python has to move all the elements after index 0 one position to the left. This takes $O(n)$ where $n$ is the length of the Queue. Is any other way of implementing Queue?
 
-The answer is yes. We can use 2 Stack data structures as Queue's internal storage. In this implementation, we have two stacks:
+The answer is yes. We can use 2 Stack data structures as internal storage for the Queue. In this implementation, we have two stacks:
 
 - Left Stack
 - Right Stack

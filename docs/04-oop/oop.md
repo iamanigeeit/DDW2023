@@ -32,16 +32,16 @@ By the end of this lesson, you should be able to:
 
 [Object-oriented programming](https://en.wikipedia.org/wiki/Object-oriented_programming) (OOP) is a programming paradigm based on the concept of "objects".
 
-As your program grows in complexity, you may need something more than simple built-in data types such as `str`, `int`, or `list`. For example, when you create a game, you may need an `Avatar`, or `Weapon`, etc. In these cases, it is easier to organize your code around objects. You can think of objects as your own user-defined data types. Later you will see that these objects have two main things:
+As your program grows in complexity, you may need something more than simple built-in data types such as `str`, `int`, or `list`. For example, when you create a game, you may need an `Avatar`, or `Weapon`, etc. In PowerPoint, you can create a `Slide`, a `TextBox`, a `Shape`, etc. In these cases, it is easier to organize your code around objects. You can think of objects as your own user-defined data types. Later you will see that these objects have two main things:
 
-- attributes: which defines the characteristic of the object, and
-- methods: which defines what the object can do
+- **attributes**: which defines the characteristic of the object, and
+- **methods**: which defines what the object can do
   
 Attributes and methods define your object.
 
-You actually have worked with objects if you use `list` and `str` data type in your program. These are called **built-in** objects in Python. Python has provided these objects for you to use. What we will do in this section is to create your own **user-defined** objects.
+You actually have worked with objects if you use `list` and `str` data type in your program. These are **built-in** objects in Python. Python has provided these objects for you to use. What we will do in this section is to create your own **user-defined** objects.
 
-We will see that user-defined objects are made of other data (attributes) and computations (methods). Moreover, we will see that **any** code can be abstracted as an **object** since any computer code are made of data (attributes) and some computations (methods). In these lessons, we will see how OOP will be used for both creating user-defined data type as well as for abstracting the whole program.
+We will see that user-defined objects are made of other data (attributes) and computations (methods). Moreover, we will see that **any** code can be abstracted as an **object** since any computer code is made of data (attributes) and some computations (methods). In these lessons, we will see how OOP will be used for both creating user-defined data type as well as for abstracting the whole program.
 
 ## Attributes and Methods
 
@@ -52,9 +52,9 @@ For example, let's say you want to create a computer game with a Robot Turtle as
 
 The class definition tells Python about your user-defined object and how to create it. It tells Python what attributes this object has using some existing built-in data types or other defined objects. It tells Python what methods the object can do. But it is important to note that a class definition is just like a kind of contract on a piece of paper. The contract does not create the object. _Instantiation_ is the step that actually creates the object in the computer's memory. We will show these two steps below.
 
-First, let's start by defining our `RobotTurtle` class.
+First, let's start by defining our `RobotTurtle` class. Please run the below code (you won't see any output yet, but you will later when there is `print`).
 
-```python
+```python live_py
 # Class definition
 class RobotTurtle:
     # Attributes:
@@ -89,7 +89,7 @@ Some notes on the class definition:
 
 It is important to remember that the class definition is just a description of the object and works as a kind of template or contract. The definition does not create the object itself. The object creation happens by doing the following:
 
-```python
+```python live_py
 # Object Instantiation
 my_robot = RobotTurtle("T1")
 ```
@@ -106,38 +106,37 @@ The above line is what we call as **object instantiation**. When Python executes
 
 Once the object is created, we can access its attributes and methods. For example, you can ask the robot to tell its name.
 
-```python
+```python live_py
 # Accessing object's method
 my_robot.tell_name()
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 My name is T1
 ```
+
 
 - `my_robot.tell_name()` is calling the method `tell_name()` using the **dot operator**. To call any method, we use the format of
   ```python
   object.method_name(arguments)
   ```
-- If you run the cell above, you will see "My name is T1" printed on the output
 
 You can actually access the attributes directly and change it, for example
 
-```python
+```python live_py
 # accessing object's attribute
 print(my_robot._speed)
 my_robot._speed = 2
 print(my_robot._speed)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 1
 2
 ```
+
 
 - the first and the third line access the object's attribute using the **dot operator**.
 - the second line assigned the value 2 into the object's `_speed` attribute.
@@ -145,7 +144,7 @@ The output is
 
 The following examples show more examples on how one can access object's attributes and methods using the dot operator.
 
-```python
+```python live_py
 my_robot = RobotTurtle("T2", 2)
 
 print(f'Robot {my_robot._name} initially at {my_robot._pos}')
@@ -156,9 +155,8 @@ for _ in range(4):
     print(f'Robot {my_robot._name} now at {my_robot._pos}')
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 Robot T2 initially at (0, 0)
 Robot T2 now at (0, 2)
 Robot T2 now at (2, 2)
@@ -174,70 +172,90 @@ Note:
 
 - We create a new object with the name "T2" and speed of 2.
 - We first printed its initial position by access `my_robot._pos` attribute.
-- Then, we iterate four times. Since we don't use of the iteration variable, we make us of `_`.
-- In the iteration, we move up and then move right. After each movement, we printed the position.
+- Then, we iterate four times. By convention we use `_` when the iteration variable is not needed.
+- In the iteration, we move up and then move right. After each movement, we print the position.
 
 ## Encapsulation and Properties
 
-One important concept of Object Oriented programming is called **Encapsulation**. The idea of encapsulation is that data should be bundled together with some methods to access it. The data itself should be hidden from those outside of the object. With encapsulation, the state of the object is hidden from those outside of the object. If anyone would like to change the state of the object or enquire about the state of the object, it has to do so using some **methods**.
+One important concept of Object-Oriented Programming is  **Encapsulation**. The idea of encapsulation is that data should be bundled together with some methods to access it. The data itself should be hidden from those outside of the object. With encapsulation, the state of the object is hidden from those outside of the object. If anyone would like to change the state of the object or enquire about the state of the object, it has to do so using some **methods**.
 
-Why would we want to have this encapsulation? One of the purpose is **abstraction**. Anyone working with the object does not need to know how the state or the data inside the object is implemented. For example, we implement the position attribute in our Robot Turtle object as a tuple of two numbers. This assumes those assigning value to this position always assign a tuple with two numbers. What if they don't? Let's illustrate this with an example
+Why would we want to have this encapsulation? One purpose is **abstraction**. Anyone working with the object does not need to know how the state or the data inside the object is implemented. For example, we implement the position attribute in our Robot Turtle object as a tuple of two numbers. This assumes those assigning value to this position always assign a tuple with two numbers. What if they don't? Let's illustrate this with an example
 
-If we let others access the attributes direclty, one can assign non number data into the position attribute, such as the following example.
+If we let others access the attributes directly, one can assign invalid data into the position attribute, such as the following example.
 
-```python
+```python live_py
 my_robot._pos = "This is not supposed to be allowed"
 print(my_robot._pos)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 This is not supposed to be allowed
 ```
 
+
 Such assignment should not be allowed in the first place. If it is allowed, then our `move()` method will produce an error now as shown by running the following cell.
 
-```python
+```python live_py
 my_robot.move("up")
 ```
 
-The output is
-
-```sh
----------------------------------------------------------------------------
-TypeError                                 Traceback (most recent call last)
-/var/folders/9l/s5tr888d1yldwlfg3_yyk7380000gq/T/ipykernel_18003/3587695430.py in <module>
-----> 1 my_robot.move("up")
-
-/var/folders/9l/s5tr888d1yldwlfg3_yyk7380000gq/T/ipykernel_18003/2532245999.py in move(self, direction)
-      9     # Methods:
-     10     def move(self, direction):
----> 11         update = {'up' : (self._pos[0], self._pos[1] + self._speed),
-     12                   'down' : (self._pos[0], self._pos[1] - self._speed),
-     13                   'left' : (self._pos[0] - self._speed, self._pos[1]),
-
-TypeError: can only concatenate str (not "int") to str
+Output:
+```shell
+Traceback (most recent call last):
+  File "2023/notes/oop/oop/#python_script_42287435219288", line 2, in <module>
+    run("""my_robot.move("up")""", 'code_python_8fd2b980_0edd_4e46_81fc_f33f9a605ddd', 0)
+  File "https://data-driven-world.github.io/2023/bry-libs/brython_runner.py", line 20, in run
+    exec(code, ns)
+  File "<string>", line 1, in <module>
+  File "<string>", line 11, in move
+TypeError: unsupported operand type(s) for +: 'str' and 'int'
 ```
 
-Encapsulation also allows us to change the internal data without changing the interface to access the data. In the above example, we store the position as a tuple. But what if we want to use *list* or *dictionary* instead? If we create methods to access these internal data, we can change the internal data without changing the way other objects interact with our data. The key is to keep the interface consistent and stable. We do these by creating methods to access our internal data.
 
-Therefore, it is important that we do encapsulation. Encapsulation ensures that any access to the data should be done through some specific methods.
+Encapsulation also allows us to change the internal data without changing the interface to access the data. In the above example, we store the position as a tuple. But what if we want to use *list* or *dictionary* instead? If we create methods to access these internal data, we can change the internal data without changing the way other objects interact with our data. The key is to keep the interface consistent and stable. We do this by creating methods to access our internal data. 
 
-Let's look at another example of why we want to do encapsulation. Let's say we want to _update_ our Robot class definition to implement relative coordinates where the robot has a absolute position and a relative position with respect to some initial position in the map. Let's say, the robot can start at any other position other than `0, 0` and we want to store the absolute position of the robot as its attribute. This change requires a change in the way the programmers set the value of the robot's position since previously the position is always relative to the origin of `0,0`. Such changes may break the code since now the `_pos` attribute means differently. Previously, it is relative to `0, 0` and now it is going to be some absolute position in the map. With encapsulation, however, we can keep the way position is set while changing the internal attributes. For example, we can create `pos` as relative to the initial origin while storing the absolute position internally based on where the initial origin is. Encapsulation simply separates the internal data representation with how others interact with this object. Without encapsulation, we will break the code and requires new methods to be created.
+<!---
+For example, if we want to change `_pos` internally to be a _dict_, we can change `move` as well:
 
-To achieve this data encapsulation, we usually create two kinds of methods:
+```python live_py
+class RobotTurtle:
+    # Attributes:
+    def __init__(self, name, speed=1):
+        self._name = name
+        self._speed = speed
+        self._pos = {'x': 0, 'y': 0}
+
+    # Methods:
+    def move(self, direction):
+        movement = {
+          'up': {'y': self._pos['y'] + self._speed},
+          'down': {'y': self._pos['y'] - self._speed},
+          'left': {'x': self._pos['x'] - self._speed},
+          'right' : {'x': self._pos['x'] + self._speed},
+        }
+        self._pos.update(movement[direction])
+
+    def tell_name(self):
+        print(f"My name is {self._name}")
+```
+-->
+
+Let's look at another example of why we want to do encapsulation. Let's say we want to _update_ our Robot class definition to implement relative coordinates where the robot has a absolute position and a relative position with respect to some initial position in the map. Let's say, the robot can start at any other position other than `0, 0` and we want to store the absolute position of the robot as its attribute. This change requires a change in the way the programmers set the value of the robot's position since previously the position is always relative to the origin of `0,0`. Such changes may break the code since now the `_pos` attribute means something different. Previously, it is relative to `0, 0` and now it is going to be some absolute position in the map. With encapsulation, however, we can keep the way position is set while changing the internal attributes. For example, we can create `pos` as relative to the initial origin while storing the absolute position internally based on where the initial origin is. Encapsulation simply separates the internal data representation from how others interact with this object. Without encapsulation, we will break the code and require new methods to be created.
+
+
+To achieve data encapsulation, we usually create two kinds of methods:
 
 - enquiry or _getter_: this method is used to get or enquire the state of the object
 - modifier or _setter_: this method is used to modify or set the state of the object.
 
 <ImageCard path={require("./images/property_attribute.png").default} widthPercentage="70%"/>
 
-In Python, we do this using the concept of **property**. A _property_ represents an attribute with its getter and setter. Note that **a property is not the same as the attribute**. Because they are not the same, Python will require you to use two different names. The name of the property must not be the same as the name of the attribute. Property looks like an attribute but they behave differently. When we set a property's value, it passes through its **setter** method. Similarly, when we get a property's value, we can only obtain it from its **getter** method. Since all access passes through some methods, the data is encapsulated by the getter and the setter methods. We can make changes internally without affecting how the outside world interact with the data.
+In Python, we do this using the concept of **property**. A _property_ represents an attribute with its getter and setter. Note that **a property is not the same as an attribute**. Because they are not the same, Python will require you to use two different names. The name of the property must not be the same as the name of the attribute. Property looks like an attribute but they behave differently. When we set a property's value, it passes through its **setter** method. Similarly, when we get a property's value, we can only obtain it from its **getter** method. Since all access passes through some methods, the data is encapsulated by the getter and the setter methods. We can make changes internally without affecting how the outside world interact with the data.
 
 Let's show how we can create a property for position attribute. 
 
-```python
+```python live_py
 # Class definition
 class RobotTurtle:
     # Attributes:
@@ -271,7 +289,7 @@ Notice the last line of this class definition. We have the following.
 pos = property(get_pos)
 ```
 
-This line creates a *property* with the name `pos` using the function `property()`. This function takes in at least one argument which is the **getter** function. In the case above, our getter function is `get_pos()`. This is defined as follows in the class.
+This line creates a *property* with the name `pos` using the function `property()`. This function takes in at least one argument which is the **getter** function. In the case above, our getter function is `get_pos()`. This is defined in the class.
 
 ```python
     #  getter method
@@ -295,7 +313,7 @@ class RobotTurtle:
     name = property(get_name, set_name)
 ```
 
-In this case, we created a `name` property that encapsulates the `_name` attribute. To set the data `_name`, one has to use the `set_name()` function. Similarly, to get the data from `_name`, one has to use the `get_name()` function. This may seems pointless, but the getter and setter may contain some logic to it. For example, let's say that we want to make sure only string data to be passed to `_name`, we can write the following code.
+In this case, we created a `name` property that encapsulates the `_name` attribute. To set the data `_name`, one has to use the `set_name()` function. Similarly, to get the data from `_name`, one has to use the `get_name()` function. This may seem pointless, but the getter and setter may contain some logic to it. For example, let's say that we want to make sure only string data is passed to `_name`, we can write:
 
 ```python
     # setter method
@@ -306,7 +324,7 @@ In this case, we created a `name` property that encapsulates the `_name` attribu
 
 The above code ensures that the data passed on to our attribute is always a string and non-empty. 
 
-Python provides a "shortcut" to create a property using function decorator. This makes the code cleaner and easier to read. The syntax is simple, you just put a decorator `@property` on a getter method of your property. Just make sure that the name of the method is the name of your property. To create the setter, we put another decorator `@property_name.setter` just before our setter function. To rewrite the above code using function decorator, we end up with the following.
+Python provides a "shortcut" to create a property using **function decorators**. This makes the code cleaner and easier to read. The syntax is simple, you just put a decorator `@property` on a getter method of your property. Just make sure that the name of the method is the name of your property. To create the setter, we put another decorator `@property_name.setter` just before our setter function. To rewrite the above code using function decorators, we end up with the following.
 
 ```python
 class RobotTurtle:
@@ -319,25 +337,27 @@ class RobotTurtle:
     # setter method
     @name.setter
     def name(self, value):
-        self._name = value
+        if isinstance(value, str) and value != "":
+            self._name = value
 ```
 Notice a few things here:
-- We no longer have the line which calls the function `property()`. 
-- You may wonder, how do we define the name of our property. The answer is that the method name under the decorator `@property` defines the name of our property. 
-- Since by default a property must have a getter function, the function decorated by `@property` is the getter method. 
+- We no longer have the line which calls `property()`. 
+- The method name under the decorator `@property` defines the property name. 
+- By default, a property must have a getter function. The function with the decorator `@property` is the getter method. 
 - To create the setter, we need to specify which property this setter belongs, so the syntax specifies the name of the property, i.e. `@name.setter`. 
 
 In the following section, we will use the syntax using the function decorator instead of calling the `property()` function.
 
 Let's rewrite our `RobotTurtle` class using property to encapsulate the `_name` attribute and `_speed` attribute. To do this, we are going to create two properties, one for `name` and the other one for `speed`. On the other hand, we will create a property for position only with a getter. The reason is that we want position to be modified only by calling the `move()` method.
 
-```python
+```python live_py
 # Class definition
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        assert isinstance(name, str) and name
+        self._name = name
+        self._speed = speed
         self._pos = (0, 0)
 
     # property getter
@@ -380,7 +400,7 @@ class RobotTurtle:
         print(f"My name is {self.name}")
 ```
 
-We define a property for `name` as follows:
+In the above, we have a property for `name`:
 
 ```python
     # property getter
@@ -399,7 +419,7 @@ Note:
 
 - We use the syntax `@property` to define a getter with the name `name`. This is what is called as **decorator** in Python. A decorator allows you to modify the function defined in the line just after it. In our case, it changes the method `def name(self)` into a **getter** method for a property called `name`.
 - The setter is defined using a decoratory `@name.setter`. In this setter method, we ensure that only those of the type `str` and not empty string can be assigned to the attribute `_name`.
-- This setter will be called in the `__init__()` since the argument is assigned to the **property** `name` and not to the **attribute** `_name`, i.e. `self.name = name`.
+- When you create a `RobotTurtle`, the `__init__()` now has `self.name = name` which will call the setter, since we are operating on the **property** `name` and not the **attribute** `_name`.
 
 The property for the `speed` is defined similarly.
 
@@ -423,7 +443,7 @@ Note:
 
 Let's see some examples on how to use the properties.
 
-```python
+```python live_py
 # this is to create a new object with property, make sure you run the cell with the class definition first
 my_robot = RobotTurtle("T4")
 
@@ -432,9 +452,8 @@ print(my_robot.name)
 print(my_robot.speed)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 T4
 1
 ```
@@ -443,32 +462,30 @@ Notice that you use the property name, which are `name` and `speed` respectively
 
 Moreover, you can also change the value using the assignment operator which will call the **setter** method.
 
-```python
+```python live_py
 my_robot.name = "T4new"
 print(my_robot.name)
 my_robot.name = ""
 print(my_robot.name)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 T4new
 T4new
 ```
 
 Notice that in the second assignment, the name is not assigned to an empty string. It remains as `T4new`. The reason is that our setter only assigns the value if the value is a string and non-empty. Similarly, we can see the same behaviour for speed property.
 
-```python
+```python live_py
 my_robot.speed = 2
 print(my_robot.speed)
 my_robot.speed = -2
 print(my_robot.speed)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 2
 2
 ```
@@ -477,22 +494,26 @@ Notice that the second assignment to -2 did not go through because of our setter
 
 On the other hand, we do not have any setter for position. The reason is that we want position to always start from `(0, 0)` and it can only change its position through the method `move()`. Note, however, that we are using a **single leading underscore** as a convention for people not to touch it. We can still enquire the position using the property's getter.
 
-```python
+```python live_py
 print(my_robot.pos)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 (0, 0)
 ```
 
 To change its position, it should call the `move()` method.
 
-```python
+```python live_py
 my_robot.move("up")
 my_robot.move("up")
 print(my_robot.pos)
+```
+
+Output:
+```shell
+(0, 4)
 ```
 
 Note that we use the **properties**'s names `self.pos` and `self.speed` in updating the attribute `_pos` and `_speed`. See the `move()` method.
@@ -506,23 +527,23 @@ Note that we use the **properties**'s names `self.pos` and `self.speed` in updat
         self._pos = update[direction]
 ```
 
-You can actually still access the attributes since Python does not have a concept of private attribute. This is how you access the attributes with a double leading underscore in its name.
+You can actually still access the attributes since Python does not have private attributes. This is how you access the attributes with a leading underscore in its name.
 
-```python
-my_robot._pos
+```python live_py
+print(my_robot._pos)
 ```
 
-The output is
-
-```sh
-(0, 0)
+Output:
+```shell
+(0, 4)
 ```
 
-But it is a convention in Python that when you use a single leading underscore, people should not touch it directly. On the other hand, one can also use a **double leading underscores**. This allows [Name Mangling](https://stackoverflow.com/questions/7456807/python-name-mangling) that prevents accidental overloading of methods and name conflicts when you extend a class.
+
+But it is a convention in Python that when you use a single leading underscore, people should not touch it directly. On the other hand, one can also use **double leading underscores**. This allows [Name Mangling](https://stackoverflow.com/questions/7456807/python-name-mangling) that prevents accidental overloading of methods and name conflicts when you inherit a class.
 
 In summary on the use of leading underscore for attribute's name:
 
-- When in doubt, leave it "public". This means that we should not add anything to obscure the name of your class' attribute.
+- When in doubt, leave it "public". This means that we should not add anything to obscure the name of your class attribute.
 - If you really want to send the message "Can't touch this!" to your users, the usual way is to precede the variable with one underscore. This is just a convention, but people understand it and take double care when dealing with such stuff.
 - The double underscore magic is used mainly to avoid accidental overloading of methods and name conflicts with superclasses' attributes. It can be quite useful if you write a class that is expected to be extended many times. We will talk about inheritance to extend a class in the subsequent lessons.
 
@@ -532,7 +553,7 @@ The above summary are taken from [this article](https://stackoverflow.com/questi
 
 Both `name` and `speed` are what is commonly called **stored** properties. For each stored property there is a corresponding attribute. We can also create what is called **computed** property. A computed property retrieves its value from some other attributes and does not have a setter. To illustrate, let's create a new user-defined object called `Coordinate`.
 
-```python
+```python live_py
 import math
 
 class Coordinate:
@@ -546,46 +567,47 @@ class Coordinate:
         return math.sqrt(self.x * self.x + self.y * self.y)
 ```
 
-In the above class, we have two attributes `x` and `y`. We do not create any properties for these attributes for simplicity. Python encourages simplicity anway. But here, we create a computed property called `distance`. This property returns the distance of the current x and y from its origin (0, 0). We can test by instantiating the object and assign some values to its attributes.
+In the above class, we have two attributes `x` and `y`. We do not create any properties for these attributes for simplicity. Python encourages simplicity anyway. But here, we create a computed property called `distance`. This property returns the distance of the current x and y from its origin (0, 0). We can test by instantiating the object and assign some values to its attributes.
 
-```python
+```python live_py
 # object instantiation
 p1 = Coordinate(3, 4)
 print(p1.x, p1.y)
 print(p1.distance)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 3 4
 5.0
 ```
 
-The last line prints the computed property `distance` which is computed from the two attributes `x` and `y`. Notice here that `distance` is printed without parenthesis and so it is not a **method** but rather a **property**.
 
-So we may ask when should we use a method that returns a value and when to use a computed property. Here are some considerations:
+The last line prints the computed property `distance` which is computed from the two attributes `x` and `y`. Notice here that `distance` is printed without parentheses and so it is not a **method** but rather a **property**.
 
-- A method can have arguments. This means that if your returned value requires some input other than the attributes of its object, you must use a method rather than a computed property.
+So we may ask when we should use a method that returns a value and when to use a computed property. Here are some considerations:
+
+- A method can have arguments. This means that if your return value requires some input other than the attributes of its object, you must use a method rather than a computed property.
 - A method describes an action. If the code performs some actions and return the output of that action, then a method is more suitable.
 
 So when should we use a computed property?
 
-- When the property describes some intrinsic quality of the object. Property is similar in many ways to attribute and it is usually a "noun". It should describes some kind of property of the object rather than some action that the object can do.
+- When the property describes some intrinsic quality of the object. Property is similar in many ways to attribute and it is usually a "noun". It should describe some kind of property of the object rather than some action that the object can do.
 - When the computation is simple and cheap. We should prefer property for simple values you can get by doing a quick calculation. Distance property in the example above is a good example of this.
 - When you can compute the value only with the object's attributes. Remember that getter of a property does not take any other argument besides `self`. This means that the computed value must be obtained only from the object's attributes.
 
 ## Composition
 
-An object can be composed of other objects. For example, we have seen that our `RobotTurtle` object is made up of other objects such as `str` for its name, `int` for its speed and tuple for its position. We can also compose an object from other **user-defined** object. For example, instead of using a tuple for its position, our Robot Turtle class can make use of the `Coordinate` class.
+An object can be composed of other objects. For example, we have seen that our `RobotTurtle` object is made up of other objects such as `str` for its name, `int` for its speed and tuple for its position. We can also compose an object from other **user-defined** objects. For example, instead of using a tuple for its position, our Robot Turtle class can use the `Coordinate` class.
 
-```python
+```python live_py
 # Class definition
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        assert isinstance(name, str) and name
+        self._name = name
+        self._speed = speed
         self._pos = Coordinate(0, 0)
 
     # property getter
@@ -632,8 +654,8 @@ We made two main changes. First, in the `__init__()` instead of initializing to 
 
 ```python
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        self._name = name
+        self._speed = speed
         self._pos = Coordinate(0, 0)
 ```
 
@@ -648,67 +670,60 @@ The initial position is still at (0, 0) but now the type is no longer a tuple, b
         self._pos = update[direction]
 ```
 
-Instead of using indices like `self.pos[0]` and `self.pos[1]`, we now use the dot operator with its attribute names like `self.pos.x` and `self.pos.y`. This is much a clearer and easy to read as compared to using indices. Moreover, instead of using a tuple, we instantiate `Coordinate()` object as the value of the dictionary `update`.
+Instead of using indices like `self.pos[0]` and `self.pos[1]`, we now use the dot operator with its attribute names like `self.pos.x` and `self.pos.y`. This is much clearer and easier to read as compared to using indices. Moreover, instead of using a tuple, we instantiate `Coordinate()` object as the value of the dictionary `update`.
 
 We can now create the object and test our new class as follows.
 
-```python
+```python live_py
 my_robot = RobotTurtle("T with Coordinate")
 print(my_robot.pos)
 ```
 
-The output is
-
-```sh
-<__main__.Coordinate object at 0x7fa838655760>
+Output:
+```shell
+<exec.Coordinate object>
 ```
+
 
 Notice that now `pos` is a `Coordinate` object. We can access its attributes as usual.
 
-```python
+```python live_py
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 0 0
 ```
 
 We can move the robot using the `move()` method.
 
-```python
+```python live_py
 my_robot.move("right")
 my_robot.move("down")
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
-The output is
-
-```sh
+Output:
+```shell
 1 -1
 ```
 
 ## Special Methods
 
-Some methods' name in Python are special and can be overridden. One example of special method that you have encountered is `__init__()` method. This method is always called during object instantiation. There are many other special methods, but for now, we will introduce one more, which is the `__str__()` method. This method is called when Python tries to convert the object to an `str` object. One common instance of this is when you print the object.
+Some method names in Python are special and can be overridden. One example of special method that you have encountered is `__init__()` method. This method is always called during object instantiation. There are many other special methods, but for now, we will introduce one more, which is the `__str__()` method. This method is called when Python tries to convert the object to an `str` object. One common instance of this is when you print the object.
 
 If we print the `Coordinate()` object, we will see the following output.
 
-```python
+```python live_py
 p1 = Coordinate(2, 3)
 print(p1)
 ```
 
-The output is
-
-```sh
-<__main__.Coordinate object at 0x7fa838655b80>
-```
 
 Python basically does not understand how to print a `Coordinate()`. But we can tell Python how to convert this object into an `str` which Python can display into the screen. Let's override the method `__str__()`.
 
-```python
+```python live_py
 import math
 
 class Coordinate:
@@ -727,33 +742,23 @@ class Coordinate:
 
 In the above method `__str__()` we return a string whenever Python tries to convert this object into a string. Once we define this special method, we can print a `Coordinate` object.
 
-```python
+```python live_py
 p1 = Coordinate(2, 3)
 print(p1)
 ```
 
-The output is
 
-```sh
-(2, 3)
-```
+Once `Coordinate` has this method, it can be used whenever the object has some `Coordinate` attributes. For example, we can print our robot position simply by doing the following.
 
-Once Coordinate has this method, it can be used whenever the object has some `Coordinate` attributes. For example, we can print our robot position simply by doin gthe following.
-
-```python
+```python live_py
 my_robot = RobotTurtle("T with Coordinate")
 print(my_robot.pos)
 ```
 
-The output is
-
-```sh
-(0, 0)
-```
 
 Recall, that previously you have to specify it as
 
-```python
+```python live_py
 print(my_robot.pos.x, my_robot.pos.y)
 ```
 
@@ -775,7 +780,7 @@ class RobotTurtle {
 ```
 
 <br/>
-The UML Class diagram consists of three compartment:
+The UML Class diagram consists of three compartments:
 
 - The first compartment on the top: this specifies the class name
 - The second compartment in the middle: this lists down all the properties and attributes
@@ -796,7 +801,7 @@ class RobotTurtle {
 
 <br/>
 
-UML diagram also allows us to specify the relationship between different classes. For example, `RobotTurtle` and `Coordinate` relationship can be drawn as shown below.
+UML diagrams also allow us to specify the relationship between different classes. For example, `RobotTurtle` and `Coordinate` relationship can be drawn as shown below.
 
 ```mermaid
 classDiagram
@@ -832,8 +837,8 @@ class Coordinate:
 class RobotTurtle:
     # Attributes:
     def __init__(self, name, speed=1):
-        self.name = name
-        self.speed = speed
+        self._name = name
+        self._speed = speed
         self._pos = Coordinate(0, 0)
 
     # property getter

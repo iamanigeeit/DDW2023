@@ -117,10 +117,8 @@ const config = {
     [
       "docusaurus-live-brython",
       {
-        brython_src:
-          "https://cdn.jsdelivr.net/npm/brython@3.9.5/brython.min.js", // default
-        brython_stdlib_src:
-          "https://cdn.jsdelivr.net/npm/brython@3.9.5/brython_stdlib.js", // default
+        brythonSrc: 'https://cdn.jsdelivr.net/npm/brython@3.12.4/brython.min.js', // default
+        brythonStdlibSrc: 'https://cdn.jsdelivr.net/npm/brython@3.12.4/brython_stdlib.js' // default
       },
     ],
     "@docusaurus/theme-mermaid",
@@ -241,5 +239,15 @@ const config = {
     mermaid: true,
   },
 };
+
+const fs = require('fs');
+const path = require('path');
+
+// Optional local override
+const localConfigPath = path.resolve(__dirname, 'docusaurus.local.config.js');
+if (fs.existsSync(localConfigPath)) {
+  const localConfig = require(localConfigPath);
+  Object.assign(config, localConfig);
+}
 
 module.exports = config;

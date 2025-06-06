@@ -13,9 +13,9 @@ import ChatBaseBubble from "@site/src/components/ChatBaseBubble";
 
 To obtain **all 5 pts** of MP marks, you need to **submit** your project to Vocareum <span style={{ "color":"red", "fontWeight": "bold" }}>and</span> complete the in-person **checkoff**. Please approach **your cohort's TA** or your cohort's **instructor** during Mini Project session of the week for checkoff.
 
-Ensure that you have submitted the code to Vocareum and **done** with the checkoff this **BEFORE the deadline** (refer to your course handout and Vocareum).
+Ensure that you have submitted the code to Vocareum and **done** the checkoff **BEFORE the deadline** (refer to your course handout and Vocareum).
 
-There are 3 criterias for the grading as reflected in Vocareum. They make up the 5pts:
+There are 3 criteria for the grading as reflected in Vocareum. They make up the 5pts:
 
 1. **[2pt]** Working Test Case
 2. **[2pt]** Understanding of Code
@@ -45,11 +45,11 @@ Total max mark for this section is 2pts. 1pt max for **each** exercise in the MP
 Here's the general rubric for the Q&A section **for each exercise**:
 
 | Points     | Explanation                                                                                                                         |
-| ---------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| ---------- |-------------------------------------------------------------------------------------------------------------------------------------|
 | 😄 `1`     | Can answer **2 out of 3** with clarity (googling, internal discussion, reference to old notes allowed)                              |
 | 🙂 `0.75`  | Can answer **2 out of 3** but with **hints from TA/instructor**, and takes a comparably long time (lots of staring, silent moments) |
 | 😐 `0.5`   | Only can answer 1 question accurately, the rest are _smokey_                                                                        |
-| 😟 `0.25 ` | Cannot answer any question accurately, but at least know **which file** contain their answer, and some explanation                  |
+| 😟 `0.25 ` | Cannot answer any question accurately, but at least know **which file** contains their answer, and some explanation                 |
 | 😵‍💫 `0`     | **No idea** at all about the project, not even about admin matters like which file should contain their answer                      |
 
 Note that we might ask any of you for answers. Please ensure that everybody knows all parts of the project, at least the big picture. This is where you will learn.
@@ -62,7 +62,7 @@ There are **8 checks** for both exercises in MP1. Each is worth **0.25 pts**, to
 
 1. 10 **integers** (OK to have repeated value) appear when `Generate 10 numbers` button is clicked
 2. Totally sorted **integer** output is displayed when `Sort` button is clicked
-3. In `1_Exercise\ 1.py`, the implementation in `sort_generated_numbers()` is **NOT hardcoded** like this, but the `mysort()` function is called to actually compute the sorted value.
+3. In `1_Exercise_1.py`, the implementation in `sort_generated_numbers()` is **NOT hardcoded** like this, but the `mysort()` function is called to actually compute the sorted value.
 4. A **custom** sort function (e.g: `bubble_sort` with actual implementation) is used to compute (2), and not using python's default [`list.sort()`](https://docs.python.org/3/howto/sorting.html)
 
 ### Exercise 2 [4 checks]
@@ -76,7 +76,7 @@ There are **8 checks** for both exercises in MP1. Each is worth **0.25 pts**, to
 Exercise related question involves questioning **how** and **why** you implement certain things in your project.
 
 :::note
-It is pretty clear cut questions we might ask: we will ask about any instruction (program) that **you** wrote for this project (anything that you wrote is fair game). Examples include your sort implementation, how did you display the values to the webpage, how did you manipulate certain values, etc.
+Our questions will be clear-cut: we will ask about any instruction (program) that **you** wrote for this project (anything that you wrote is fair game). Examples include your sort implementation, how did you display the values to the webpage, how did you manipulate certain values, etc.
 :::
 
 Project-related question involves **understanding** the project structure:
@@ -97,19 +97,19 @@ It is important to be **independent** and **curious** about things you've worked
 
 ## Mini Project 2 Details
 
-There are **8 checks** for both exercises in MP1. Each is worth 0.25 pts, totalling of 2pts under “Working Test Case” criteria. **This is similar to MP1**.
+There are **8 checks** for both exercises in MP2. Each is worth 0.25 pts, totalling of 2pts under “Working Test Case” criteria. **This is similar to MP1**.
 
 ### Exercise 1 [3 checks]
 
-1. Able to **create** users and its updated in the Google Sheet.
+1. Able to **create** users and update the Excel sheet.
 3. Able to **create** many users and display all registered users under `Users` page.
 
 ### Exercise 2 [5 checks]
 
-1. In `library.py`, there exist a `Stack` implementation in there **from scratch**, e.g: `pop`, `peek`, etc is implemented/
+1. In `library.py`, there is a `Stack` implemented **from scratch**, e.g: `pop`, `peek`, etc are implemented.
 2. In `library.py`, there exist a `EvaluateExpression` implementation in there **from scratch**.
 3. Users can create questions and the answer displayed in `Questions` page is correct. Users can also send it to multiple other users.
-4. Users can `Show/Hide` questions and enter the correct answer in the `Challenges` page, afterwhich the timer value is displayed at the row.
+4. Users can `Show/Hide` questions and enter the correct answer in the `Challenges` page, after which the timer value is displayed on the row.
 5. In the **Hall of Fame**, we can see the **ranks** properly. Each challenge is displayed as a new section and in each section the question and the correct answer is displayed. After that, a table of top three users are displayed.
 
 ### Q&A
